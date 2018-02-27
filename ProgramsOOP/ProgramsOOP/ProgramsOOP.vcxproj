@@ -116,10 +116,12 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="LaunchTask1.cpp" />
+    <ClCompile Include="LaunchTask2.cpp" />
     <ClCompile Include="Main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AllLabs.h" />
+    <ClInclude Include="LaunchTaskFunction2.h" />
     <ClInclude Include="LaunchTaskFunctions1.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

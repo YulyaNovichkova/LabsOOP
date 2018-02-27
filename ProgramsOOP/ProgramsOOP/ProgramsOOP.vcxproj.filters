@@ -13,13 +13,22 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Исходные файлы\LaunchLab1">
+      <UniqueIdentifier>{0a7a705b-1582-4e0a-9cbe-c6ea9f7c41bc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\LaunchLab2">
+      <UniqueIdentifier>{ca04c5e6-50cd-4eb6-a362-0b2f272b0c5c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="LaunchTask1.cpp">
-      <Filter>Исходные файлы</Filter>
+      <Filter>Исходные файлы\LaunchLab1</Filter>
+    </ClCompile>
+    <ClCompile Include="LaunchTask2.cpp">
+      <Filter>Исходные файлы\LaunchLab2</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -27,6 +36,9 @@
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="AllLabs.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="LaunchTaskFunction2.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>

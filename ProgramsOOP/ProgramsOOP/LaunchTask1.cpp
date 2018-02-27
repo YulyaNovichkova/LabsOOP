@@ -105,7 +105,6 @@ int Menu1()
 
 void LaunchTask1()
 {
-
 	int key = Menu1();
 	cout << key << endl;
 };

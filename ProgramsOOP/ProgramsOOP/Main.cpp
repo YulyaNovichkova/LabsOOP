@@ -11,8 +11,8 @@ int Menu()
 	do
 	{
 		cout << "\t Choose laboratory work:\n\n\n"
-			<< "1. Task 1; \n"
-			<< "0. Exit. \n";
+			<< "1. Task 1;" << endl
+			<< "0. Exit." << endl;
 
 		cin >> key;
 		cin.ignore(1);
@@ -21,6 +21,9 @@ int Menu()
 		{
 		case '1':
 			LaunchTask1();
+			break;
+		case '2':
+			LaunchTask2();
 			break;
 		case '0':
 			cout << " Welcome back." << endl;
