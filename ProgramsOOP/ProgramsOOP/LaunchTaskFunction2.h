@@ -89,23 +89,40 @@ void GlobalEqualsOne()
 
 void Randomly()
 {
-	srand(time(NULL)); // для задания случайного начального числа
+	srand(time(NULL));
 	cout << "---Game: Guess the Number---" << endl;
-	int guessNumber = rand() % 10; // генерация угадываемого числа
-	int enteredNumber = -1; // вводимое пользователем число
-	int shots = 0; // количество попыток
+	int guessNumber = rand() % 10;
+	int enteredNumber = -1;
+	int shots = 0;
 	cout << "Enter number from 0 to 9: " << endl;
 	cin >> enteredNumber;
-	while (guessNumber != enteredNumber || shots < 4)
+	while (shots <= 2)
 	{
-		shots++;
-		if (guessNumber > enteredNumber)
-			cout << "Wrong!!! Try to take a number more." << endl << " Enter number from 0 to 9: " << endl;
+		if (guessNumber != enteredNumber)
+		{
+			if (shots == 2)
+			{
+				cout << "You lose!" << endl;
+				break;
+			}
+			else
+			{
+				shots++;
+				if (guessNumber > enteredNumber)
+					cout << "Wrong!!! Try to take a number more." << endl << " Enter number from 0 to 9: " << endl;
+				else
+					cout << "Wrong!!! Try to take a number less." << endl << " Enter number from 0 to 9: " << endl;
+				cin >> enteredNumber;
+			}
+			
+		}
 		else
-			cout << "Wrong!!! Try to take a number less." << endl << " Enter number from 0 to 9: " << endl;
-		cin >> enteredNumber;
-	}
-	cout << "\nCorrect! You win in" << shots << "shots!" << endl;
+		{
+			cout << "\nCorrect! You win in " << shots+1 << " shots!" << endl;
+			break;
+		}
+		
+	}	
 }
 /*
 void Array()
@@ -121,4 +138,6 @@ for (int i = 0; i < size; i++)
 {
 realArray[i] = rand();
 }
-}*/
+}
+
+void MultiplyMatrices()*/

@@ -12,6 +12,7 @@ int Menu()
 	{
 		cout << "\t Choose laboratory work:\n\n\n"
 			<< "1. Task 1;" << endl
+			<< "2. Task 2;" << endl
 			<< "0. Exit." << endl;
 
 		cin >> key;

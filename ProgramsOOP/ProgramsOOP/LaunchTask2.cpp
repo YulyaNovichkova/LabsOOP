@@ -19,7 +19,7 @@ int Menu2()
 	do
 	{
 		cout << "\t Choose next step:" << endl << endl << endl
-			<< "11. ""Hello, World!"";" << endl
+			<< "1. ""Hello, World!"";" << endl
 			<< "2. Make Calculation;" << endl
 			<< "3. Get Roots;" << endl
 			<< "4. GetRoots 2.0;" << endl
@@ -28,8 +28,8 @@ int Menu2()
 			<< "7. Get Power;" << endl
 			<< "8. Game: Guess the Number;" << endl
 			<< "9. Get Power;" << endl
-			<< "A. Get Power;" << endl
-			<< "B. Get Power;" << endl
+			<< "10. Get Power;" << endl
+			<< "11. Get Power;" << endl
 			<< "0. Exit. \n";
 
 		cin >> key;
@@ -37,7 +37,7 @@ int Menu2()
 		system("cls");
 		switch (key)
 		{
-		case 11:
+		case 1:
 
 			PrintHelloWorld();
 
