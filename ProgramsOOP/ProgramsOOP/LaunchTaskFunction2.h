@@ -1,4 +1,4 @@
-#include <iostream>
+﻿#include <iostream>
 #include <cmath>
 #include <stdlib.h>
 #include <time.h>
@@ -11,7 +11,7 @@ int globalVariable = 7;
 void PrintHelloWorld()
 {
 	cout << "Hello, World!" << endl;
-};double MakeCalculation(int value1, int value2, char operationKey){	if (operationKey == '+')	{		double value = value1 + value2;		return value;	}	if (operationKey == '-')	{		double value = value1 - value2;		return value;	}	if (operationKey == '*')	{		double value = value1 * value2;		return value;	}	if (operationKey == '/')	{		double value = value1 / value2;		return value;	}	if (operationKey == '%')	{		double value = value1 % value2;		return value;	}};//����� ����������� ���������
+};double MakeCalculation(int value1, int value2, char operationKey){	if (operationKey == '+')	{		double value = value1 + value2;		return value;	}	if (operationKey == '-')	{		double value = value1 - value2;		return value;	}	if (operationKey == '*')	{		double value = value1 * value2;		return value;	}	if (operationKey == '/')	{		double value = value1 / value2;		return value;	}	if (operationKey == '%')	{		double value = value1 % value2;		return value;	}};//Корни квадратного уравнения
 void GetRoots(int a, int b, int c, double* x1, double* x2)
 {
 	double D = b * b - 4 * a*c;
@@ -31,7 +31,7 @@ void GetRoots(int a, int b, int c, double* x1, double* x2)
 	}
 }
 
-//������ ����������� ��������� (� �������������� ������)
+//Корень квадратного уравнения (с использованием ссылок)
 void GetRoots(int a, int b, int c, double& x1, double& x2)
 {
 	double D = b * b - 4 * a*c;
@@ -88,7 +88,7 @@ void GlobalEqualsOne()
 		return base * GetPower(base, power - 1);
 	}}
 
-void Randomly()
+void GameRandomly()
 {
 	srand(time(NULL));
 	cout << "---Game: Guess the Number---" << endl;
@@ -124,28 +124,73 @@ void Randomly()
 		}
 	}	
 }
-/*
-void SortArray(int integerArray[], int arraySize)
+
+void SortArray(int *array, int arraySize) // сортировка выбором
 {
-int integerArray[arraySize];
-for (int i = 0; i < arraySize; i++)
-{
-integerArray[i] = rand();
+	int j = 0;									//На каждой итерации ищется элемент с наибольшим значением,
+	int tmp = 0;								//с ним нужно поменять местами последний элемент.
+	for (int i = 0; i < arraySize; i++)			//Следующий элемент с наибольшим значением становится уже на предпоследнее место.
+	{											//Продолжается, пока первые элементы не встанут на свои места 
+		j = i;
+		for (int k = i; k < arraySize; k++)
+		{
+			if (array[j] > array[k])
+			{
+				j = k;
+			}
+		}
+		tmp = array[i];
+		array[i] = array[j];
+		array[j] = tmp;
+	}
 }
 
-double realArray[arraySize];
-for (int i = 0; i < arraySize; i++)
+void SortArray(int array[7]) // сортировка выбором
 {
-realArray[i] = rand();
+	int j = 0;
+	int tmp = 0;
+	for (int i = 0; i < 7; i++)
+	{
+		j = i;
+		for (int k = i; k < 7; k++) 
+		{
+			if (array[j] > array[k]) 
+			{
+				j = k;
+			}
+		}
+		tmp = array[i];
+		array[i] = array[j];
+		array[j] = tmp;
+	}
 }
+
+void SortArray(double array[], int arraySize) // сортировка выбором
+{
+	int j = 0;
+	int tmp = 0;
+	for (int i = 0; i < arraySize; i++)
+	{
+		j = i;
+		for (int k = i; k < arraySize; k++)
+		{
+			if (array[j] > array[k])
+			{
+				j = k;
+			}
+		}
+		tmp = array[i];
+		array[i] = array[j];
+		array[j] = tmp;
+	}
 }
-*/
+
 void MultiplyMatrices()
 {
 	double matrixA[10][10], matrixB[10][10], matrixC[10][10];
-	int n; // �������� ������� �
+	int n; // параметр матрицы А
 	int m;
- 	int l; //�������� ������� B 
+ 	int l; //параметр матрицы B 
 	srand(time(NULL));
 	cout << "Attention! The number of columns of the matrix A" << endl
 		<< "must coincide with the number of rows of the matrix B!" << endl;
@@ -199,4 +244,8 @@ void MultiplyMatrices()
 		cout << endl;
 	}
 	cout << endl;
+
+	delete[] matrixA;
+	delete[] matrixB;
+	delete[] matrixC;
 }

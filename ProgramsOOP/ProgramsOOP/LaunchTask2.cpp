@@ -27,7 +27,7 @@ int Menu2()
 			<< "6. Global Variable;" << endl
 			<< "7. Get Power;" << endl
 			<< "8. Game: Guess the Number;" << endl
-			<< "9. Array;" << endl
+			<< "9. Sort an array;" << endl
 			<< "10. Multiply Matrices;" << endl
 			<< "0. Exit. \n";
 
@@ -155,22 +155,71 @@ int Menu2()
 
 		case 8:
 		{
-			Randomly();
+			GameRandomly();
 		}
 		break;
 
-		/*case 9:
+		case 9:
 		{
-			int arraySize;
-			int integerArray[10];
-			/*
-			cout << "Enter the size of the array:" << endl;
-			cin >> integerArray;
-			for (int i = 0; i < arraySize; i++)
-				cin >> integerArray[arraySize];
-			SortArray(integerArray[10], arraySize)
+			srand(time(NULL));
+
+			cout << "The first method:" << endl << endl; // первый способ передачи массива в функцию
+			int arraySize1 = 10;
+			int* array1 = new int[arraySize1];
+			cout << "Unsorted array: " << endl;
+			for (int i = 0; i < arraySize1; i++)
+			{
+				array1[i] = rand() % 15;
+				cout << array1[i] << setw(5);
+			}
+			SortArray(array1, arraySize1);
+			cout << endl;
+			cout << "Sorted array: " << endl;
+			for (int i = 0; i < arraySize1; i++)
+			{
+				cout << array1[i] << setw(5);
+			}
+			cout << endl << endl;
+
+
+			cout << "The second method:" << endl << endl; // второй способ передачи массива в функцию
+			const int arraySize2 = 7;
+			int array2[arraySize2];
+			cout << "Unsorted array: " << endl;
+			for (int i = 0; i < arraySize2; i++)
+			{
+				array2[i] = rand() % 15;
+				cout << array2[i] << setw(5);
+			}
+			SortArray(array2);
+			cout << endl;
+			cout << "Sorted array: " << endl;
+			for (int i = 0; i < arraySize2; i++)
+			{
+				cout << array2[i] << setw(5);
+			}
+			cout << endl << endl;
+
+			
+			cout << "The third method:" << endl << endl; // третий способ передачи массива в функцию
+			const int arraySize3 = 8;
+			int array3[arraySize3];
+			cout << "Unsorted array: " << endl;
+			for (int i = 0; i < arraySize3; i++)
+			{
+				array3[i] = rand() % 15;
+				cout << array3[i] << setw(5);
+			}
+			SortArray(array3, arraySize3);
+			cout << endl;
+			cout << "Sorted array: " << endl;
+			for (int i = 0; i < arraySize3; i++)
+			{
+				cout << array3[i] << setw(5);
+			}
+			cout << endl << endl;
 		}
-		break;*/
+		break;
 
 		case 10:
 		{	
