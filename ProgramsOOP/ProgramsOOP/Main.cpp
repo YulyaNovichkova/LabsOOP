@@ -21,10 +21,14 @@ int Menu()
 		switch (key)
 		{
 		case '1':
+		{
 			LaunchTask1();
+		}
 			break;
 		case '2':
+		{
 			LaunchTask2();
+		}
 			break;
 		case '0':
 			cout << " Welcome back." << endl;

@@ -27,9 +27,8 @@ int Menu2()
 			<< "6. Global Variable;" << endl
 			<< "7. Get Power;" << endl
 			<< "8. Game: Guess the Number;" << endl
-			<< "9. Get Power;" << endl
-			<< "10. Get Power;" << endl
-			<< "11. Get Power;" << endl
+			<< "9. Array;" << endl
+			<< "10. Multiply Matrices;" << endl
 			<< "0. Exit. \n";
 
 		cin >> key;
@@ -155,31 +154,29 @@ int Menu2()
 		break;
 
 		case 8:
-
+		{
 			Randomly();
+		}
+		break;
 
-			break;
+		/*case 9:
+		{
+			int arraySize;
+			int integerArray[10];
+			/*
+			cout << "Enter the size of the array:" << endl;
+			cin >> integerArray;
+			for (int i = 0; i < arraySize; i++)
+				cin >> integerArray[arraySize];
+			SortArray(integerArray[10], arraySize)
+		}
+		break;*/
 
-			/*	case 9:
-			const int size = 5;
-
-			Array();
-			break;
-
-			case 10:
-
-			Iteration();
-			break;
-
-			case 'B':
-
-			Break();
-			break;
-
-			case 'C':
-
-			Float();
-			break;*/
+		case 10:
+		{	
+			MultiplyMatrices();
+		}
+		break;
 
 		case '0':
 			cout << " Welcome back." << endl;
@@ -188,9 +185,6 @@ int Menu2()
 			cout << " Mistake. Try again." << endl;
 			break;
 		}
-	} while (key != '0');
-
-	int k = key;
-	return(k);
-
+	}while (key != '0');
+	return(key);
 };
