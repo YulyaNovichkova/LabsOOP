@@ -4,7 +4,7 @@
 #include <stdlib.h>
 #include <time.h>
 #include <iomanip> // for setw()
-
+//авакаакаакаак
 using namespace std;
 
 int globalVariable = 7;
