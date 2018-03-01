@@ -1,6 +1,6 @@
 #include <iostream>
 #include "LaunchTaskFunction2.h"
-#include "../AllLabs.h"
+#include "AllLabs.h"
 
 using namespace std;
 
@@ -147,8 +147,8 @@ int Menu2()
 			cin >> base;
 			cout << "Enter the power value:" << endl;
 			cin >> power;
-			//GetPower(base, power);
-			double value = GetPower(base, power);
+			GetPower(base, power);
+			int value = GetPower(base, power);
 			cout << "Value: " << value << endl;
 		}
 		break;

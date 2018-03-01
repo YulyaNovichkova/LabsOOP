@@ -1,6 +1,6 @@
 #include <iostream>
 #include "LaunchTaskFunctions1.h"
-#include "../AllLabs.h"
+#include "AllLabs.h"
 
 using namespace std;
 
