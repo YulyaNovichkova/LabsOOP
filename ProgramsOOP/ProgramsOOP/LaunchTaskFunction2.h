@@ -2,7 +2,7 @@
 #include <cmath>
 #include <stdlib.h>
 #include <time.h>
-#include <iomanip> // for setw()
+#include <iomanip> // fot setw()
 
 using namespace std;
 
@@ -239,9 +239,13 @@ void MultiplyMatrices()
 	{
 		for (int j = 0; j < l; j++)
 		{
-			cout << setw(4) << matrixC[i][j] << setw(8);
+			cout << setw(3) << matrixC[i][j] << setw(6);
 		}
 		cout << endl;
 	}
 	cout << endl;
+
+	delete[] matrixA;
+	delete[] matrixB;
+	delete[] matrixC;
 }
