@@ -10,5 +10,3 @@ void LaunchTask2()
 	int key = Menu2();
 	cout << key << endl;
 }
-
-

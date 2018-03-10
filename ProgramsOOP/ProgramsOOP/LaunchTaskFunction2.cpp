@@ -3,7 +3,7 @@
 #include <cmath>
 #include <stdlib.h>
 #include <time.h>
-#include <iomanip> // for setw()
+#include <iomanip> // для setw()
 
 using namespace std;
 
@@ -47,9 +47,9 @@ int Menu2()
 			cin >> value1;
 			cout << "Enter the second value:" << endl;
 			cin >> value2;
-			char operationKey; //считываемый с клавиатуры символ
+			char operationKey;
 			cout << "Enter mathematic operation (+, -, *, /, %): " << endl;
-			operationKey = getchar(); //getchar() - чтение символа с клавиатуры
+			operationKey = getchar(); 
 			while ((operationKey != '+') && (operationKey != '-') && (operationKey != '*') && (operationKey != '/') && (operationKey != '%'))
 			{
 				cout << "INCORRECT SYMBOL!!!\nPlease, enter (+, -, *, /, %): " << endl;
@@ -151,15 +151,15 @@ int Menu2()
 
 		case 8:
 		{
-			GameRandomly();
+			GuessNumber();
 		}
 		break;
 
 		case 9:
 		{
 			srand(time(NULL));
-
-			cout << "The first method:" << endl << endl; // первый способ передачи массива в функцию
+			//Первый способ передачи массива в функцию
+			cout << "The first method:" << endl << endl; 
 			int arraySize1 = 10;
 			int* array1 = new int[arraySize1];
 			cout << "Unsorted array: " << endl;
@@ -177,8 +177,8 @@ int Menu2()
 			}
 			cout << endl << endl;
 
-
-			cout << "The second method:" << endl << endl; // второй способ передачи массива в функцию
+			//Второй способ передачи массива в функцию
+			cout << "The second method:" << endl << endl; 
 			const int arraySize2 = 7;
 			int array2[arraySize2];
 			cout << "Unsorted array: " << endl;
@@ -196,8 +196,8 @@ int Menu2()
 			}
 			cout << endl << endl;
 
-
-			cout << "The third method:" << endl << endl; // третий способ передачи массива в функцию
+			//Третий способ передачи массива в функцию
+			cout << "The third method:" << endl << endl; 
 			const int arraySize3 = 8;
 			int array3[arraySize3];
 			cout << "Unsorted array: " << endl;
@@ -318,7 +318,7 @@ void GlobalEqualsOne()
 		return base * GetPower(base, power - 1);
 	}}
 
-void GameRandomly()
+void GuessNumber()
 {
 	srand(time(NULL));
 	cout << "---Game: Guess the Number---" << endl;
@@ -355,7 +355,7 @@ void GameRandomly()
 	}
 }
 
-void SortArray(int *array, int arraySize) // сортировка выбором
+void SortArray(int *array, int arraySize)
 {
 	int j = 0;									//На каждой итерации ищется элемент с наименьшим значением,
 	int tmp = 0;								//с ним нужно поменять местами последний элемент.
@@ -375,7 +375,7 @@ void SortArray(int *array, int arraySize) // сортировка выбором
 	}
 }
 
-void SortArray(int array[7]) // сортировка выбором
+void SortArray(int array[7])
 {
 	int j = 0;
 	int tmp = 0;
@@ -395,7 +395,7 @@ void SortArray(int array[7]) // сортировка выбором
 	}
 }
 
-void SortArray(double array[], int arraySize) // сортировка выбором
+void SortArray(double array[], int arraySize)
 {
 	int j = 0;
 	int tmp = 0;
@@ -419,7 +419,7 @@ void MultiplyMatrices()
 {
 	double matrixA[10][10], matrixB[10][10], matrixC[10][10];
 	int n; // параметр матрицы А
-	int m;
+	int m; // общий параметр
 	int l; //параметр матрицы B 
 	srand(time(NULL));
 	cout << "Attention! The number of columns of the matrix A" << endl
