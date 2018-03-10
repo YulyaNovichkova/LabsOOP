@@ -30,15 +30,21 @@
     <ClCompile Include="LaunchTask2.cpp">
       <Filter>Исходные файлы\LaunchLab2</Filter>
     </ClCompile>
+    <ClCompile Include="LaunchTaskFunction2.cpp">
+      <Filter>Исходные файлы\LaunchLab2</Filter>
+    </ClCompile>
+    <ClCompile Include="LaunchTaskFunctions1.cpp">
+      <Filter>Исходные файлы\LaunchLab1</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="LaunchTaskFunctions1.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
     <ClInclude Include="AllLabs.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="LaunchTaskFunction2.h">
+    <ClInclude Include="Function2.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="Function1.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>
