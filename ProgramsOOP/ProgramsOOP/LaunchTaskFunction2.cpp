@@ -12,7 +12,8 @@ int globalVariable = 7;
 int Menu2()
 {
 	int key;
-
+//TODO: Внимательно прочитайте стандарт оформления кода RSDN https://rsdn.org/article/mag/200401/codestyle.XML
+//TODO: и приведите свой код в соответстие со стандартом
 	do
 	{
 		cout << "\t Choose next step:" << endl << endl << endl
@@ -163,6 +164,7 @@ int Menu2()
 			int arraySize1 = 10;
 			int* array1 = new int[arraySize1];
 			cout << "Unsorted array: " << endl;
+			//TODO: Код дублируется с тем, что ниже, исправьте!
 			for (int i = 0; i < arraySize1; i++)
 			{
 				array1[i] = rand() % 15;
@@ -237,7 +239,40 @@ int Menu2()
 void PrintHelloWorld()
 {
 	cout << "Hello, World!" << endl;
-};double MakeCalculation(int value1, int value2, char operationKey){	if (operationKey == '+')	{		double value = value1 + value2;		return value;	}	if (operationKey == '-')	{		double value = value1 - value2;		return value;	}	if (operationKey == '*')	{		double value = value1 * value2;		return value;	}	if (operationKey == '/')	{		double value = value1 / value2;		return value;	}	if (operationKey == '%')	{		double value = value1 % value2;		return value;	}};//Корни квадратного уравнения
+};
+
+double MakeCalculation(int value1, int value2, char operationKey)
+{
+	//TODO:Правильнее использовать switch-case, а не if-else
+	if (operationKey == '+')
+	{
+		//TODO: можно возвращать сразу без присваивний.
+		double value = value1 + value2;
+		return value;
+	}
+	if (operationKey == '-')
+	{
+		double value = value1 - value2;
+		return value;
+	}
+	if (operationKey == '*')
+	{
+		double value = value1 * value2;
+		return value;
+	}
+	if (operationKey == '/')
+	{
+		double value = value1 / value2;
+		return value;
+	}
+	if (operationKey == '%')
+	{
+		double value = value1 % value2;
+		return value;
+	}
+};
+
+//Корни квадратного уравнения
 void GetRoots(int a, int b, int c, double* x1, double* x2)
 {
 	double D = b * b - 4 * a*c;
@@ -288,7 +323,8 @@ void SummNumbers(double value1, double value2)
 void SummNumbers(int value1, double value2)
 {
 	cout << "Summ of integer and double is " << value1 + value2 << endl;
-}
+}
+
 void GlobalPlusTwo()
 {
 	globalVariable += 2;
@@ -300,7 +336,10 @@ void GlobalMultiplyThree()
 void GlobalEqualsOne()
 {
 	globalVariable = 1;
-}double GetPower(int base, int power){
+}
+
+double GetPower(int base, int power)
+{
 	if (power == 0)
 	{
 		return 1;
@@ -316,7 +355,8 @@ void GlobalEqualsOne()
 	else
 	{
 		return base * GetPower(base, power - 1);
-	}}
+	}
+}
 
 void GuessNumber()
 {
@@ -339,6 +379,7 @@ void GuessNumber()
 			else
 			{
 				shots++;
+				//TODO: Для if-else всегда надо расставлять скобки!
 				if (guessNumber > enteredNumber)
 					cout << "Wrong!!! Try to take a number more." << endl << " Enter number from 0 to 9: " << endl;
 				else
@@ -357,6 +398,9 @@ void GuessNumber()
 
 void SortArray(int *array, int arraySize)
 {
+//TODO: Не пишите комментарии к коду в завершении строки. Код должен читаться сверху вниз.
+	//TODO: Без передвижения диагонального скрол-бара.
+	//TODO: Правильнее будет располагать комментарии НАД комментируемой строкой.
 	int j = 0;									//На каждой итерации ищется элемент с наименьшим значением,
 	int tmp = 0;								//с ним нужно поменять местами последний элемент.
 	for (int i = 0; i < arraySize; i++)			//Следующий элемент с наибольшим значением становится уже на предпоследнее место.
@@ -374,7 +418,7 @@ void SortArray(int *array, int arraySize)
 		array[j] = tmp;
 	}
 }
-
+//TODO: Избавьтесь от дублирования в этом и последующем методе
 void SortArray(int array[7])
 {
 	int j = 0;
@@ -434,6 +478,7 @@ void MultiplyMatrices()
 	cin >> l;
 	cout << endl;
 	cout << "\tThe matrix A is: " << endl;
+	//TODO: Ниже много дублирования. Избавьтесь от него!
 	for (int i = 0; i < n; i++)
 	{
 		for (int j = 0; j < m; j++)

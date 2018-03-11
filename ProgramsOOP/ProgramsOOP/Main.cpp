@@ -20,6 +20,8 @@ int Menu()
 		system("cls");
 		switch (key)
 		{
+//TODO: Внимательно прочитайте стандарт оформления кода RSDN https://rsdn.org/article/mag/200401/codestyle.XML
+//TODO: и приведите свой код в соответстие со стандартом
 		case '1':
 		{
 			LaunchTask1();
