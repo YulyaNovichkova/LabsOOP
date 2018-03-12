@@ -246,29 +246,25 @@ double MakeCalculation(int value1, int value2, char operationKey)
 	//TODO:Ïğàâèëüíåå èñïîëüçîâàòü switch-case, à íå if-else
 	if (operationKey == '+')
 	{
-		//TODO: ìîæíî âîçâğàùàòü ñğàçó áåç ïğèñâàèâíèé.
-		double value = value1 + value2;
-		return value;
+		//TODO: ìîæíî âîçâğàùàòü ñğàçó áåç ïğèñâàèâíèé. 
+		//ÈÑÏĞÀÂËÅÍÎ.
+		return (value1 + value2);
 	}
 	if (operationKey == '-')
 	{
-		double value = value1 - value2;
-		return value;
+		return (value1 - value2);
 	}
 	if (operationKey == '*')
 	{
-		double value = value1 * value2;
-		return value;
+		return (value1 * value2);
 	}
 	if (operationKey == '/')
 	{
-		double value = value1 / value2;
-		return value;
+		return (value1 / value2);
 	}
 	if (operationKey == '%')
 	{
-		double value = value1 % value2;
-		return value;
+		return (value1 % value2);
 	}
 };
 
@@ -379,11 +375,16 @@ void GuessNumber()
 			else
 			{
 				shots++;
-				//TODO: Äëÿ if-else âñåãäà íàäî ğàññòàâëÿòü ñêîáêè!
+				//TODO: Äëÿ if-else âñåãäà íàäî ğàññòàâëÿòü ñêîáêè! 
+				//ÈÑÏĞÀÂËÅÍÎ.
 				if (guessNumber > enteredNumber)
+				{
 					cout << "Wrong!!! Try to take a number more." << endl << " Enter number from 0 to 9: " << endl;
+				}
 				else
+				{
 					cout << "Wrong!!! Try to take a number less." << endl << " Enter number from 0 to 9: " << endl;
+				}
 				cin >> enteredNumber;
 			}
 
