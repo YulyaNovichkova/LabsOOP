@@ -165,57 +165,34 @@ int Menu2()
 				int* array1 = new int[arraySize1];
 				cout << "Unsorted array: " << endl;
 				//TODO: Код дублируется с тем, что ниже, исправьте!
-				for (int i = 0; i < arraySize1; i++)
-				{
-					array1[i] = rand() % 15;
-					cout << array1[i] << setw(5);
-				}
+				//ИСПРАВЛЕНО.
+				CreateArray(array1, arraySize1);
+				ShowArray(array1, arraySize1);
 				SortArray(array1, arraySize1);
-				cout << endl;
 				cout << "Sorted array: " << endl;
-				for (int i = 0; i < arraySize1; i++)
-				{
-					cout << array1[i] << setw(5);
-				}
-				cout << endl << endl;
+				ShowArray(array1, arraySize1);
 
 				//Второй способ передачи массива в функцию
 				cout << "The second method:" << endl << endl; 
 				const int arraySize2 = 7;
 				int array2[arraySize2];
 				cout << "Unsorted array: " << endl;
-				for (int i = 0; i < arraySize2; i++)
-				{
-					array2[i] = rand() % 15;
-					cout << array2[i] << setw(5);
-				}
+				CreateArray(array2, 7);
+				ShowArray(array2, 7);
 				SortArray(array2);
-				cout << endl;
 				cout << "Sorted array: " << endl;
-				for (int i = 0; i < arraySize2; i++)
-				{
-					cout << array2[i] << setw(5);
-				}
-				cout << endl << endl;
+				ShowArray(array2, arraySize2);
 
 				//Третий способ передачи массива в функцию
 				cout << "The third method:" << endl << endl; 
 				const int arraySize3 = 8;
 				int array3[arraySize3];
 				cout << "Unsorted array: " << endl;
-				for (int i = 0; i < arraySize3; i++)
-				{
-					array3[i] = rand() % 15;
-					cout << array3[i] << setw(5);
-				}
+				CreateArray(array3, arraySize3);
+				ShowArray(array3, arraySize3);
 				SortArray(array3, arraySize3);
-				cout << endl;
 				cout << "Sorted array: " << endl;
-				for (int i = 0; i < arraySize3; i++)
-				{
-					cout << array3[i] << setw(5);
-				}
-				cout << endl << endl;
+				ShowArray(array3, arraySize3);
 			}
 				break;
 
@@ -403,13 +380,10 @@ void GuessNumber()
 
 void SortArray(int *array, int arraySize)
 {
-//TODO: Не пишите комментарии к коду в завершении строки. Код должен читаться сверху вниз.
-	//TODO: Без передвижения диагонального скрол-бара.
-	//TODO: Правильнее будет располагать комментарии НАД комментируемой строкой.
-	int j = 0;									//На каждой итерации ищется элемент с наименьшим значением,
-	int tmp = 0;								//с ним нужно поменять местами последний элемент.
-	for (int i = 0; i < arraySize; i++)			//Следующий элемент с наибольшим значением становится уже на предпоследнее место.
-	{											//Продолжается, пока первые элементы не встанут на свои места 
+	int j = 0;									
+	int tmp = 0;		
+	for (int i = 0; i < arraySize; i++)			
+	{											
 		j = i;
 		for (int k = i; k < arraySize; k++)
 		{
@@ -424,44 +398,55 @@ void SortArray(int *array, int arraySize)
 	}
 }
 //TODO: Избавьтесь от дублирования в этом и последующем методе
+//ИСПРАВЛЕНО.
 void SortArray(int array[7])
 {
-	int j = 0;
-	int tmp = 0;
-	for (int i = 0; i < 7; i++)
+	int key = 0;
+	int i = 0;
+	for (int j = 1; j < 7; j++)
 	{
-		j = i;
-		for (int k = i; k < 7; k++)
+		key = array[j];
+		i = j - 1;
+		while (i >= 0 && array[i] > key) 
 		{
-			if (array[j] > array[k])
-			{
-				j = k;
-			}
+			array[i + 1] = array[i];
+			i = i - 1;
+			array[i + 1] = key;
 		}
-		tmp = array[i];
-		array[i] = array[j];
-		array[j] = tmp;
 	}
 }
 
 void SortArray(double array[], int arraySize)
 {
-	int j = 0;
 	int tmp = 0;
 	for (int i = 0; i < arraySize; i++)
 	{
-		j = i;
-		for (int k = i; k < arraySize; k++)
+		for (int j = (arraySize - 1); j >= (i + 1); j--) 
 		{
-			if (array[j] > array[k])
+			if (array[j] < array[j - 1])
 			{
-				j = k;
+				tmp = array[j];
+				array[j] = array[j - 1];
+				array[j - 1] = tmp;
 			}
 		}
-		tmp = array[i];
-		array[i] = array[j];
-		array[j] = tmp;
 	}
+}
+int* CreateArray(int *array, int arraySize)
+{
+	for (int i = 0; i < arraySize; i++)
+	{
+		array[i] = rand() % 15;
+	}
+	return array;
+}
+void ShowArray(int *array, int arraySize)
+{
+	for (int i = 0; i < arraySize; i++)
+	{
+		cout << array[i] << setw(5);
+	}
+	cout << endl << endl;
 }
 
 void MultiplyMatrices()
