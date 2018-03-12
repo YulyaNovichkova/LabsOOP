@@ -462,7 +462,6 @@ void SortArray(double array[], int arraySize)
 
 void MultiplyMatrices()
 {
-	double matrixA[10][10], matrixB[10][10], matrixC[10][10];
 	int n; // параметр матрицы А
 	int m; // общий параметр
 	int l; //параметр матрицы B 
@@ -478,28 +477,25 @@ void MultiplyMatrices()
 	cout << "Enter the number of columns of the matrix B: ";
 	cin >> l;
 	cout << endl;
+
 	cout << "\tThe matrix A is: " << endl;
-	//TODO: Ниже много дублирования. Избавьтесь от него!
-	for (int i = 0; i < n; i++)
-	{
-		for (int j = 0; j < m; j++)
-		{
-			cout << setw(3) << (matrixA[i][j] = rand() % 10) << setw(6);
-		}
-		cout << endl;
-	}
+	//TODO: Ниже много дублирования. Избавьтесь от него!\
+	//ИСПРАВЛЕНО.
+	int **matrixA = new int*[n];
+	CreateMatrix(matrixA, n, m);
+	ShowMatrix(matrixA, n, m);
 	cout << endl;
+
 	cout << "\tThe matrix B is: " << endl;
-	for (int i = 0; i < m; i++)
-	{
-		for (int j = 0; j < l; j++)
-		{
-			cout << setw(3) << (matrixB[i][j] = rand() % 10) << setw(6);
-		}
-		cout << endl;
-	}
+	int **matrixB = new int*[m];
+	CreateMatrix(matrixB, m, l);
+	ShowMatrix(matrixB, m, l);
 	cout << endl;
+
 	cout << "\tThe new matrix is: " << endl;
+
+	int **matrixC = new int*[n];
+	CreateMatrix(matrixC, n, m);
 	for (int i = 0; i < n; i++)
 	{
 		for (int j = 0; j < l; j++)
@@ -511,13 +507,49 @@ void MultiplyMatrices()
 			}
 		}
 	}
+	ShowMatrix(matrixC, n, l);
+	cout << endl;
 	for (int i = 0; i < n; i++)
 	{
-		for (int j = 0; j < l; j++)
+		delete[] matrixA[i];
+	}
+	delete[] matrixA;
+	for (int i = 0; i < m; i++)
+	{
+		delete[] matrixB[i];
+	}
+	delete[] matrixB;
+	for (int i = 0; i < n; i++)
+	{
+		delete[] matrixC[i];
+	}
+	delete[] matrixC;
+}
+
+int** CreateMatrix(int **matrix, int row, int col)
+{
+	for (int i = 0; i < row; i++)
+	{
+		matrix[i] = new int[col];
+	}
+	for (int i = 0; i < row; i++)
+	{
+		for (int j = 0; j < col; j++)
 		{
-			cout << setw(3) << matrixC[i][j] << setw(6);
+			matrix[i][j] = rand() % 10;
 		}
 		cout << endl;
 	}
-	cout << endl;
+	return matrix;
+}
+void ShowMatrix(int **matrix, int row, int col)
+{
+	for (int i = 0; i < row; i++)
+	{
+		for (int j = 0; j < col; j++)
+		{
+			cout << setw(3) << matrix[i][j] << setw(6);
+		}
+		cout << endl;
+	}
 }

@@ -19,3 +19,5 @@ void SortArray(int array[7]);
 void SortArray(double array[], int arraySize);
 
 void MultiplyMatrices();
+int** CreateMatrix(int **matrix, int row, int col);
+void ShowMatrix(int **matrix, int row, int col);
