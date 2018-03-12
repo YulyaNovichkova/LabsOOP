@@ -22,28 +22,26 @@ int Menu()
 		{
 //TODO: Внимательно прочитайте стандарт оформления кода RSDN https://rsdn.org/article/mag/200401/codestyle.XML
 //TODO: и приведите свой код в соответстие со стандартом
-		case '1':
-		{
-			LaunchTask1();
-		}
-			break;
-		case '2':
-		{
-			LaunchTask2();
-		}
-			break;
-		case '0':
-			cout << " Welcome back." << endl;
-			break;
-		default:
-			cout << " Mistake. Try again." << endl;
-			break;
+			// НАДЕЮСЬ, ЧТО ВСЕ ИСПРАВИЛА.
+			case '1':
+				LaunchTask1();
+				break;
+
+			case '2':
+				LaunchTask2();
+				break;
+
+			case '0':
+				cout << " Welcome back." << endl;
+				break;
+
+			default:
+				cout << " Mistake. Try again." << endl;
+				break;
 		}
 	} while (key != '0');
-
 	int k = atoi(&key);
 	return(k);
-
 };
 
 int main()

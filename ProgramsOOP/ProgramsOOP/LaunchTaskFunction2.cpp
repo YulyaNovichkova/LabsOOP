@@ -1,9 +1,9 @@
-#include "Function2.h"
+п»ї#include "Function2.h"
 #include <iostream>
 #include <cmath>
 #include <stdlib.h>
 #include <time.h>
-#include <iomanip> // для setw()
+#include <iomanip> // РґР»СЏ setw()
 
 using namespace std;
 
@@ -12,8 +12,9 @@ int globalVariable = 7;
 int Menu2()
 {
 	int key;
-//TODO: Внимательно прочитайте стандарт оформления кода RSDN https://rsdn.org/article/mag/200401/codestyle.XML
-//TODO: и приведите свой код в соответстие со стандартом
+//TODO: Р’РЅРёРјР°С‚РµР»СЊРЅРѕ РїСЂРѕС‡РёС‚Р°Р№С‚Рµ СЃС‚Р°РЅРґР°СЂС‚ РѕС„РѕСЂРјР»РµРЅРёСЏ РєРѕРґР° RSDN https://rsdn.org/article/mag/200401/codestyle.XML
+//TODO: Рё РїСЂРёРІРµРґРёС‚Рµ СЃРІРѕР№ РєРѕРґ РІ СЃРѕРѕС‚РІРµС‚СЃС‚РёРµ СЃРѕ СЃС‚Р°РЅРґР°СЂС‚РѕРј
+	//РќРђР”Р•Р®РЎР¬, Р§РўРћ РРЎРџР РђР’РР›Рђ.
 	do
 	{
 		cout << "\t Choose next step:" << endl << endl << endl
@@ -34,203 +35,202 @@ int Menu2()
 		system("cls");
 		switch (key)
 		{
-		case 1:
-
-			PrintHelloWorld();
-
-			break;
-
-		case 2:
-		{
-			int value1;
-			int value2;
-			cout << "Enter the first value:" << endl;
-			cin >> value1;
-			cout << "Enter the second value:" << endl;
-			cin >> value2;
-			char operationKey;
-			cout << "Enter mathematic operation (+, -, *, /, %): " << endl;
-			operationKey = getchar(); 
-			while ((operationKey != '+') && (operationKey != '-') && (operationKey != '*') && (operationKey != '/') && (operationKey != '%'))
+			case 1:
 			{
-				cout << "INCORRECT SYMBOL!!!\nPlease, enter (+, -, *, /, %): " << endl;
-				operationKey = getchar();
-				fflush(stdin); //функция очистки стандартного буфера ввода
-							   //на случай ввода нескольких символов вместо одного
+				PrintHelloWorld();
 			}
-			MakeCalculation(value1, value2, operationKey);
-			cout << "Your value is: " << MakeCalculation(value1, value2, operationKey) << endl;
-		}
-		break;
+				break;
 
-		case 3:
-		{
-			int a;
-			int b;
-			int c;
-			double x1 = 0;
-			double x2 = 0;
-			cout << "Enter 3 coefficients of your equation." << endl;
-			cout << "The first coefficient A: " << endl;
-			cin >> a;
-			cout << "The second coefficient B: " << endl;
-			cin >> b;
-			cout << "The third coefficient C: " << endl;
-			cin >> c;
-			GetRoots(a, b, c, &x1, &x2);
-			cout << "The root of your equation " << x1 << " and " << x2 << endl;
-		}
-		break;
-
-		case 4:
-		{
-			int a;
-			int b;
-			int c;
-			double x1 = 0;
-			double x2 = 0;
-			cout << "Enter 3 coefficients of your equation." << endl;
-			cout << "The first coefficient A: " << endl;
-			cin >> a;
-			cout << "The second coefficient B: " << endl;
-			cin >> b;
-			cout << "The third coefficient C: " << endl;
-			cin >> c;
-			GetRoots(a, b, c, &x1, &x2);
-			cout << "The root of your equation " << x1 << " and " << x2 << endl;
-		}
-		break;
-
-		case 5:
-		{
-			int a;
-			a = 1;
-			int b;
-			b = 2;
-			SummNumbers(a, b);
-			double x;
-			x = 3.0;
-			double y;
-			y = 4.0;
-			SummNumbers(x, y);
-			SummNumbers(a, y);
-			float m;
-			m = 5.0;
-			float n;
-			n = 6.0;
-			SummNumbers(m, n);
-		}
-		break;
-
-		case 6:
-		{
-			cout << "Global Variable: " << globalVariable << endl;
-			GlobalPlusTwo();
-			cout << "Global Variable: " << globalVariable << endl;
-			GlobalMultiplyThree();
-			cout << "Global Variable: " << globalVariable << endl;
-			GlobalEqualsOne();
-			cout << "Global Variable: " << globalVariable << endl;
-			globalVariable = 5;
-			cout << "Global Variable: " << globalVariable << endl;
-		}
-		break;
-
-		case 7:
-		{
-			int base;
-			int power;
-
-			cout << "Enter an integer:" << endl;
-			cin >> base;
-			cout << "Enter the power value:" << endl;
-			cin >> power;
-			double value = GetPower(base, power);
-			cout << "Value: " << value << endl;
-		}
-		break;
-
-		case 8:
-		{
-			GuessNumber();
-		}
-		break;
-
-		case 9:
-		{
-			srand(time(NULL));
-			//Первый способ передачи массива в функцию
-			cout << "The first method:" << endl << endl; 
-			int arraySize1 = 10;
-			int* array1 = new int[arraySize1];
-			cout << "Unsorted array: " << endl;
-			//TODO: Код дублируется с тем, что ниже, исправьте!
-			for (int i = 0; i < arraySize1; i++)
+			case 2:
 			{
-				array1[i] = rand() % 15;
-				cout << array1[i] << setw(5);
+				int value1;
+				int value2;
+				cout << "Enter the first value:" << endl;
+				cin >> value1;
+				cout << "Enter the second value:" << endl;
+				cin >> value2;
+				char operationKey;
+				cout << "Enter mathematic operation (+, -, *, /, %): " << endl;
+				cin >> operationKey;
+				while ((operationKey != '+') && (operationKey != '-') && (operationKey != '*') && (operationKey != '/') && (operationKey != '%'))
+				{
+					cout << "INCORRECT SYMBOL!!!\nPlease, enter (+, -, *, /, %): " << endl;
+					cin >> operationKey;
+					fflush(stdin);
+				}
+				MakeCalculation(value1, value2, operationKey);
+				cout << "Your value is: " << MakeCalculation(value1, value2, operationKey) << endl;
 			}
-			SortArray(array1, arraySize1);
-			cout << endl;
-			cout << "Sorted array: " << endl;
-			for (int i = 0; i < arraySize1; i++)
-			{
-				cout << array1[i] << setw(5);
-			}
-			cout << endl << endl;
+				break;
 
-			//Второй способ передачи массива в функцию
-			cout << "The second method:" << endl << endl; 
-			const int arraySize2 = 7;
-			int array2[arraySize2];
-			cout << "Unsorted array: " << endl;
-			for (int i = 0; i < arraySize2; i++)
+			case 3:
 			{
-				array2[i] = rand() % 15;
-				cout << array2[i] << setw(5);
+				int a;
+				int b;
+				int c;
+				double x1 = 0;
+				double x2 = 0;
+				cout << "Enter 3 coefficients of your equation." << endl;
+				cout << "The first coefficient A: " << endl;
+				cin >> a;
+				cout << "The second coefficient B: " << endl;
+				cin >> b;
+				cout << "The third coefficient C: " << endl;
+				cin >> c;
+				GetRoots(a, b, c, &x1, &x2);
+				cout << "The root of your equation " << x1 << " and " << x2 << endl;
 			}
-			SortArray(array2);
-			cout << endl;
-			cout << "Sorted array: " << endl;
-			for (int i = 0; i < arraySize2; i++)
-			{
-				cout << array2[i] << setw(5);
-			}
-			cout << endl << endl;
+				break;
 
-			//Третий способ передачи массива в функцию
-			cout << "The third method:" << endl << endl; 
-			const int arraySize3 = 8;
-			int array3[arraySize3];
-			cout << "Unsorted array: " << endl;
-			for (int i = 0; i < arraySize3; i++)
+			case 4:
 			{
-				array3[i] = rand() % 15;
-				cout << array3[i] << setw(5);
+				int a;
+				int b;
+				int c;
+				double x1 = 0;
+				double x2 = 0;
+				cout << "Enter 3 coefficients of your equation." << endl;
+				cout << "The first coefficient A: " << endl;
+				cin >> a;
+				cout << "The second coefficient B: " << endl;
+				cin >> b;
+				cout << "The third coefficient C: " << endl;
+				cin >> c;
+				GetRoots(a, b, c, &x1, &x2);
+				cout << "The root of your equation " << x1 << " and " << x2 << endl;
 			}
-			SortArray(array3, arraySize3);
-			cout << endl;
-			cout << "Sorted array: " << endl;
-			for (int i = 0; i < arraySize3; i++)
+				break;
+
+			case 5:
 			{
-				cout << array3[i] << setw(5);
+				int a;
+				a = 1;
+				int b;
+				b = 2;
+				SummNumbers(a, b);
+				double x;
+				x = 3.0;
+				double y;
+				y = 4.0;
+				SummNumbers(x, y);
+				SummNumbers(a, y);
+				float m;
+				m = 5.0;
+				float n;
+				n = 6.0;
+				SummNumbers(m, n);
 			}
-			cout << endl << endl;
-		}
-		break;
+				break;
 
-		case 10:
-		{
-			MultiplyMatrices();
-		}
-		break;
+			case 6:
+			{
+				cout << "Global Variable: " << globalVariable << endl;
+				GlobalPlusTwo();
+				cout << "Global Variable: " << globalVariable << endl;
+				GlobalMultiplyThree();
+				cout << "Global Variable: " << globalVariable << endl;
+				GlobalEqualsOne();
+				cout << "Global Variable: " << globalVariable << endl;
+				globalVariable = 5;
+				cout << "Global Variable: " << globalVariable << endl;
+			}
+				break;
 
-		case '0':
-			cout << " Welcome back." << endl;
-			break;
-		default:
-			cout << " Mistake. Try again." << endl;
-			break;
+			case 7:
+			{
+				int base;
+				int power;
+
+				cout << "Enter an integer:" << endl;
+				cin >> base;
+				cout << "Enter the power value:" << endl;
+				cin >> power;
+				double value = GetPower(base, power);
+				cout << "Value: " << value << endl;
+			}
+				break;
+
+			case 8:
+			{
+				GuessNumber();
+			}
+				break;
+
+			case 9:
+			{
+				srand(time(NULL));
+				//РџРµСЂРІС‹Р№ СЃРїРѕСЃРѕР± РїРµСЂРµРґР°С‡Рё РјР°СЃСЃРёРІР° РІ С„СѓРЅРєС†РёСЋ
+				cout << "The first method:" << endl << endl; 
+				int arraySize1 = 10;
+				int* array1 = new int[arraySize1];
+				cout << "Unsorted array: " << endl;
+				//TODO: РљРѕРґ РґСѓР±Р»РёСЂСѓРµС‚СЃСЏ СЃ С‚РµРј, С‡С‚Рѕ РЅРёР¶Рµ, РёСЃРїСЂР°РІСЊС‚Рµ!
+				for (int i = 0; i < arraySize1; i++)
+				{
+					array1[i] = rand() % 15;
+					cout << array1[i] << setw(5);
+				}
+				SortArray(array1, arraySize1);
+				cout << endl;
+				cout << "Sorted array: " << endl;
+				for (int i = 0; i < arraySize1; i++)
+				{
+					cout << array1[i] << setw(5);
+				}
+				cout << endl << endl;
+
+				//Р’С‚РѕСЂРѕР№ СЃРїРѕСЃРѕР± РїРµСЂРµРґР°С‡Рё РјР°СЃСЃРёРІР° РІ С„СѓРЅРєС†РёСЋ
+				cout << "The second method:" << endl << endl; 
+				const int arraySize2 = 7;
+				int array2[arraySize2];
+				cout << "Unsorted array: " << endl;
+				for (int i = 0; i < arraySize2; i++)
+				{
+					array2[i] = rand() % 15;
+					cout << array2[i] << setw(5);
+				}
+				SortArray(array2);
+				cout << endl;
+				cout << "Sorted array: " << endl;
+				for (int i = 0; i < arraySize2; i++)
+				{
+					cout << array2[i] << setw(5);
+				}
+				cout << endl << endl;
+
+				//РўСЂРµС‚РёР№ СЃРїРѕСЃРѕР± РїРµСЂРµРґР°С‡Рё РјР°СЃСЃРёРІР° РІ С„СѓРЅРєС†РёСЋ
+				cout << "The third method:" << endl << endl; 
+				const int arraySize3 = 8;
+				int array3[arraySize3];
+				cout << "Unsorted array: " << endl;
+				for (int i = 0; i < arraySize3; i++)
+				{
+					array3[i] = rand() % 15;
+					cout << array3[i] << setw(5);
+				}
+				SortArray(array3, arraySize3);
+				cout << endl;
+				cout << "Sorted array: " << endl;
+				for (int i = 0; i < arraySize3; i++)
+				{
+					cout << array3[i] << setw(5);
+				}
+				cout << endl << endl;
+			}
+				break;
+
+			case 10:
+			{
+				MultiplyMatrices();
+			}
+				break;
+
+			case '0':
+				cout << " Welcome back." << endl;
+				break;
+			default:
+				cout << " Mistake. Try again." << endl;
+				break;
 		}
 	} while (key != '0');
 	return(key);
@@ -243,32 +243,36 @@ void PrintHelloWorld()
 
 double MakeCalculation(int value1, int value2, char operationKey)
 {
-	//TODO:Правильнее использовать switch-case, а не if-else
-	if (operationKey == '+')
+	//TODO:РџСЂР°РІРёР»СЊРЅРµРµ РёСЃРїРѕР»СЊР·РѕРІР°С‚СЊ switch-case, Р° РЅРµ if-else
+	//РРЎРџР РђР’Р›Р•РќРћ.
+	switch (operationKey)
 	{
-		//TODO: можно возвращать сразу без присваивний. 
-		//ИСПРАВЛЕНО.
-		return (value1 + value2);
-	}
-	if (operationKey == '-')
-	{
-		return (value1 - value2);
-	}
-	if (operationKey == '*')
-	{
-		return (value1 * value2);
-	}
-	if (operationKey == '/')
-	{
-		return (value1 / value2);
-	}
-	if (operationKey == '%')
-	{
-		return (value1 % value2);
-	}
-};
+		case '+':
+			return (value1 + value2);
+			break;
 
-//Корни квадратного уравнения
+		case '-':
+			return (value1 - value2);
+			break;
+
+		case '*':
+			return (value1 * value2);
+			break;
+
+		case '/':
+			return (value1 / value2);
+			break;
+
+		case '%':
+			return (value1 % value2);
+			break;
+		default:
+			return -1;
+			break;
+	}
+}
+
+//РљРѕСЂРЅРё РєРІР°РґСЂР°С‚РЅРѕРіРѕ СѓСЂР°РІРЅРµРЅРёСЏ
 void GetRoots(int a, int b, int c, double* x1, double* x2)
 {
 	double D = b * b - 4 * a*c;
@@ -288,7 +292,7 @@ void GetRoots(int a, int b, int c, double* x1, double* x2)
 	}
 }
 
-//Корень квадратного уравнения (с использованием ссылок)
+//РљРѕСЂРµРЅСЊ РєРІР°РґСЂР°С‚РЅРѕРіРѕ СѓСЂР°РІРЅРµРЅРёСЏ (СЃ РёСЃРїРѕР»СЊР·РѕРІР°РЅРёРµРј СЃСЃС‹Р»РѕРє)
 void GetRoots(int a, int b, int c, double& x1, double& x2)
 {
 	double D = b * b - 4 * a*c;
@@ -375,8 +379,8 @@ void GuessNumber()
 			else
 			{
 				shots++;
-				//TODO: Для if-else всегда надо расставлять скобки! 
-				//ИСПРАВЛЕНО.
+				//TODO: Р”Р»СЏ if-else РІСЃРµРіРґР° РЅР°РґРѕ СЂР°СЃСЃС‚Р°РІР»СЏС‚СЊ СЃРєРѕР±РєРё! 
+				//РРЎРџР РђР’Р›Р•РќРћ.
 				if (guessNumber > enteredNumber)
 				{
 					cout << "Wrong!!! Try to take a number more." << endl << " Enter number from 0 to 9: " << endl;
@@ -399,13 +403,13 @@ void GuessNumber()
 
 void SortArray(int *array, int arraySize)
 {
-//TODO: Не пишите комментарии к коду в завершении строки. Код должен читаться сверху вниз.
-	//TODO: Без передвижения диагонального скрол-бара.
-	//TODO: Правильнее будет располагать комментарии НАД комментируемой строкой.
-	int j = 0;									//На каждой итерации ищется элемент с наименьшим значением,
-	int tmp = 0;								//с ним нужно поменять местами последний элемент.
-	for (int i = 0; i < arraySize; i++)			//Следующий элемент с наибольшим значением становится уже на предпоследнее место.
-	{											//Продолжается, пока первые элементы не встанут на свои места 
+//TODO: РќРµ РїРёС€РёС‚Рµ РєРѕРјРјРµРЅС‚Р°СЂРёРё Рє РєРѕРґСѓ РІ Р·Р°РІРµСЂС€РµРЅРёРё СЃС‚СЂРѕРєРё. РљРѕРґ РґРѕР»Р¶РµРЅ С‡РёС‚Р°С‚СЊСЃСЏ СЃРІРµСЂС…Сѓ РІРЅРёР·.
+	//TODO: Р‘РµР· РїРµСЂРµРґРІРёР¶РµРЅРёСЏ РґРёР°РіРѕРЅР°Р»СЊРЅРѕРіРѕ СЃРєСЂРѕР»-Р±Р°СЂР°.
+	//TODO: РџСЂР°РІРёР»СЊРЅРµРµ Р±СѓРґРµС‚ СЂР°СЃРїРѕР»Р°РіР°С‚СЊ РєРѕРјРјРµРЅС‚Р°СЂРёРё РќРђР” РєРѕРјРјРµРЅС‚РёСЂСѓРµРјРѕР№ СЃС‚СЂРѕРєРѕР№.
+	int j = 0;									//РќР° РєР°Р¶РґРѕР№ РёС‚РµСЂР°С†РёРё РёС‰РµС‚СЃСЏ СЌР»РµРјРµРЅС‚ СЃ РЅР°РёРјРµРЅСЊС€РёРј Р·РЅР°С‡РµРЅРёРµРј,
+	int tmp = 0;								//СЃ РЅРёРј РЅСѓР¶РЅРѕ РїРѕРјРµРЅСЏС‚СЊ РјРµСЃС‚Р°РјРё РїРѕСЃР»РµРґРЅРёР№ СЌР»РµРјРµРЅС‚.
+	for (int i = 0; i < arraySize; i++)			//РЎР»РµРґСѓСЋС‰РёР№ СЌР»РµРјРµРЅС‚ СЃ РЅР°РёР±РѕР»СЊС€РёРј Р·РЅР°С‡РµРЅРёРµРј СЃС‚Р°РЅРѕРІРёС‚СЃСЏ СѓР¶Рµ РЅР° РїСЂРµРґРїРѕСЃР»РµРґРЅРµРµ РјРµСЃС‚Рѕ.
+	{											//РџСЂРѕРґРѕР»Р¶Р°РµС‚СЃСЏ, РїРѕРєР° РїРµСЂРІС‹Рµ СЌР»РµРјРµРЅС‚С‹ РЅРµ РІСЃС‚Р°РЅСѓС‚ РЅР° СЃРІРѕРё РјРµСЃС‚Р° 
 		j = i;
 		for (int k = i; k < arraySize; k++)
 		{
@@ -419,7 +423,7 @@ void SortArray(int *array, int arraySize)
 		array[j] = tmp;
 	}
 }
-//TODO: Избавьтесь от дублирования в этом и последующем методе
+//TODO: РР·Р±Р°РІСЊС‚РµСЃСЊ РѕС‚ РґСѓР±Р»РёСЂРѕРІР°РЅРёСЏ РІ СЌС‚РѕРј Рё РїРѕСЃР»РµРґСѓСЋС‰РµРј РјРµС‚РѕРґРµ
 void SortArray(int array[7])
 {
 	int j = 0;
@@ -462,9 +466,9 @@ void SortArray(double array[], int arraySize)
 
 void MultiplyMatrices()
 {
-	int n; // параметр матрицы А
-	int m; // общий параметр
-	int l; //параметр матрицы B 
+	int n; // РїР°СЂР°РјРµС‚СЂ РјР°С‚СЂРёС†С‹ Рђ
+	int m; // РѕР±С‰РёР№ РїР°СЂР°РјРµС‚СЂ
+	int l; //РїР°СЂР°РјРµС‚СЂ РјР°С‚СЂРёС†С‹ B 
 	srand(time(NULL));
 	cout << "Attention! The number of columns of the matrix A" << endl
 		<< "must coincide with the number of rows of the matrix B!" << endl;
@@ -479,8 +483,8 @@ void MultiplyMatrices()
 	cout << endl;
 
 	cout << "\tThe matrix A is: " << endl;
-	//TODO: Ниже много дублирования. Избавьтесь от него!\
-	//ИСПРАВЛЕНО.
+	//TODO: РќРёР¶Рµ РјРЅРѕРіРѕ РґСѓР±Р»РёСЂРѕРІР°РЅРёСЏ. РР·Р±Р°РІСЊС‚РµСЃСЊ РѕС‚ РЅРµРіРѕ!
+	//РРЎРџР РђР’Р›Р•РќРћ.
 	int **matrixA = new int*[n];
 	CreateMatrix(matrixA, n, m);
 	ShowMatrix(matrixA, n, m);

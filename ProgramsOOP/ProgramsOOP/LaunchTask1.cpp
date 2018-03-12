@@ -30,71 +30,59 @@ int Menu1()
 		system("cls");
 		switch (key)
 		{
-		case '1':
+			case '1':
+				Hi();
+				break;
 
-			Hi();
-			break;
+			case '2':
+				Summ();
+				break;
 
-		case '2':
+			case '3':
+				Division();
+				break;
 
-			Summ();
-			break;
+			case '4':
+				Summ2();
+				break;
 
-		case '3':
+			case '5':
+				Pointer();
+				break;
 
-			Division();
-			break;
+			case '6':
+				EvenOdd();
+				break;
 
-		case '4':
+			case '7':
+				Multiples();
+				break;
 
-			Summ2();
-			break;
+			case '8':
+				PredCondition();
+				break;
 
-		case '5':
+			case '9':
+				PostCondition();
+				break;
 
-			Pointer();
-			break;
+			case 'A':
+				Iteration();
+				break;
 
-		case '6':
+			case 'B':
+				Break();
+				break;
 
-			EvenOdd();
-			break;
+			case 'C':
+				Float();
+				break;
 
-		case '7':
-
-			Multiples();
-			break;
-
-		case '8':
-
-			PredCondition();
-			break;
-
-		case '9':
-
-			PostCondition();
-			break;
-
-		case 'A':
-
-			Iteration();
-			break;
-
-		case 'B':
-
-			Break();
-			break;
-
-		case 'C':
-
-			Float();
-			break;
-
-		case '0':
-			cout << " Welcome back." << endl;
-			break;
-		default:
-			cout << " Mistake. Try again." << endl;
+			case '0':
+				cout << " Welcome back." << endl;
+				break;
+			default:
+				cout << " Mistake. Try again." << endl;
 		}
 	} while (key != '0');
 
