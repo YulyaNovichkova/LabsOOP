@@ -28,7 +28,7 @@ int Menu2()
 			<< "8. Game: Guess the Number;" << endl
 			<< "9. Sort an array;" << endl
 			<< "10. Multiply Matrices;" << endl
-			<< "0. Exit. \n";
+			<< "0. Exit." << endl;
 
 		cin >> key;
 		cin.ignore(0);
@@ -202,7 +202,7 @@ int Menu2()
 			}
 				break;
 
-			case '0':
+			case 0:
 				cout << " Welcome back." << endl;
 				break;
 			default:

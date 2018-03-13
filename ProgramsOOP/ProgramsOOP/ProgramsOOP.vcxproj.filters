@@ -19,6 +19,9 @@
     <Filter Include="Исходные файлы\LaunchLab2">
       <UniqueIdentifier>{ca04c5e6-50cd-4eb6-a362-0b2f272b0c5c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Исходные файлы\LaunchLab3">
+      <UniqueIdentifier>{d631f54e-3b03-4c4f-b106-c23257ae88d5}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -36,6 +39,12 @@
     <ClCompile Include="LaunchTaskFunctions1.cpp">
       <Filter>Исходные файлы\LaunchLab1</Filter>
     </ClCompile>
+    <ClCompile Include="LaunchTask3.cpp">
+      <Filter>Исходные файлы\LaunchLab3</Filter>
+    </ClCompile>
+    <ClCompile Include="LaunchTaskFunction3.cpp">
+      <Filter>Исходные файлы\LaunchLab3</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AllLabs.h">
@@ -45,6 +54,9 @@
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="Function1.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="Function3.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>

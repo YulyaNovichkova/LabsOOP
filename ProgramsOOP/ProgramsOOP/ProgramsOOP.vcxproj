@@ -117,7 +117,9 @@
   <ItemGroup>
     <ClCompile Include="LaunchTask1.cpp" />
     <ClCompile Include="LaunchTask2.cpp" />
+    <ClCompile Include="LaunchTask3.cpp" />
     <ClCompile Include="LaunchTaskFunction2.cpp" />
+    <ClCompile Include="LaunchTaskFunction3.cpp" />
     <ClCompile Include="LaunchTaskFunctions1.cpp" />
     <ClCompile Include="Main.cpp" />
   </ItemGroup>
@@ -125,6 +127,7 @@
     <ClInclude Include="AllLabs.h" />
     <ClInclude Include="Function2.h" />
     <ClInclude Include="Function1.h" />
+    <ClInclude Include="Function3.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
