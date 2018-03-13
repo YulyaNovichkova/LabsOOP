@@ -13,6 +13,8 @@ int Menu3()
 		cout << "\t Choose next step:\n\n\n"
 			<< "1. Determine the length of a string;" << endl
 			<< "2. Combining two strings into one new one;" << endl
+			<< "5. Convert string to uppercase;" << endl
+			<< "6. Convert string to lowercase;" << endl
 			<< "9. MEN;" << endl
 			<< "0. Exit. \n";
 
@@ -41,6 +43,29 @@ int Menu3()
 				ShowString(strResult);
 			}
 				break;
+
+			case '5':
+			{
+				char string[100];
+				cout << "Enter string:" << endl;
+				cin.getline(string, 100);
+				Uppercase(string);
+				cout << "Convert string to uppercase:" << endl;
+				ShowString(string);
+			}
+			break;
+
+			case '6':
+			{
+				char string[100];
+				cout  << "Enter string:" << endl;
+				cin.getline(string, 100);
+				Lowercase(string);
+				cout << "Convert string to lowercase:" << endl;
+				ShowString(string);
+			}
+			break;
+
 			case '9':
 			{
 				Person newPerson;
@@ -115,8 +140,33 @@ char* Concatenate(char* string1, char* string2)
 
 char* GetSubstring(char* string, int startIndex, int charCount);
 int FindSubstring(char* string, char* substring);
-char* Uppercase(char* string);
-char* Lowercase(char* string);
+
+char* Uppercase(char* string)
+{
+	int count = 0;
+	while (string[count] != '\0')
+	{
+		if (string[count] >= 'a' && string[count] <= 'z')
+		{
+				string[count] = string[count] - 32;
+		}
+		count++;
+	}
+	return string;
+}
+char* Lowercase(char* string)
+{
+	int count = 0;
+	while (string[count] != '\0')
+	{
+		if (string[count] >= 'A' && string[count] <= 'Z')
+		{
+				string[count] = string[count] + 32;
+		}
+		count++;
+	}
+	return string;
+}
 void SplitFilename(char* source, char* path, char* name, char* extension);
 char* ReplaceTabsOnSpaces(char* string);
 char* ReplaceSpacesOnTabs(char* string);
