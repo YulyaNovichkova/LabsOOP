@@ -25,11 +25,12 @@ char* ReplaceTabsOnSpaces(char* string);
 // Замена пробелов на таб
 char* ReplaceSpacesOnTabs(char* string);
 
-
+//TODO: Структура должна быть в отдельном файле
 struct Person
 {
 	char Surname[40];
 	char Name[20];
+	//TODO: Использование char для пола - плохо. Вспомните последнюю лекцию. Нужен enum.
 	char Sex[1];
 	int Age;
 	char Status[20];

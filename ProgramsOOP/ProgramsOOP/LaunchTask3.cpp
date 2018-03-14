@@ -45,7 +45,7 @@ int Menu3()
 			strResult = Concatenate(str1, str2);
 			cout << "Combined string:" << endl;
 			ShowString(strResult);
-		}
+		}//TODO: Break после скобочек
 			break;
 
 		case 3:
@@ -54,7 +54,7 @@ int Menu3()
 			GetSubstring(str, 2, 4);
 			GetSubstring(str, -3, 3);
 			GetSubstring(str, 2, -4);
-			GetSubstring(str, 7, 8);
+			GetSubstring(str, 7, 8);//TODO: Пустая строка.
 
 		}
 			break;

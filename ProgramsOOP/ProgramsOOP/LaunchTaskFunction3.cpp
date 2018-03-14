@@ -102,7 +102,7 @@ int FindSubstring(char* string, char* substring)
 	}
 	return -1;
 }
-
+//TODO: Название метода не соответствует стандарту именования
 char* Uppercase(char* string)
 {
 	int count = 0;
@@ -116,6 +116,7 @@ char* Uppercase(char* string)
 	}
 	return string;
 }
+//TODO: Название метода не соответствует стандарту именования
 char* Lowercase(char* string)
 {
 	int count = 0;
@@ -200,7 +201,7 @@ char* ReplaceTabsOnSpaces(char* string)
 	}
 	int count = 0;
 	for (int i = 0; i < lengthString; i++)
-	{
+	{//TODO: Жёстко реализовано, что может быть только 4 символа. Иногда выставляют другое количество. Должно быть просто это поменять.
 		if (tempString[i] == '\\' && tempString[i + 1] == 't')
 		{
 			for (int j = 0; j < (4 - countChar); j++)
@@ -233,11 +234,11 @@ char* ReplaceSpacesOnTabs(char* string)
 	}
 	int count = 0;
 	for (int j = 0; j < lengthString; j++)
-	{
+	{//TODO: Жёстко реализовано, что может быть только 4 символа. Иногда выставляют другое количество. Должно быть просто это поменять.
 		if (countChar == 4)
 		{
 			countChar = 0;
-		}
+		}//TODO: Плохая реализация влоб с большим количеством копипасты. Исправьте.
 		if ((tempString[j] == ':' &&  tempString[j + 1] == ':' &&  tempString[j + 2] == ':' && tempString[j + 3] == ':') && (countChar == 0))
 		{
 			string[count] = '\\';
@@ -315,7 +316,7 @@ Person ReadPerson()
 	}
 	return person;
 }
-
+//TODO: Передача по значению - не очень оптимально.
 void PrintPerson(Person person)
 {
 	cout << endl << "Surname: " << person.Surname;

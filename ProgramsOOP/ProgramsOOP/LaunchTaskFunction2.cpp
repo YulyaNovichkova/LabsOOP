@@ -12,9 +12,6 @@ int globalVariable = 7;
 int Menu2()
 {
 	int key;
-//TODO: Внимательно прочитайте стандарт оформления кода RSDN https://rsdn.org/article/mag/200401/codestyle.XML
-//TODO: и приведите свой код в соответстие со стандартом
-	//НАДЕЮСЬ, ЧТО ИСПРАВИЛА.
 	do
 	{
 		cout << "\t Choose next step:" << endl << endl << endl
@@ -38,7 +35,7 @@ int Menu2()
 			case 1:
 			{
 				PrintHelloWorld();
-			}
+			}//TODO: Почему break везде за скобками? Это не правильно.
 				break;
 
 			case 2:
@@ -164,8 +161,7 @@ int Menu2()
 				int arraySize1 = 10;
 				int* array1 = new int[arraySize1];
 				cout << "Unsorted array: " << endl;
-				//TODO: Код дублируется с тем, что ниже, исправьте!
-				//ИСПРАВЛЕНО.
+				
 				CreateArray(array1, arraySize1);
 				ShowArray(array1, arraySize1);
 				SortArray(array1, arraySize1);
@@ -220,10 +216,8 @@ void PrintHelloWorld()
 
 double MakeCalculation(int value1, int value2, char operationKey)
 {
-	//TODO:Правильнее использовать switch-case, а не if-else
-	//ИСПРАВЛЕНО.
 	switch (operationKey)
-	{
+	{//TODO: Послн return нет смысла ставить break-и
 		case '+':
 			return (value1 + value2);
 			break;
@@ -356,8 +350,7 @@ void GuessNumber()
 			else
 			{
 				shots++;
-				//TODO: Для if-else всегда надо расставлять скобки! 
-				//ИСПРАВЛЕНО.
+				//TODO: Много кода дублируется - можно сократить.
 				if (guessNumber > enteredNumber)
 				{
 					cout << "Wrong!!! Try to take a number more." << endl << " Enter number from 0 to 9: " << endl;
@@ -399,6 +392,7 @@ void SortArray(int *array, int arraySize)
 }
 //TODO: Избавьтесь от дублирования в этом и последующем методе
 //ИСПРАВЛЕНО.
+//Не увидел, что исправили.
 void SortArray(int array[7])
 {
 	int key = 0;
@@ -451,6 +445,7 @@ void ShowArray(int *array, int arraySize)
 
 void MultiplyMatrices()
 {
+	//TODO: плохое именование для переменных. Не понятно, за что они отвечают.
 	int n; // параметр матрицы А
 	int m; // общий параметр
 	int l; //параметр матрицы B 
@@ -470,6 +465,7 @@ void MultiplyMatrices()
 	cout << "\tThe matrix A is: " << endl;
 	//TODO: Ниже много дублирования. Избавьтесь от него!
 	//ИСПРАВЛЕНО.
+	//Не всё исправили.
 	int **matrixA = new int*[n];
 	CreateMatrix(matrixA, n, m);
 	ShowMatrix(matrixA, n, m);
