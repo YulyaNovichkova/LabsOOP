@@ -4,89 +4,6 @@
 
 using namespace std;
 
-int Menu3()
-{
-	char key;
-
-	do
-	{
-		cout << "\t Choose next step:\n\n\n"
-			<< "1. Determine the length of a string;" << endl
-			<< "2. Combining two strings into one new one;" << endl
-			<< "5. Convert string to uppercase;" << endl
-			<< "6. Convert string to lowercase;" << endl
-			<< "9. MEN;" << endl
-			<< "0. Exit. \n";
-
-		cin >> key;
-		cin.ignore(1);
-		system("cls");
-		switch (key)
-		{
-			case '1':
-				char str[51];
-				cout << "Enter your string: " << endl;
-				cin.get(str, 51);
-				cout << "Your string consists of " << GetLength(str) << " characters." << endl;
-				break;
-			case '2':
-			{
-				char str1[50];
-				char str2[50];
-				char *strResult;
-				cout << "Enter your first string: " << endl;
-				cin.getline(str1, 50);
-				cout << "Enter your second string: " << endl;
-				cin.getline(str2, 50);
-				strResult = Concatenate(str1, str2);
-				cout << "Combined string:" << endl;
-				ShowString(strResult);
-			}
-				break;
-
-			case '5':
-			{
-				char string[100];
-				cout << "Enter string:" << endl;
-				cin.getline(string, 100);
-				Uppercase(string);
-				cout << "Convert string to uppercase:" << endl;
-				ShowString(string);
-			}
-			break;
-
-			case '6':
-			{
-				char string[100];
-				cout  << "Enter string:" << endl;
-				cin.getline(string, 100);
-				Lowercase(string);
-				cout << "Convert string to lowercase:" << endl;
-				ShowString(string);
-			}
-			break;
-
-			case '9':
-			{
-				Person newPerson;
-				newPerson = ReadPerson();
-				PrintPerson(newPerson);
-			}
-				break;
-
-			case '0':
-				cout << " Welcome back.\n";
-				break;
-			default:
-				cout << " Mistake. Try again.\n";
-				break;
-		}
-	} while (key != '0');
-
-	int k = atoi(&key);
-	return(k);
-
-};
 
 void ShowString(char *string)
 {
@@ -101,12 +18,9 @@ void ShowString(char *string)
 
 void CreateLength()
 {
-	//максимальный размер строки
-	const int max = 51;
-	char str[max];
-	cout << "Enter your string: " << endl;
-	cin.get(str, max);
-	cout << "Your string: " << endl << str << endl;
+	char string[100];
+	cout << "Enter string:" << endl;
+	cin.getline(string, 100);
 }
 
 int GetLength(char* string)
@@ -167,9 +81,107 @@ char* Lowercase(char* string)
 	}
 	return string;
 }
+
 void SplitFilename(char* source, char* path, char* name, char* extension);
-char* ReplaceTabsOnSpaces(char* string);
-char* ReplaceSpacesOnTabs(char* string);
+
+char* ReplaceTabsOnSpaces(char* string)
+{
+	int lengthString;
+	int countChar = 0;
+	char tempString[100];
+	lengthString = GetLength(string);
+	//копируем строку во временную
+	for (int j = 0; j < lengthString; j++)
+	{
+		tempString[j] = string[j];
+	}
+	int count = 0;
+	for (int i = 0; i < lengthString; i++)
+	{
+		if (tempString[i] == '\\' && tempString[i + 1] == 't')
+		{
+			for (int j = 0; j < (4 - countChar); j++)
+			{
+				string[count] = ':';
+				count++;
+			}
+			i++;
+		}
+		else
+		{
+			string[count] = tempString[i];
+			count++;
+			countChar++;
+		}
+
+	}
+	string[count] = '\0';
+	return string;
+}
+char* ReplaceSpacesOnTabs(char* string)
+{
+	int lengthString;
+	int countChar = 0;
+	char tempString[100];
+	lengthString = GetLength(string);
+	for (int i = 0; i < lengthString; i++)
+	{
+		tempString[i] = string[i];
+	}
+	int count = 0;
+	for (int j = 0; j < lengthString; j++)
+	{
+		if (countChar == 4)
+		{
+			countChar = 0;
+		}
+		if ((tempString[j] == ':' &&  tempString[j + 1] == ':' &&  tempString[j + 2] == ':' && tempString[j + 3] == ':') && (countChar == 0))
+		{
+			string[count] = '\\';
+			string[count + 1] = 't';
+			j += 3;
+			count += 2;
+		}
+		else if ((tempString[j] == ':' &&  tempString[j + 1] == ':' &&  tempString[j + 2] == ':') && (countChar == 1))
+		{
+			string[count] = '\\';
+			string[count + 1] = 't';
+			j += 2;
+			count += 2;
+			countChar = 0;
+		}
+		else if ((tempString[j] == ':' &&  tempString[j + 1] == ':') && (countChar == 2))
+		{
+			string[count] = '\\';
+			string[count + 1] = 't';
+			j += 1;
+			count += 2;
+			countChar = 0;
+		}
+		else if ((tempString[j] == ':') && (countChar == 3))
+		{
+			string[count] = '\\';
+			string[count + 1] = 't';
+			count += 2;
+			countChar = 0;
+		}
+		else
+		{
+			if (tempString[j] == ' ')
+			{
+				string[count] = ':';
+			}
+			else
+			{
+				string[count] = tempString[j];
+			}
+			count++;
+			countChar++;
+		}
+	}
+	string[count] = '\0';
+	return string;
+}
 
 Person ReadPerson()
 {

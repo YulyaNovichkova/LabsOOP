@@ -1,6 +1,5 @@
 #pragma once
 
-int Menu3();
 void ShowString(char *string);
 //Определение длины строки
 void CreateLength();
@@ -15,7 +14,9 @@ char* Uppercase(char* string);
 //Преобразование в нижний регистр
 char* Lowercase(char* string);
 void SplitFilename(char* source, char* path, char* name, char* extension);
+//Замена таб на пробелы
 char* ReplaceTabsOnSpaces(char* string);
+// Замена пробелов на таб
 char* ReplaceSpacesOnTabs(char* string);
 
 
