@@ -6,11 +6,10 @@ using namespace std;
 
 int Menu3()
 {
-	char key;
-
+	int key;
 	do
 	{
-		cout << "\t Choose next step:\n\n\n"
+		cout << "\t Choose next step:" << endl << endl << endl
 			<< "1. Determine the length of a string;" << endl
 			<< "2. Combining two strings into one new one;" << endl
 			<< "3. ;" << endl
@@ -20,20 +19,20 @@ int Menu3()
 			<< "7. Replace characters (tab on space);" << endl
 			<< "8. Replace characters (space on tab);" << endl
 			<< "9. Data on the person;" << endl
-			<< "0. Exit. \n";
+			<< "0. Exit." << endl;
 
 		cin >> key;
-		cin.ignore(1);
+		cin.ignore();
 		system("cls");
 		switch (key)
 		{
-		case '1':
+		case 1:
 			char str[51];
 			cout << "Enter your string: " << endl;
 			cin.get(str, 51);
 			cout << "Your string consists of " << GetLength(str) << " characters." << endl;
 			break;
-		case '2':
+		case 2:
 		{
 			char str1[50];
 			char str2[50];
@@ -46,9 +45,9 @@ int Menu3()
 			cout << "Combined string:" << endl;
 			ShowString(strResult);
 		}
-		break;
+			break;
 
-		case '5':
+		case 5:
 		{
 			char string[100];
 			cout << "Enter string:" << endl;
@@ -57,9 +56,9 @@ int Menu3()
 			cout << "Convert string to uppercase:" << endl;
 			ShowString(string);
 		}
-		break;
+			break;
 
-		case '6':
+		case 6:
 		{
 			char string[100];
 			cout << "Enter string:" << endl;
@@ -68,9 +67,9 @@ int Menu3()
 			cout << "Convert string to lowercase:" << endl;
 			ShowString(string);
 		}
-		break;
+			break;
 
-		case '7':
+		case 7:
 		{
 			char string[100];
 			cout << "Enter string." << endl;
@@ -79,11 +78,10 @@ int Menu3()
 			ReplaceTabsOnSpaces(string);
 			cout << "New string: " << endl;
 			ShowString(string);
-
 		}
-		break;
+			break;
 
-		case '8':
+		case 8:
 		{
 			char string[100];
 			cout << "Enter string." << endl;
@@ -93,17 +91,17 @@ int Menu3()
 			cout << "New string: " << endl;
 			ShowString(string);
 		}
-		break;
+			break;
 
-		case '9':
+		case 9:
 		{
 			Person newPerson;
 			newPerson = ReadPerson();
 			PrintPerson(newPerson);
 		}
-		break;
+			break;
 
-		case '0':
+		case 0:
 			cout << " Welcome back.\n";
 			break;
 		default:
@@ -112,8 +110,8 @@ int Menu3()
 		}
 	} while (key != '0');
 
-	int k = atoi(&key);
-	return(k);
+	//int k = atoi(&key);
+	return(key);
 
 };
 
