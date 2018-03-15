@@ -25,3 +25,4 @@ void SortArray(double array[], int arraySize);
 void MultiplyMatrices();
 int** CreateMatrix(int **matrix, int row, int col);
 void ShowMatrix(int **matrix, int row, int col);
+void DeleteMatrix(int **matrix, int row);

@@ -39,7 +39,6 @@ int Menu2()
 			}//TODO: Почему break везде за скобками? Это не правильно.
 			//ИСПРАВЛЕНО
 				
-
 			case 2:
 			{
 				int value1;
@@ -472,6 +471,7 @@ void MultiplyMatrices()
 	//TODO: Ниже много дублирования. Избавьтесь от него!
 	//ИСПРАВЛЕНО.
 	//Не всё исправили.
+	//ТЕПЕРЬ, НАДЕЮСЬ, ВСЁ.
 	int **matrixA = new int*[rowA];
 	CreateMatrix(matrixA, rowA, rowCol);
 	ShowMatrix(matrixA, rowA, rowCol);
@@ -500,21 +500,9 @@ void MultiplyMatrices()
 	}
 	ShowMatrix(matrixC, rowA, colB);
 	cout << endl;
-	for (int i = 0; i < rowA; i++)
-	{
-		delete[] matrixA[i];
-	}
-	delete[] matrixA;
-	for (int i = 0; i < rowCol; i++)
-	{
-		delete[] matrixB[i];
-	}
-	delete[] matrixB;
-	for (int i = 0; i < rowA; i++)
-	{
-		delete[] matrixC[i];
-	}
-	delete[] matrixC;
+	DeleteMatrix(matrixA, rowA);
+	DeleteMatrix(matrixB, rowCol);
+	DeleteMatrix(matrixC, rowA);
 }
 
 int** CreateMatrix(int **matrix, int row, int col)
@@ -543,4 +531,13 @@ void ShowMatrix(int **matrix, int row, int col)
 		}
 		cout << endl;
 	}
+}
+
+void DeleteMatrix(int **matrix, int row)
+{
+	for (int i = 0; i < row; i++)
+	{
+		delete[] matrix[i];
+	}
+	delete[] matrix;
 }
