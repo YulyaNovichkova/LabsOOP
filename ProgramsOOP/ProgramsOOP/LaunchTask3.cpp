@@ -1,5 +1,6 @@
 #include <iostream>
 #include "Function3.h"
+#include "StructFunction3.h"
 #include "AllLabs.h"
 
 using namespace std;
@@ -28,11 +29,14 @@ int Menu3()
 		switch (key)
 		{
 		case 1:
+		{
 			char str[100];
 			cout << "Enter your string: " << endl;
 			cin.get(str, 100);
 			cout << "Your string consists of " << GetLength(str) << " characters." << endl;
 			break;
+		}
+			
 		case 2:
 		{
 			char str1[100];
@@ -45,8 +49,10 @@ int Menu3()
 			strResult = Concatenate(str1, str2);
 			cout << "Combined string:" << endl;
 			ShowString(strResult);
-		}//TODO: Break после скобочек
 			break;
+		}//TODO: Break после скобочек
+		//ИСПРАВЛЕНО
+			
 
 		case 3:
 		{
@@ -55,9 +61,9 @@ int Menu3()
 			GetSubstring(str, -3, 3);
 			GetSubstring(str, 2, -4);
 			GetSubstring(str, 7, 8);//TODO: Пустая строка.
-
-		}
 			break;
+		}
+			
 
 		case 4:
 		{
@@ -70,8 +76,9 @@ int Menu3()
 			FindSubstringTest(string, subString, testSubstring2);
 			char testSubstring3[10] = "sum";
 			FindSubstringTest(string, subString, testSubstring3);
-		}
 			break;
+		}
+			
 			
 		case 5:
 		{
@@ -79,8 +86,9 @@ int Menu3()
 			Uppercase(string);
 			cout << "Convert string to uppercase:" << endl;
 			ShowString(string);
-		}
 			break;
+		}
+			
 
 		case 6:
 		{
@@ -88,8 +96,9 @@ int Menu3()
 			Lowercase(string);
 			cout << "Convert string to lowercase:" << endl;
 			ShowString(string);
-		}
 			break;
+		}
+			
 
 		case 7:
 		{
@@ -101,8 +110,9 @@ int Menu3()
 			delete[] source;
 			delete[] name;
 			delete[] extension;
-		}
 			break;
+		}
+			
 
 		case 8:
 		{
@@ -113,8 +123,9 @@ int Menu3()
 			ReplaceTabsOnSpaces(string);
 			cout << "New string: " << endl;
 			ShowString(string);
-		}
 			break;
+		}
+			
 
 		case 9:
 		{
@@ -125,16 +136,18 @@ int Menu3()
 			ReplaceSpacesOnTabs(string);
 			cout << "New string: " << endl;
 			ShowString(string);
-		}
 			break;
+		}
+			
 
 		case 10:
 		{
 			Person newPerson;
 			newPerson = ReadPerson();
 			PrintPerson(newPerson);
-		}
 			break;
+		}
+			
 
 		case 0:
 			cout << " Welcome back.\n";

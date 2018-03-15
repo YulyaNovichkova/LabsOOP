@@ -35,8 +35,10 @@ int Menu2()
 			case 1:
 			{
 				PrintHelloWorld();
-			}//TODO: Почему break везде за скобками? Это не правильно.
 				break;
+			}//TODO: Почему break везде за скобками? Это не правильно.
+			//ИСПРАВЛЕНО
+				
 
 			case 2:
 			{
@@ -57,8 +59,9 @@ int Menu2()
 				}
 				MakeCalculation(value1, value2, operationKey);
 				cout << "Your value is: " << MakeCalculation(value1, value2, operationKey) << endl;
-			}
 				break;
+			}
+				
 
 			case 3:
 			{
@@ -76,8 +79,9 @@ int Menu2()
 				cin >> c;
 				GetRoots(a, b, c, &x1, &x2);
 				cout << "The root of your equation " << x1 << " and " << x2 << endl;
-			}
 				break;
+			}
+				
 
 			case 4:
 			{
@@ -95,8 +99,9 @@ int Menu2()
 				cin >> c;
 				GetRoots(a, b, c, &x1, &x2);
 				cout << "The root of your equation " << x1 << " and " << x2 << endl;
-			}
 				break;
+			}
+				
 
 			case 5:
 			{
@@ -116,8 +121,9 @@ int Menu2()
 				float n;
 				n = 6.0;
 				SummNumbers(m, n);
-			}
 				break;
+			}
+				
 
 			case 6:
 			{
@@ -130,8 +136,9 @@ int Menu2()
 				cout << "Global Variable: " << globalVariable << endl;
 				globalVariable = 5;
 				cout << "Global Variable: " << globalVariable << endl;
-			}
 				break;
+			}
+				
 
 			case 7:
 			{
@@ -144,9 +151,9 @@ int Menu2()
 				cin >> power;
 				double value = GetPower(base, power);
 				cout << "Value: " << value << endl;
-			}
 				break;
-
+			}
+				
 			case 8:
 			{
 				GuessNumber();
@@ -189,14 +196,16 @@ int Menu2()
 				SortArray(array3, arraySize3);
 				cout << "Sorted array: " << endl;
 				ShowArray(array3, arraySize3);
-			}
 				break;
+			}
+				
 
 			case 10:
 			{
 				MultiplyMatrices();
-			}
 				break;
+			}
+				
 
 			case 0:
 				cout << " Welcome back." << endl;
@@ -218,17 +227,15 @@ double MakeCalculation(int value1, int value2, char operationKey)
 {
 	switch (operationKey)
 	{//TODO: Послн return нет смысла ставить break-и
+		//ИСПРАВЛЕНО
 		case '+':
 			return (value1 + value2);
-			break;
 
 		case '-':
 			return (value1 - value2);
-			break;
 
 		case '*':
 			return (value1 * value2);
-			break;
 
 		case '/':
 			return (value1 / value2);
@@ -236,10 +243,8 @@ double MakeCalculation(int value1, int value2, char operationKey)
 
 		case '%':
 			return (value1 % value2);
-			break;
 		default:
 			return -1;
-			break;
 	}
 }
 
@@ -446,65 +451,66 @@ void ShowArray(int *array, int arraySize)
 void MultiplyMatrices()
 {
 	//TODO: плохое именование для переменных. Не понятно, за что они отвечают.
-	int n; // параметр матрицы А
-	int m; // общий параметр
-	int l; //параметр матрицы B 
+	//ИСПРАВЛЕНО.
+	int rowA; // параметр матрицы А
+	int rowCol; // общий параметр
+	int colB; //параметр матрицы B 
 	srand(time(NULL));
 	cout << "Attention! The number of columns of the matrix A" << endl
 		<< "must coincide with the number of rows of the matrix B!" << endl;
 	cout << "Enter the number of rows of matrix A: ";
-	cin >> n;
+	cin >> rowA;
 	cout << "Enter the number of columns of the matrix A: ";
-	cin >> m;
+	cin >> rowCol;
 	cout << "Enter the number of rows of matrix B: ";
-	cin >> m;
+	cin >> rowCol;
 	cout << "Enter the number of columns of the matrix B: ";
-	cin >> l;
+	cin >> colB;
 	cout << endl;
 
 	cout << "\tThe matrix A is: " << endl;
 	//TODO: Ниже много дублирования. Избавьтесь от него!
 	//ИСПРАВЛЕНО.
 	//Не всё исправили.
-	int **matrixA = new int*[n];
-	CreateMatrix(matrixA, n, m);
-	ShowMatrix(matrixA, n, m);
+	int **matrixA = new int*[rowA];
+	CreateMatrix(matrixA, rowA, rowCol);
+	ShowMatrix(matrixA, rowA, rowCol);
 	cout << endl;
 
 	cout << "\tThe matrix B is: " << endl;
-	int **matrixB = new int*[m];
-	CreateMatrix(matrixB, m, l);
-	ShowMatrix(matrixB, m, l);
+	int **matrixB = new int*[rowCol];
+	CreateMatrix(matrixB, rowCol, colB);
+	ShowMatrix(matrixB, rowCol, colB);
 	cout << endl;
 
 	cout << "\tThe new matrix is: " << endl;
 
-	int **matrixC = new int*[n];
-	CreateMatrix(matrixC, n, m);
-	for (int i = 0; i < n; i++)
+	int **matrixC = new int*[rowA];
+	CreateMatrix(matrixC, rowA, rowCol);
+	for (int i = 0; i < rowA; i++)
 	{
-		for (int j = 0; j < l; j++)
+		for (int j = 0; j < colB; j++)
 		{
 			matrixC[i][j] = 0;
-			for (int k = 0; k < m; k++)
+			for (int k = 0; k < rowCol; k++)
 			{
 				matrixC[i][j] += matrixA[i][k] * matrixB[k][j];
 			}
 		}
 	}
-	ShowMatrix(matrixC, n, l);
+	ShowMatrix(matrixC, rowA, colB);
 	cout << endl;
-	for (int i = 0; i < n; i++)
+	for (int i = 0; i < rowA; i++)
 	{
 		delete[] matrixA[i];
 	}
 	delete[] matrixA;
-	for (int i = 0; i < m; i++)
+	for (int i = 0; i < rowCol; i++)
 	{
 		delete[] matrixB[i];
 	}
 	delete[] matrixB;
-	for (int i = 0; i < n; i++)
+	for (int i = 0; i < rowA; i++)
 	{
 		delete[] matrixC[i];
 	}

@@ -1,6 +1,7 @@
 #include <iostream>
 #include <iomanip>
 #include "Function3.h"
+#include "StructFunction3.h"
 
 using namespace std;
 
