@@ -4,6 +4,7 @@
 #include <stdlib.h>
 #include <time.h>
 #include <iomanip> // для setw()
+#include <string>
 
 using namespace std;
 
@@ -238,52 +239,58 @@ double MakeCalculation(int value1, int value2, char operationKey)
 
 		case '/':
 			return (value1 / value2);
-			break;
 
 		case '%':
 			return (value1 % value2);
+
 		default:
 			return -1;
 	}
 }
 
 //Корни квадратного уравнения
-void GetRoots(int a, int b, int c, double* x1, double* x2)
+int GetRoots(int a, int b, int c, double* x1, double* x2)
 {
 	double D = b * b - 4 * a*c;
 	if (D < 0)
 	{
 		*x1 = *x2 = NULL;
+		return 0;
 	}
 	else if (D == 0)
 	{
 		*x1 = -b / (2 * a);
-		*x2 = NULL;
+		*x2 = 0;
+		return 1;
 	}
 	else
 	{
 		*x1 = (-b - sqrt(D)) / (2 * a);
 		*x2 = (-b + sqrt(D)) / (2 * a);
+		return 2;
 	}
 }
 
 //Корень квадратного уравнения (с использованием ссылок)
-void GetRoots(int a, int b, int c, double& x1, double& x2)
+int GetRoots(int a, int b, int c, double& x1, double& x2)
 {
 	double D = b * b - 4 * a*c;
 	if (D < 0)
 	{
-		x1 = x2 = NULL;
+		x1 = x2 = 0;
+		return 0;
 	}
 	else if (D == 0)
 	{
 		x1 = -b / (2 * a);
-		x2 = NULL;
+		x2 = 0;
+		return 1;
 	}
 	else
 	{
 		x1 = (-b - sqrt(D)) / (2 * a);
 		x2 = (-b + sqrt(D)) / (2 * a);
+				return 2;
 	}
 }
 
@@ -354,15 +361,9 @@ void GuessNumber()
 			else
 			{
 				shots++;
-				//TODO: Много кода дублируется - можно сократить.
-				if (guessNumber > enteredNumber)
-				{
-					cout << "Wrong!!! Try to take a number more." << endl << " Enter number from 0 to 9: " << endl;
-				}
-				else
-				{
-					cout << "Wrong!!! Try to take a number less." << endl << " Enter number from 0 to 9: " << endl;
-				}
+				cout << "Wrong!!! Try to take a number " 
+					 << ((guessNumber > enteredNumber) ? "more" : "less") << "." << endl
+					 << " Enter number from 0 to 9: " << endl;
 				cin >> enteredNumber;
 			}
 

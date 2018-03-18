@@ -1,4 +1,4 @@
-#include <iostream>
+ï»¿#include <iostream>
 #include <iomanip>
 #include "Function3.h"
 #include "StructFunction3.h"
@@ -40,6 +40,18 @@ char* Concatenate(char* string1, char* string2)
 {
 	int count1 = 0;
 	int count2 = 0;
+	int i;
+	char* string3 = new char[100];
+	for (i = 0; i < GetLength(string1); i++)
+	{
+		string3[i] = string1[i];
+	}
+	for (int j = 0; j < GetLength(string2); j++)
+	{
+		string3[i] = string2[j];
+		i++;
+	}
+	/*
 	while (string1[count1])
 	{
 		count1++;
@@ -52,7 +64,9 @@ char* Concatenate(char* string1, char* string2)
 		string1++;
 	}
 	string1[count1] = '\0';
-	return string1;
+	return string1;*/
+	string3[i] = '\0';
+	return string3;
 }
 
 char* GetSubstring(char* string, int startIndex, int charCount)
@@ -103,8 +117,9 @@ int FindSubstring(char* string, char* substring)
 	}
 	return -1;
 }
-//TODO: Íàçâàíèå ìåòîäà íå ñîîòâåòñòâóåò ñòàíäàðòó èìåíîâàíèÿ
-char* Uppercase(char* string)
+//TODO: ÐÐ°Ð·Ð²Ð°Ð½Ð¸Ðµ Ð¼ÐµÑ‚Ð¾Ð´Ð° Ð½Ðµ ÑÐ¾Ð¾Ñ‚Ð²ÐµÑ‚ÑÑ‚Ð²ÑƒÐµÑ‚ ÑÑ‚Ð°Ð½Ð´Ð°Ñ€Ñ‚Ñƒ Ð¸Ð¼ÐµÐ½Ð¾Ð²Ð°Ð½Ð¸Ñ
+//Ð˜Ð¡ÐŸÐ ÐÐ’Ð›Ð•ÐÐž
+char* ToUppercase(char* string)
 {
 	int count = 0;
 	while (string[count] != '\0')
@@ -117,8 +132,9 @@ char* Uppercase(char* string)
 	}
 	return string;
 }
-//TODO: Íàçâàíèå ìåòîäà íå ñîîòâåòñòâóåò ñòàíäàðòó èìåíîâàíèÿ
-char* Lowercase(char* string)
+//TODO: ÐÐ°Ð·Ð²Ð°Ð½Ð¸Ðµ Ð¼ÐµÑ‚Ð¾Ð´Ð° Ð½Ðµ ÑÐ¾Ð¾Ñ‚Ð²ÐµÑ‚ÑÑ‚Ð²ÑƒÐµÑ‚ ÑÑ‚Ð°Ð½Ð´Ð°Ñ€Ñ‚Ñƒ Ð¸Ð¼ÐµÐ½Ð¾Ð²Ð°Ð½Ð¸Ñ
+//Ð˜Ð¡ÐŸÐ ÐÐ’Ð›Ð•ÐÐž
+char* ToLowercase(char* string)
 {
 	int count = 0;
 	while (string[count] != '\0')
@@ -151,7 +167,7 @@ void SplitFilename(char* source, char* path, char* name, char* extension)
 	cout << "Path: " << path << endl;
 }
 
-//Ðàçáèåíèå ñòðîêè source íà ÷àñòè (ïóòü, èìÿ, ðàñøèðåíèå)
+//Ð Ð°Ð·Ð±Ð¸ÐµÐ½Ð¸Ðµ ÑÑ‚Ñ€Ð¾ÐºÐ¸ source Ð½Ð° Ñ‡Ð°ÑÑ‚Ð¸ (Ð¿ÑƒÑ‚ÑŒ, Ð¸Ð¼Ñ, Ñ€Ð°ÑÑˆÐ¸Ñ€ÐµÐ½Ð¸Ðµ)
 int GetSourcePart(char* source, char* partString, char symbol, const char partName[30], int size)
 {
 	int i = 0;
@@ -189,23 +205,24 @@ char* RevertString(char* string, int size)
 	return newString;
 }
 
-char* ReplaceTabsOnSpaces(char* string)
+char* ReplaceTabsOnSpaces(char* string, int sizeTabs)
 {
 	int lengthString;
 	int countChar = 0;
 	char tempString[100];
 	lengthString = GetLength(string);
-	//êîïèðóåì ñòðîêó âî âðåìåííóþ
+	//ÐºÐ¾Ð¿Ð¸Ñ€ÑƒÐµÐ¼ ÑÑ‚Ñ€Ð¾ÐºÑƒ Ð²Ð¾ Ð²Ñ€ÐµÐ¼ÐµÐ½Ð½ÑƒÑŽ
 	for (int j = 0; j < lengthString; j++)
 	{
 		tempString[j] = string[j];
 	}
 	int count = 0;
 	for (int i = 0; i < lengthString; i++)
-	{//TODO: Æ¸ñòêî ðåàëèçîâàíî, ÷òî ìîæåò áûòü òîëüêî 4 ñèìâîëà. Èíîãäà âûñòàâëÿþò äðóãîå êîëè÷åñòâî. Äîëæíî áûòü ïðîñòî ýòî ïîìåíÿòü.
-		if (tempString[i] == '\\' && tempString[i + 1] == 't')
+	{//TODO: Ð–Ñ‘ÑÑ‚ÐºÐ¾ Ñ€ÐµÐ°Ð»Ð¸Ð·Ð¾Ð²Ð°Ð½Ð¾, Ñ‡Ñ‚Ð¾ Ð¼Ð¾Ð¶ÐµÑ‚ Ð±Ñ‹Ñ‚ÑŒ Ñ‚Ð¾Ð»ÑŒÐºÐ¾ 4 ÑÐ¸Ð¼Ð²Ð¾Ð»Ð°. Ð˜Ð½Ð¾Ð³Ð´Ð° Ð²Ñ‹ÑÑ‚Ð°Ð²Ð»ÑÑŽÑ‚ Ð´Ñ€ÑƒÐ³Ð¾Ðµ ÐºÐ¾Ð»Ð¸Ñ‡ÐµÑÑ‚Ð²Ð¾. Ð”Ð¾Ð»Ð¶Ð½Ð¾ Ð±Ñ‹Ñ‚ÑŒ Ð¿Ñ€Ð¾ÑÑ‚Ð¾ ÑÑ‚Ð¾ Ð¿Ð¾Ð¼ÐµÐ½ÑÑ‚ÑŒ.
+		//Ð˜Ð¡ÐŸÐ ÐÐ’Ð›Ð•ÐÐž.
+		if (tempString[i] == '\t')
 		{
-			for (int j = 0; j < (4 - countChar); j++)
+			for (int j = 0; j < (sizeTabs - countChar); j++)
 			{
 				string[count] = ':';
 				count++;
@@ -218,111 +235,55 @@ char* ReplaceTabsOnSpaces(char* string)
 			count++;
 			countChar++;
 		}
-
 	}
 	string[count] = '\0';
 	return string;
-}
+}/*
 char* ReplaceSpacesOnTabs(char* string)
 {
-	int lengthString;
 	int countChar = 0;
-	char tempString[100];
-	lengthString = GetLength(string);
-	for (int i = 0; i < lengthString; i++)
+	for (int j = 0; j < GetLength(string); j++)
 	{
-		tempString[i] = string[i];
+		// Ð‘ÐµÑ€ÐµÐ¼ ÑÑ‚Ñ€Ð¾ÐºÑƒ Ð¾Ñ‚ 0 Ð´Ð¾ 7 Ð¸ Ð¿Ñ€Ð¾Ð²ÐµÑ€ÑÐµÐ¼, ÑÐ²Ð»ÑÐµÑ‚ÑÑ Ð»Ð¸ Ð¾Ð½Ð° Ð¿Ñ€Ð¾Ð±ÐµÐ»Ð¾Ð¼. Ð¡Ð¼Ð¾Ñ‚Ñ€Ð¸Ð¼ Ð´Ð°Ð»ÑŒÑˆÐµ: 6,5... Ð•ÑÐ»Ð¸ Ð¾Ð½Ð¸ Ð¿Ñ€Ð¾Ð±ÐµÐ»Ñ‹ - Ð¼ÐµÐ½ÑÐµÐ¼ Ð½Ð° Ñ‚Ð°Ð±.
 	}
-	int count = 0;
-	for (int j = 0; j < lengthString; j++)
-	{//TODO: Æ¸ñòêî ðåàëèçîâàíî, ÷òî ìîæåò áûòü òîëüêî 4 ñèìâîëà. Èíîãäà âûñòàâëÿþò äðóãîå êîëè÷åñòâî. Äîëæíî áûòü ïðîñòî ýòî ïîìåíÿòü.
-		if (countChar == 4)
-		{
-			countChar = 0;
-		}//TODO: Ïëîõàÿ ðåàëèçàöèÿ âëîá ñ áîëüøèì êîëè÷åñòâîì êîïèïàñòû. Èñïðàâüòå.
-		if ((tempString[j] == ':' &&  tempString[j + 1] == ':' &&  tempString[j + 2] == ':' && tempString[j + 3] == ':') && (countChar == 0))
-		{
-			string[count] = '\\';
-			string[count + 1] = 't';
-			j += 3;
-			count += 2;
-		}
-		else if ((tempString[j] == ':' &&  tempString[j + 1] == ':' &&  tempString[j + 2] == ':') && (countChar == 1))
-		{
-			string[count] = '\\';
-			string[count + 1] = 't';
-			j += 2;
-			count += 2;
-			countChar = 0;
-		}
-		else if ((tempString[j] == ':' &&  tempString[j + 1] == ':') && (countChar == 2))
-		{
-			string[count] = '\\';
-			string[count + 1] = 't';
-			j += 1;
-			count += 2;
-			countChar = 0;
-		}
-		else if ((tempString[j] == ':') && (countChar == 3))
-		{
-			string[count] = '\\';
-			string[count + 1] = 't';
-			count += 2;
-			countChar = 0;
-		}
-		else
-		{
-			if (tempString[j] == ' ')
-			{
-				string[count] = ':';
-			}
-			else
-			{
-				string[count] = tempString[j];
-			}
-			count++;
-			countChar++;
-		}
-	}
-	string[count] = '\0';
-	return string;
-}
+}*/
 
 Person ReadPerson()
 {
-	Person person;
+	Person *person = new Person();
 	cout << "Enter surname: ";
-	cin.getline(person.Surname, 40);
+	cin.getline(person->Surname, 40);
 	cout << "Enter name: ";
-	cin.getline(person.Name, 20);
+	cin.getline(person->Name, 20);
 	cout << "Enter the status: ";
-	cin.getline(person.Status, 20);
-	while (person.Sex[0] != 'M' && person.Sex[0] != 'F')
+	cin.getline(person->Status, 20);
+	while (person->Sex[0] != 'M' && person->Sex[0] != 'F')
 	{
 		cout << "Enter the sex (M/F) : ";
-		cin.getline(person.Sex, 2);
-		if (person.Sex[0] != 'M' && person.Sex[0] != 'F')
+		cin.getline(person->Sex, 2);
+		if (person->Sex[0] != 'M' && person->Sex[0] != 'F')
 		{
 			cout << "Input Error! " << endl;
 		}
 	}
-	while (person.Age < 0)
+	do
 	{
 		cout << "Enter the age: ";
-		cin >> person.Age;
-		if (person.Age < 0)
+		cin >> person->Age;
+		if (person->Age < 0)
 		{
 			cout << "An invalid value was entered!" << endl;
 		}
-	}
-	return person;
+	} while (person->Age < 0);
+	return *person;
 }
-//TODO: Ïåðåäà÷à ïî çíà÷åíèþ - íå î÷åíü îïòèìàëüíî.
-void PrintPerson(Person person)
+//TODO: ÐŸÐµÑ€ÐµÐ´Ð°Ñ‡Ð° Ð¿Ð¾ Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸ÑŽ - Ð½Ðµ Ð¾Ñ‡ÐµÐ½ÑŒ Ð¾Ð¿Ñ‚Ð¸Ð¼Ð°Ð»ÑŒÐ½Ð¾.
+//Ð˜Ð¡ÐŸÐ ÐÐ’Ð›Ð•ÐÐž.
+void PrintPerson(Person *person)
 {
-	cout << endl << "Surname: " << person.Surname;
-	cout << endl << "Name: " << person.Name;
-	cout << endl << "Status: " << person.Status;
-	cout << endl << "Sex: " << person.Sex;
-	cout << endl << "Age: " << person.Age << endl;
+	cout << endl << "Surname: " << person->Surname;
+	cout << endl << "Name: " << person->Name;
+	cout << endl << "Status: " << person->Status;
+	cout << endl << "Sex: " << person->Sex;
+	cout << endl << "Age: " << person->Age << endl;
 }

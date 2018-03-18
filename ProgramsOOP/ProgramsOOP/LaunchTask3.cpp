@@ -1,4 +1,4 @@
-#include <iostream>
+ï»¿#include <iostream>
 #include "Function3.h"
 #include "StructFunction3.h"
 #include "AllLabs.h"
@@ -50,21 +50,20 @@ int Menu3()
 			cout << "Combined string:" << endl;
 			ShowString(strResult);
 			break;
-		}//TODO: Break ïîñëå ñêîáî÷åê
-		//ÈÑÏÐÀÂËÅÍÎ
+		}//TODO: Break Ð¿Ð¾ÑÐ»Ðµ ÑÐºÐ¾Ð±Ð¾Ñ‡ÐµÐº
+		//Ð˜Ð¡ÐŸÐ ÐÐ’Ð›Ð•ÐÐž
 			
-
 		case 3:
 		{
 			char str[12] = { 'H', 'e', 'l', 'l', 'o', ',', 'W', 'o', 'r', 'l', 'd', '\0' };
 			GetSubstring(str, 2, 4);
 			GetSubstring(str, -3, 3);
 			GetSubstring(str, 2, -4);
-			GetSubstring(str, 7, 8);//TODO: Ïóñòàÿ ñòðîêà.
+			GetSubstring(str, 7, 8);//TODO: ÐŸÑƒÑÑ‚Ð°Ñ ÑÑ‚Ñ€Ð¾ÐºÐ°.
+									// ÐÐ•Ð¢.
 			break;
 		}
 			
-
 		case 4:
 		{
 			char mainString[25] = "Lorem ipsum aset ametsum";
@@ -79,26 +78,23 @@ int Menu3()
 			break;
 		}
 			
-			
 		case 5:
 		{
 			char* string = CreateLength();
-			Uppercase(string);
+			ToUppercase(string);
 			cout << "Convert string to uppercase:" << endl;
 			ShowString(string);
 			break;
 		}
-			
 
 		case 6:
 		{
 			char* string = CreateLength();
-			Lowercase(string);
+			ToLowercase(string);
 			cout << "Convert string to lowercase:" << endl;
 			ShowString(string);
 			break;
 		}
-			
 
 		case 7:
 		{
@@ -112,22 +108,21 @@ int Menu3()
 			delete[] extension;
 			break;
 		}
-			
 
 		case 8:
 		{
+			int sizeTabs = 8;
 			char string[100];
 			cout << "Enter string." << endl;
 			cout << "Specify a space with the symbol ':', tab '\ t':" << endl;
 			cin.getline(string, 100);
-			ReplaceTabsOnSpaces(string);
+			ReplaceTabsOnSpaces(string, sizeTabs);
 			cout << "New string: " << endl;
 			ShowString(string);
 			break;
 		}
-			
 
-		case 9:
+		/*case 9:
 		{
 			char string[100];
 			cout << "Enter string." << endl;
@@ -137,18 +132,16 @@ int Menu3()
 			cout << "New string: " << endl;
 			ShowString(string);
 			break;
-		}
+		}*/
 			
-
 		case 10:
 		{
-			Person newPerson;
-			newPerson = ReadPerson();
+			Person *newPerson = new Person();
+			*newPerson = ReadPerson();
 			PrintPerson(newPerson);
 			break;
 		}
 			
-
 		case 0:
 			cout << " Welcome back.\n";
 			break;

@@ -1,26 +1,26 @@
-#pragma once
+п»ї#pragma once
 
 void ShowString(char *string);
 char* CreateLength();
-//Определение длины строки
+//РћРїСЂРµРґРµР»РµРЅРёРµ РґР»РёРЅС‹ СЃС‚СЂРѕРєРё
 int GetLength(char* string);
-//Объединение двух строк
+//РћР±СЉРµРґРёРЅРµРЅРёРµ РґРІСѓС… СЃС‚СЂРѕРє
 char* Concatenate(char* string1, char* string2);
-//Поиск подстрок
+//РџРѕРёСЃРє РїРѕРґСЃС‚СЂРѕРє
 char* GetSubstring(char* string, int startIndex, int charCount);
 int FindSubstring(char* string, char* substring);
-//Нахождение подстроки теста
+//РќР°С…РѕР¶РґРµРЅРёРµ РїРѕРґСЃС‚СЂРѕРєРё С‚РµСЃС‚Р°
 void FindSubstringTest(char* string, char* substring, char testSubstring[20]);
-//Преобразование в верхний регистр
-char* Uppercase(char* string);
-//Преобразование в нижний регистр
-char* Lowercase(char* string);
+//РџСЂРµРѕР±СЂР°Р·РѕРІР°РЅРёРµ РІ РІРµСЂС…РЅРёР№ СЂРµРіРёСЃС‚СЂ
+char* ToUppercase(char* string);
+//РџСЂРµРѕР±СЂР°Р·РѕРІР°РЅРёРµ РІ РЅРёР¶РЅРёР№ СЂРµРіРёСЃС‚СЂ
+char* ToLowercase(char* string);
 void SplitFilename(char* source, char* path, char* name, char* extension);
-//Разбиение строки
+//Р Р°Р·Р±РёРµРЅРёРµ СЃС‚СЂРѕРєРё
 int GetSourcePart(char* source, char* partString, char symbol, const char partName[30], int size);
-//Отзеркаливание строки
+//РћС‚Р·РµСЂРєР°Р»РёРІР°РЅРёРµ СЃС‚СЂРѕРєРё
 char* RevertString(char* string, int size);
-//Замена таб на пробелы
-char* ReplaceTabsOnSpaces(char* string);
-// Замена пробелов на таб
+//Р—Р°РјРµРЅР° С‚Р°Р± РЅР° РїСЂРѕР±РµР»С‹
+char* ReplaceTabsOnSpaces(char* string, int sizeTabs);
+// Р—Р°РјРµРЅР° РїСЂРѕР±РµР»РѕРІ РЅР° С‚Р°Р±
 char* ReplaceSpacesOnTabs(char* string);
