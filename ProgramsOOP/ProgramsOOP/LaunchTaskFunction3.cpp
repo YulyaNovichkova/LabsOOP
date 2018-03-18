@@ -223,7 +223,7 @@ char* ReplaceTabsOnSpaces(char* string, int sizeTabs)
 		{
 			for (int j = 0; j < (sizeTabs - countChar); j++)
 			{
-				string[count] = ' ';
+				string[count] = ':';
 				count++;
 			}
 			i++;
@@ -243,8 +243,8 @@ char* ReplaceSpacesOnTabs(char* string, int sizeSpace)
 {
 	int j = 0;
 	int i = 0;
-	char* tempString = new char[255];
-	for (; string[i + j]; i++)
+	char tempString[100];
+	for (i = 0; string[i + j]; i++)
 	{
 		if (string[i + j] == ':')
 		{
@@ -252,7 +252,7 @@ char* ReplaceSpacesOnTabs(char* string, int sizeSpace)
 			{
 				if (string[i] != ':')
 				{
-					return false;
+					return 0;
 				}
 				i++;
 
