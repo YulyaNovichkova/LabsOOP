@@ -114,7 +114,7 @@ int Menu3()
 			int sizeTabs = 8;
 			char string[100];
 			cout << "Enter string." << endl;
-			cout << "Specify a space with the symbol ':', tab '\ t':" << endl;
+			cout << "Specify a space with the symbol ' ', tab '\t':" << endl;
 			cin.getline(string, 100);
 			ReplaceTabsOnSpaces(string, sizeTabs);
 			cout << "New string: " << endl;
@@ -122,17 +122,20 @@ int Menu3()
 			break;
 		}
 
-		/*case 9:
+		case 9:
 		{
-			char string[100];
+			char* resultString;
+			int sizeSpace = 8;
+			char string[255];
 			cout << "Enter string." << endl;
-			cout << "Specify a space with the symbol ':', tab '\ t':" << endl;
-			cin.getline(string, 100);
-			ReplaceSpacesOnTabs(string);
+			cout << "Specify a space with the symbol ' ', tab '\t':" << endl;
+			cin.getline(string, 255);
+			resultString = ReplaceSpacesOnTabs(string, sizeSpace);
 			cout << "New string: " << endl;
-			ShowString(string);
+			ShowString(resultString);
+			delete[] resultString;
 			break;
-		}*/
+		}
 			
 		case 10:
 		{

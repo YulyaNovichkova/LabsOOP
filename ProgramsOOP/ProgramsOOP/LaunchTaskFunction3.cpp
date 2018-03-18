@@ -207,10 +207,9 @@ char* RevertString(char* string, int size)
 
 char* ReplaceTabsOnSpaces(char* string, int sizeTabs)
 {
-	int lengthString;
 	int countChar = 0;
 	char tempString[100];
-	lengthString = GetLength(string);
+	int lengthString = GetLength(string);
 	//копируем строку во временную
 	for (int j = 0; j < lengthString; j++)
 	{
@@ -224,7 +223,7 @@ char* ReplaceTabsOnSpaces(char* string, int sizeTabs)
 		{
 			for (int j = 0; j < (sizeTabs - countChar); j++)
 			{
-				string[count] = ':';
+				string[count] = ' ';
 				count++;
 			}
 			i++;
@@ -238,15 +237,40 @@ char* ReplaceTabsOnSpaces(char* string, int sizeTabs)
 	}
 	string[count] = '\0';
 	return string;
-}/*
-char* ReplaceSpacesOnTabs(char* string)
+}
+
+char* ReplaceSpacesOnTabs(char* string, int sizeSpace)
 {
-	int countChar = 0;
-	for (int j = 0; j < GetLength(string); j++)
+	int j = 0;
+	int i = 0;
+	char* tempString = new char[255];
+	for (; string[i + j]; i++)
 	{
-		// Берем строку от 0 до 7 и проверяем, является ли она пробелом. Смотрим дальше: 6,5... Если они пробелы - меняем на таб.
+		if (string[i + j] == ':')
+		{
+			while (i % sizeSpace != 0)
+			{
+				if (string[i] != ':')
+				{
+					return false;
+				}
+				i++;
+
+				while ((i + j + 1) % sizeSpace != 0)
+				{
+					j++;
+				}
+				tempString[i] = '\t';
+			}
+		}
+		else
+		{
+			tempString[i] = string[i + j];
+		}
 	}
-}*/
+	tempString[i] = '\0';
+	return tempString;
+}
 
 Person ReadPerson()
 {
@@ -257,18 +281,12 @@ Person ReadPerson()
 	cin.getline(person->Name, 20);
 	cout << "Enter the status: ";
 	cin.getline(person->Status, 20);
-	while (person->Sex[0] != 'M' && person->Sex[0] != 'F')
-	{
-		cout << "Enter the sex (M/F) : ";
-		cin.getline(person->Sex, 2);
-		if (person->Sex[0] != 'M' && person->Sex[0] != 'F')
-		{
-			cout << "Input Error! " << endl;
-		}
-	}
+	cout << "Sex: Enter '0' for female, '1' for male: ";
+	int sex;
+	cin >> sex;
 	do
 	{
-		cout << "Enter the age: ";
+		cout << endl << "Enter the age: ";
 		cin >> person->Age;
 		if (person->Age < 0)
 		{
@@ -284,6 +302,16 @@ void PrintPerson(Person *person)
 	cout << endl << "Surname: " << person->Surname;
 	cout << endl << "Name: " << person->Name;
 	cout << endl << "Status: " << person->Status;
-	cout << endl << "Sex: " << person->Sex;
+	switch (person->Sex)
+	{
+		case 0:
+			cout << endl << "Sex: " << female;
+			break;
+		case 1:
+			cout << endl << "Sex: " << male;
+			break;
+		default:
+			break;
+	}
 	cout << endl << "Age: " << person->Age << endl;
 }
