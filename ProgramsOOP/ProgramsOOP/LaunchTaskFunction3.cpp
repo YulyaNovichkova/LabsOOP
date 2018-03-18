@@ -239,38 +239,7 @@ char* ReplaceTabsOnSpaces(char* string, int sizeTabs)
 	return string;
 }
 
-char* ReplaceSpacesOnTabs(char* string, int sizeSpace)
-{
-	int j = 0;
-	int i = 0;
-	char tempString[100];
-	for (i = 0; string[i + j]; i++)
-	{
-		if (string[i + j] == ':')
-		{
-			while (i % sizeSpace != 0)
-			{
-				if (string[i] != ':')
-				{
-					return 0;
-				}
-				i++;
-
-				while ((i + j + 1) % sizeSpace != 0)
-				{
-					j++;
-				}
-				tempString[i] = '\t';
-			}
-		}
-		else
-		{
-			tempString[i] = string[i + j];
-		}
-	}
-	tempString[i] = '\0';
-	return tempString;
-}
+char* ReplaceSpacesOnTabs(char* string, int sizeSpace);
 
 Person ReadPerson()
 {
