@@ -23,4 +23,4 @@ char* RevertString(char* string, int size);
 //Замена таб на пробелы
 char* ReplaceTabsOnSpaces(char* string, int sizeTabs);
 // Замена пробелов на таб
-char* ReplaceSpacesOnTabs(char* string, int sizeSpace);
+//char* ReplaceSpacesOnTabs(char* string, int sizeSpace);

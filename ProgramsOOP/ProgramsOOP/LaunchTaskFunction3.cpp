@@ -50,7 +50,7 @@ char* Concatenate(char* string1, char* string2)
 	{
 		string3[i] = string2[j];
 		i++;
-	}
+	}//todo: Не нужно оставлять закомментированный код без необходимости.
 	/*
 	while (string1[count1])
 	{
@@ -117,8 +117,7 @@ int FindSubstring(char* string, char* substring)
 	}
 	return -1;
 }
-//TODO: Название метода не соответствует стандарту именования
-//ИСПРАВЛЕНО
+
 char* ToUppercase(char* string)
 {
 	int count = 0;
@@ -132,8 +131,7 @@ char* ToUppercase(char* string)
 	}
 	return string;
 }
-//TODO: Название метода не соответствует стандарту именования
-//ИСПРАВЛЕНО
+
 char* ToLowercase(char* string)
 {
 	int count = 0;
@@ -217,8 +215,7 @@ char* ReplaceTabsOnSpaces(char* string, int sizeTabs)
 	}
 	int count = 0;
 	for (int i = 0; i < lengthString; i++)
-	{//TODO: Жёстко реализовано, что может быть только 4 символа. Иногда выставляют другое количество. Должно быть просто это поменять.
-		//ИСПРАВЛЕНО.
+	{
 		if (tempString[i] == '\t')
 		{
 			for (int j = 0; j < (sizeTabs - countChar); j++)
@@ -239,7 +236,7 @@ char* ReplaceTabsOnSpaces(char* string, int sizeTabs)
 	return string;
 }
 
-char* ReplaceSpacesOnTabs(char* string, int sizeSpace);
+//char* ReplaceSpacesOnTabs(char* string, int sizeSpace);
 
 Person ReadPerson()
 {
@@ -264,8 +261,7 @@ Person ReadPerson()
 	} while (person->Age < 0);
 	return *person;
 }
-//TODO: Передача по значению - не очень оптимально.
-//ИСПРАВЛЕНО.
+
 void PrintPerson(Person *person)
 {
 	cout << endl << "Surname: " << person->Surname;
