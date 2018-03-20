@@ -50,8 +50,7 @@ int Menu3()
 			cout << "Combined string:" << endl;
 			ShowString(strResult);
 			break;
-		}//TODO: Break после скобочек
-		//ИСПРАВЛЕНО
+		}
 			
 		case 3:
 		{
@@ -59,8 +58,7 @@ int Menu3()
 			GetSubstring(str, 2, 4);
 			GetSubstring(str, -3, 3);
 			GetSubstring(str, 2, -4);
-			GetSubstring(str, 7, 8);//TODO: Пустая строка.
-									// НЕТ.
+			GetSubstring(str, 7, 8);
 			break;
 		}
 			
@@ -117,9 +115,7 @@ int Menu3()
 			int sizeTabs = 8;
 			char string[100];
 			cout << "Enter string." << endl;
-			//TODO: Метод не работает.
-			//TODO: Не показывается как \t, выводится как пустое место в кавычках
-			cout << "Specify a space with the symbol ':', tab '\t':" << endl;
+			cout << "Specify a space with the symbol ':', tab '\\t':" << endl;
 			cin.getline(string, 100);
 			resultString = ReplaceTabsOnSpaces(string, sizeTabs);
 			cout << "New string: " << endl;
@@ -150,10 +146,10 @@ int Menu3()
 		}
 			
 		case 0:
-			cout << " Welcome back.\n";
+			cout << " Welcome back." << endl;
 			break;
 		default:
-			cout << " Mistake. Try again.\n";
+			cout << " Mistake. Try again." << endl;
 			break;
 		}
 	} while (key != '0');

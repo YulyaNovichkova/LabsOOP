@@ -10,10 +10,11 @@ int Menu()
 
 	do
 	{
-		cout << "\t Choose laboratory work:\n\n\n"
+		cout << "\t Choose laboratory work:" << endl << endl << endl
 			<< "1. Task 1;" << endl
 			<< "2. Task 2;" << endl
 			<< "3. Task 3;" << endl
+			<< "4. Task 4;" << endl
 			<< "0. Exit." << endl;
 
 		cin >> key;
@@ -31,6 +32,9 @@ int Menu()
 
 			case '3':
 				LaunchTask3();
+				break;
+			case '4':
+				LaunchTask4();
 				break;
 
 			case '0':

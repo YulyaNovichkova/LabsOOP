@@ -50,21 +50,7 @@ char* Concatenate(char* string1, char* string2)
 	{
 		string3[i] = string2[j];
 		i++;
-	}//todo: Не нужно оставлять закомментированный код без необходимости.
-	/*
-	while (string1[count1])
-	{
-		count1++;
 	}
-	while (string2[count2])
-	{
-
-		string1[count1] = string2[count2];
-		count2++;
-		string1++;
-	}
-	string1[count1] = '\0';
-	return string1;*/
 	string3[i] = '\0';
 	return string3;
 }
