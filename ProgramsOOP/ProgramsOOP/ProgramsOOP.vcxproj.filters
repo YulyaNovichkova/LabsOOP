@@ -60,6 +60,9 @@
     <ClCompile Include="LaunchTask4.cpp">
       <Filter>Исходные файлы\LaunchLab4</Filter>
     </ClCompile>
+    <ClCompile Include="DoublyLinkedListFunction4.cpp">
+      <Filter>Исходные файлы\LaunchLab4</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AllLabs.h">
@@ -78,6 +81,9 @@
       <Filter>Файлы заголовков\Lab3</Filter>
     </ClInclude>
     <ClInclude Include="StackFunction4.h">
+      <Filter>Файлы заголовков\Lab4</Filter>
+    </ClInclude>
+    <ClInclude Include="DoublyLinkedList4.h">
       <Filter>Файлы заголовков\Lab4</Filter>
     </ClInclude>
   </ItemGroup>

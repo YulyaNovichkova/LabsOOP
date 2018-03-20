@@ -115,6 +115,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="DoublyLinkedListFunction4.cpp" />
     <ClCompile Include="LaunchTask1.cpp" />
     <ClCompile Include="LaunchTask2.cpp" />
     <ClCompile Include="LaunchTask3.cpp" />
@@ -127,6 +128,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AllLabs.h" />
+    <ClInclude Include="DoublyLinkedList4.h" />
     <ClInclude Include="Function2.h" />
     <ClInclude Include="Function1.h" />
     <ClInclude Include="Function3.h" />

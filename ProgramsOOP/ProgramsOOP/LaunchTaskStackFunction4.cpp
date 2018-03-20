@@ -1,4 +1,4 @@
-#include <iostream>
+﻿#include <iostream>
 #include "StackFunction4.h"
 
 using namespace std;
@@ -61,6 +61,15 @@ int FindSizeStack(Stack* stack)
 		lengthStack++;
 	}
 	return lengthStack;
+}
+
+int GetTopStack(Stack* stack)
+{
+	if (stack == NULL)
+	{
+		return - 1;
+	}
+	else return stack->top;
 }
 
 void StackShow(Stack* stack)
