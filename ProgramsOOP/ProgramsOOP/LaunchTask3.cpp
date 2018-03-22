@@ -122,26 +122,12 @@ int Menu3()
 			ShowString(resultString);
 			break;
 		}
-
-		case 9:
-		{
-			/*char* resultString;
-			int sizeSpace = 8;
-			char string[100];
-			cout << "Enter string." << endl;
-			cout << "Specify a space with the symbol ':', tab '\t':" << endl;
-			cin.getline(string, 100);
-			resultString = ReplaceSpacesOnTabs(string, sizeSpace);
-			cout << "New string: " << endl;
-			ShowString(resultString);*/
-			break;
-		}
 			
 		case 10:
 		{
-			Person *newPerson = new Person();
-			*newPerson = ReadPerson();
-			PrintPerson(newPerson);
+			Person newPerson;
+			newPerson = ReadPerson();
+			ShowPerson(newPerson);
 			break;
 		}
 			

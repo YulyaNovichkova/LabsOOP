@@ -222,47 +222,42 @@ char* ReplaceTabsOnSpaces(char* string, int sizeTabs)
 	return string;
 }
 
-//char* ReplaceSpacesOnTabs(char* string, int sizeSpace);
-
 Person ReadPerson()
 {
-	Person *person = new Person();
+	Person person;
 	cout << "Enter surname: ";
-	cin.getline(person->Surname, 40);
+	cin.getline(person.Surname, 40);
 	cout << "Enter name: ";
-	cin.getline(person->Name, 20);
-	cout << "Enter the status: ";
-	cin.getline(person->Status, 20);
+	cin.getline(person.Name, 20);
 	cout << "Sex: Enter '0' for female, '1' for male: ";
 	int sex;
 	cin >> sex;
 	do
 	{
 		cout << endl << "Enter the age: ";
-		cin >> person->Age;
-		if (person->Age < 0)
+		cin >> person.Age;
+		if (person.Age < 0)
 		{
 			cout << "An invalid value was entered!" << endl;
 		}
-	} while (person->Age < 0);
-	return *person;
+	} while (person.Age < 0);
+	return person;
 }
 
-void PrintPerson(Person *person)
+void ShowPerson(Person person)
 {
-	cout << endl << "Surname: " << person->Surname;
-	cout << endl << "Name: " << person->Name;
-	cout << endl << "Status: " << person->Status;
-	switch (person->Sex)
+	cout << endl << "Surname: " << person.Surname;
+	cout << endl << "Name: " << person.Name;
+	switch (person.Sex)
 	{
 		case 0:
-			cout << endl << "Sex: " << female;
+			cout << endl << "Sex: female";
 			break;
 		case 1:
-			cout << endl << "Sex: " << male;
+			cout << endl << "Sex: male";
 			break;
 		default:
 			break;
 	}
-	cout << endl << "Age: " << person->Age << endl;
+	cout << endl << "Age: " << person.Age << endl;
 }

@@ -1,7 +1,7 @@
 ﻿#include <iostream>
 #include "StackFunction4.h"
 #include "DoublyLinkedList4.h"
-//#include "StructFunction3.h"
+#include "StructFunction3.h"
 #include "AllLabs.h"
 
 using namespace std;
@@ -56,8 +56,12 @@ int MenuStack(Stack* stack)
 	int data;
 	int element;
 	bool check;
-	cout << "Your stack!" << endl << endl;
-	StackShow(stack);
+	int size = 0;
+	cout << "Enter size your stack:" << endl;
+	cin >> size;
+	//Stack* stack = InitStack(size);
+	//cout << "Your stack!" << endl << endl;
+	//StackShow(stack);
 
 	do
 	{
@@ -67,6 +71,7 @@ int MenuStack(Stack* stack)
 			<< "3. Check Empty." << endl
 			<< "4. Check Full." << endl
 			<< "5. Size stack." << endl
+			<< "6. Top stack element." << endl
 			<< "0. Exit." << endl;
 
 		cin >> key;
@@ -92,7 +97,7 @@ int MenuStack(Stack* stack)
 			}
 			case '2':
 			{
-				cout << "Your stack, Master!" << endl << endl;
+				cout << "Your stack!" << endl << endl;
 				StackShow(stack);
 				check = IsEmpty(stack);
 				if (check == false)
@@ -145,26 +150,22 @@ int MenuStack(Stack* stack)
 				break;
 		}
 	} while (key != '0');
-
 	int k = atoi(&key);
 	return(k);
-
 };
 
 int MenuList(List* list)
 {
 	char key;
-	int element;
 	int index;
-
+	Person person;
 	do
 	{
 		cout << "\t Choose next step:" << endl << endl << endl
 			<< "1. Add new element." << endl
 			<< "2. Delete element." << endl
 			<< "3. Insert element." << endl
-			<< "4. Sort elements." << endl
-			<< "5. Line Search." << endl
+			<< "4. The index of element." << endl
 			<< "0. Exit." << endl;
 
 		cin >> key;
@@ -174,17 +175,15 @@ int MenuList(List* list)
 		{
 			case '1':
 			{
-				cout << "Enter new element!" << endl;
-				cin >> element;
-				AddElement(list, element);
+				person = ReadPerson();
+				AddElement(list, person);
 				ListShow(list);
 				break;
 			}
 			case '2':
 			{
-				cout << "Enter the index of element:" << endl;
-				cin >> index;
-				DeleteElement(list, index);
+				person = ReadRandomPerson();
+				AddElement(list, person);
 				ListShow(list);
 				break;
 			}
@@ -193,34 +192,20 @@ int MenuList(List* list)
 				ListShow(list);
 				cout << "Enter the index of element:" << endl;
 				cin >> index;
-				cout << "Enter new element!" << endl;
-				cin >> element;
-				InsertElement(list, element, index);
+				person = ReadPerson();
+				InsertElement(list, person, index);
+				ListShow(list);
+				break;
+			}
+			case 4:
+			{
+				cout << "Enter the index of element:" << endl;
+				cin >> index;
+				DeleteElement(list, index);
 				ListShow(list);
 				break;
 			}
 
-			case '4':
-			{
-				ListShow(list);
-				cout << "Now we sort your list!" << endl;
-				SortDoublyLinkedList(list);
-				ListShow(list);
-				break;
-			}
-
-			case '5':
-			{
-				ListShow(list);
-				cout << "Which element we must find?" << endl;
-				cin >> element;
-				Node* temp = Search(list, element);
-				if (temp != NULL)
-					cout << "This element here!" << endl;
-				else
-					cout << "Can not find the item." << endl;
-				break;
-			}
 			case '0':
 				cout << " Welcome back." << endl;
 				break;
@@ -236,15 +221,13 @@ int MenuList(List* list)
 
 void LaunchTask4()
 {
-	int size;
-	cout << "Size: " << endl;
-	cin >> size;
+	int size = 0;
 	Stack* stack = InitStack(size);
-	////////////////////////////////////
+
 	List* list = new List();
 	list->head = NULL;
 	list->tail = NULL;
-	///////////////////////////////////
+
 	int key = Menu4(stack, list);
 	cout << key << endl;
 	system("pause");

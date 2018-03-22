@@ -1,11 +1,9 @@
 ﻿#pragma once
-#include "iostream"
 #include "StructFunction3.h"
 
 struct Node
 {
-	int data;
-	//Person *person;
+	Person data;
 	Node* next = NULL;
 	Node* prev = NULL;
 };
@@ -17,10 +15,14 @@ struct List
 };
 
 int MenuList(List* list);
-void AddElement(List* list, int data);
-void InsertElement(List* list, int data, int index);
-void DeleteElement(List* list, int index);
 void ListShow(List* list);
+void AddElement(List* list, Person data);
+void InsertElement(List* list, Person data, int index);
 
-Node* SortDoublyLinkedList(List* list);
-Node* Search(List* list, int element);
+void DeleteElement(List* list, int index);
+
+//Person* GetPerson(List* list, int index);
+//Вывод данных человека на экран
+//void PrintPerson(Person *person);
+Person ReadRandomPerson();
+void CopyCharString(char* structString, const char* constString);

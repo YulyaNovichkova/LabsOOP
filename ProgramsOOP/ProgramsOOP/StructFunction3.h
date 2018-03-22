@@ -8,10 +8,9 @@ struct Person
 	char Name[20];
 	Gender Sex;
 	int Age;
-	char Status[20];
 };
 
 //Ввод данных о человеке
 Person ReadPerson();
 //Вывод данных человека на экран
-void PrintPerson(Person *person);
+void ShowPerson(Person person);

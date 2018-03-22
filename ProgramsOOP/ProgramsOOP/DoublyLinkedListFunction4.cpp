@@ -3,53 +3,62 @@
 #include <cstdlib>
 #include <ctime>
 #include "DoublyLinkedList4.h"
+#include "StructFunction3.h"
 
 using namespace std;
 
 void ListShow(List* list)
 {
 	Node* current = list->head;
-	if (list->head == NULL)
+	if (list->head == nullptr)
 		return;
 
-	cout << "List" << endl;
-	do
+	cout << "List:" << endl;
+	while (current != nullptr)
 	{
-		cout << current->data << ' ';
+		ShowPerson(current->data);
 		current = current->next;
-	} while (current != NULL);
+	}
 	cout << endl;
 };
 
-// Добавление узла в ДЛС 
-void AddElement(List* list, int data)
+
+void AddElement(List* list, Person data)
 {
-	//валидация параметров
 	Node* newNode = new Node();
 	newNode->data = data;
-	newNode->next = NULL;
-
+	newNode->next = nullptr;
 	int i = 0;
 	Node* node = list->head;
 
-	if (list->head == NULL)
+	if (list->head == nullptr)
 	{
 		list->head = newNode;
 		list->tail = newNode;
 		return;
 	}
-
 	while (node->next)
 		node = node->next;
 
 	node->next = newNode;
 	newNode->prev = node;
 	list->tail = newNode;
-
-
 }
-// Вставка узла ДЛС
-void InsertElement(List* list, int data, int index)
+/*
+Person* GetPerson(List* list, int index)
+{
+	Node* node = new Node;
+	node = list->head;
+	int count = 0;
+	while (count != index)
+	{
+		node = node->next;
+		count++;
+	}
+	return &node->person;
+}*/
+
+void InsertElement(List* list, Person data, int index)
 {
 	Node* newNode = new Node();
 	newNode->data = data;
@@ -74,7 +83,7 @@ void InsertElement(List* list, int data, int index)
 
 	if (index > n)
 	{
-		throw "Mistake, Master! This index too big. Try again! \n";
+		throw "Mistake! This index too big. \n";
 		return;
 	}
 
@@ -98,10 +107,7 @@ void InsertElement(List* list, int data, int index)
 		newNode->prev = current;
 		current = newNode;
 	}
-
 }
-
-// Удаление узла из ДЛС
 
 void DeleteElement(List* list, int index)
 {
@@ -128,7 +134,6 @@ void DeleteElement(List* list, int index)
 			list->head = node->next;
 			list->head->prev = NULL;
 		}
-
 	}
 
 	//конец списка
@@ -152,52 +157,40 @@ void DeleteElement(List* list, int index)
 	delete node;
 }
 
-
-// Сортировка ДЛС 
-
-Node* SortDoublyLinkedList(List* list)
+Person ReadRandomPerson()
 {
-	Node* count = list->head;
-	int n = 0;
-	do
+	Person person;
+	srand(time(NULL));
+	person.Age = rand() % 10;
+	int sex = rand() % 1;
+
+	switch (sex)
 	{
-		count = count->next;
-		n++;
-	} while (count != NULL);
-
-	int z = 0;
-
-	for (Node* start = list->head; start != NULL; start = start->next)
+	case 1:
 	{
-		for (Node* start2 = start; start2 != NULL; start2 = start2->next)
-		{
-			Node* temp = start2->next;
-			if (temp != NULL && start2->data > temp->data)
-			{
-				z = start2->data;
-				start2->data = temp->data;
-				temp->data = z;
+		const char *maleSurname[] = { "Walter", "Krause", "Zimmer", "Regenherz", "Von-Webber" };
+		CopyCharString(person.Surname, maleSurname[rand() % 5]);
+		const char *maleName[] = { "Johann", "Walter", "Ludwig", "Karl", "Ulrich" };
+		CopyCharString(person.Name, maleName[rand() % 5]);
 
-			}
-		}
 	}
+	case 0:
+	{
+		const char *femaleSurname[] = { "Marinelli", "Alfieri", "Bellini", "Ferrario", "Cortese" };
+		CopyCharString(person.Surname, femaleSurname[rand() % 5]);
+		const char *femaleName[] = { "Annabella", "Ottavia", "Laura", "Alessia", "Chiara" };
+		CopyCharString(person.Name, femaleName[rand() % 5]);
+	}
+	}
+	return person;
+}
 
-	return NULL;
-};
-
-// Линейный поиск по ДЛС
-
-Node* Search(List* list, int element)
+void CopyCharString(char* structString, const char* constString)
 {
-	Node* current = list->head;
-	while (current != nullptr)
+	int i = 0;
+	for (; constString[i]; i++)
 	{
-		if (current->data == element)
-		{
-
-			return current;
-		}
-		current = current->next;
+		structString[i] = constString[i];
 	}
-	return NULL;
-};
+	structString[i] = '\0';
+}
