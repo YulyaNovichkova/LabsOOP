@@ -24,27 +24,24 @@ void ListShow(List* list)
 
 
 void AddElement(List* list, Person data)
-{
-	Node* newNode = new Node();
-	newNode->data = data;
-	newNode->next = nullptr;
-	int i = 0;
-	Node* node = list->head;
-
-	if (list->head == nullptr)
+{/*
+	Node *tempList = new Node; // Память под новый
+	tempList->data = data; // Записываем значение в структуру
+	if (list->tail != NULL)
 	{
-		list->head = newNode;
-		list->tail = newNode;
-		return;
+		tempList->prev = list->tail;
+		list->tail->next = tempList;
 	}
-	while (node->next)
-		node = node->next;
-
-	node->next = newNode;
-	newNode->prev = node;
-	list->tail = newNode;
+	else
+	{
+		list->head = tempList;
+	}
+	list->tail = tempList;
+	list->size++;*/
+	InsertElement(list, data, 0);
+	list->size++;
 }
-/*
+
 Person* GetPerson(List* list, int index)
 {
 	Node* node = new Node;
@@ -55,8 +52,8 @@ Person* GetPerson(List* list, int index)
 		node = node->next;
 		count++;
 	}
-	return &node->person;
-}*/
+	return &node->data;
+}
 
 void InsertElement(List* list, Person data, int index)
 {
@@ -90,6 +87,7 @@ void InsertElement(List* list, Person data, int index)
 	Node* current = list->head;
 	for (int i = 1; i < index && current->next != NULL; i++)
 		current = current->next;
+
 	if (index == 0)
 	{
 		//вставляем новый элемент на первое место
@@ -153,7 +151,6 @@ void DeleteElement(List* list, int index)
 		node->next->prev = node->prev;
 		node->prev->next = node->next;
 	}
-
 	delete node;
 }
 
@@ -161,7 +158,7 @@ Person ReadRandomPerson()
 {
 	Person person;
 	srand(time(NULL));
-	person.Age = rand() % 10;
+	person.Age = rand() % 100;
 	int sex = rand() % 1;
 
 	switch (sex)
@@ -193,4 +190,20 @@ void CopyCharString(char* structString, const char* constString)
 		structString[i] = constString[i];
 	}
 	structString[i] = '\0';
+}
+
+int GetLengthStruct(List* list)
+{
+	int count = 0;
+	Node* current = list->head;
+	while (current != NULL)
+	{
+		count++;
+		current = current->next;
+	}
+	if (count > 0)
+	{
+		return count;
+	}
+	else NULL;
 }

@@ -54,13 +54,13 @@
     <ClCompile Include="LaunchTaskFunction3.cpp">
       <Filter>Исходные файлы\LaunchLab3</Filter>
     </ClCompile>
-    <ClCompile Include="LaunchTaskStackFunction4.cpp">
-      <Filter>Исходные файлы\LaunchLab4</Filter>
-    </ClCompile>
     <ClCompile Include="LaunchTask4.cpp">
       <Filter>Исходные файлы\LaunchLab4</Filter>
     </ClCompile>
     <ClCompile Include="DoublyLinkedListFunction4.cpp">
+      <Filter>Исходные файлы\LaunchLab4</Filter>
+    </ClCompile>
+    <ClCompile Include="StackFunction4.cpp">
       <Filter>Исходные файлы\LaunchLab4</Filter>
     </ClCompile>
   </ItemGroup>

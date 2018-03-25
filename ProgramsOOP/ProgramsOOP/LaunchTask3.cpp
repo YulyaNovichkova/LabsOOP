@@ -96,8 +96,6 @@ int Menu3()
 
 		case 7:
 		{
-			//TODO: При вводе строки C:\Users\alexe\OneDrive\Документы\!repos\2018\GPO\Novichkova\ProgramsOOP
-			//TODO: Завершается с исключением.
 			char* source = CreateLength();
 			char* path = new char[20];
 			char* name = new char[20];
@@ -120,6 +118,18 @@ int Menu3()
 			resultString = ReplaceTabsOnSpaces(string, sizeTabs);
 			cout << "New string: " << endl;
 			ShowString(resultString);
+			break;
+		}
+
+		case 9:
+		{
+			int sizeSpaces = 4;
+			char string[100];
+			cout << "Enter string." << endl;
+			cout << "Specify a space with the symbol ':', tab '\\t':" << endl;
+			cin.getline(string, 100);
+			cout << "New string: " << endl;
+			cout << ReplaceSpacesOnTabs(string, sizeSpaces);
 			break;
 		}
 			

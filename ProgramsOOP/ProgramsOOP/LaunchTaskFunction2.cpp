@@ -197,6 +197,10 @@ int Menu2()
 				cout << "Sorted array: " << endl;
 				ShowArray(array3, arraySize3);
 				break;
+				delete[] array1;
+				delete[] array2;
+				delete[] array3;
+
 			}
 				
 

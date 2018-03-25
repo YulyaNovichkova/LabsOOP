@@ -10,6 +10,7 @@ struct Node
 
 struct List
 {
+	int size;
 	Node* head = NULL;
 	Node* tail = NULL;
 };
@@ -21,8 +22,9 @@ void InsertElement(List* list, Person data, int index);
 
 void DeleteElement(List* list, int index);
 
-//Person* GetPerson(List* list, int index);
-//Вывод данных человека на экран
-//void PrintPerson(Person *person);
+Person* GetPerson(List* list, int index);
+
 Person ReadRandomPerson();
 void CopyCharString(char* structString, const char* constString);
+//Длина списка
+int GetLengthStruct(List* list);

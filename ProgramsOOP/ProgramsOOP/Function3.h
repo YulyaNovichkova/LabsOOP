@@ -22,3 +22,6 @@ int GetSourcePart(char* source, char* partString, char symbol, const char partNa
 char* RevertString(char* string, int size);
 //Замена таб на пробелы
 char* ReplaceTabsOnSpaces(char* string, int sizeTabs);
+//Заменапробелов на таб
+char* ReplaceSpacesOnTabs(char* string, int sizeSpaces);
+bool NeedTab(char* string, int i, int sizeSpaces);

@@ -202,6 +202,10 @@ char* ReplaceTabsOnSpaces(char* string, int sizeTabs)
 	int count = 0;
 	for (int i = 0; i < lengthString; i++)
 	{
+		if (countChar == sizeTabs)
+		{
+			countChar = 0;
+		}
 		if (tempString[i] == '\t')
 		{
 			for (int j = 0; j < (sizeTabs - countChar); j++)
@@ -209,7 +213,6 @@ char* ReplaceTabsOnSpaces(char* string, int sizeTabs)
 				string[count] = ':';
 				count++;
 			}
-			i++;
 		}
 		else
 		{
@@ -222,6 +225,42 @@ char* ReplaceTabsOnSpaces(char* string, int sizeTabs)
 	return string;
 }
 
+char* ReplaceSpacesOnTabs(char* string, int sizeSpaces)
+{
+	int j = 0;
+	int i = 0;
+	char tempString[100];
+	for (i = 0; string[i + j]; i++)
+	{
+		if (string[i + j] == ':' && NeedTab(string, i + j + 1, sizeSpaces))
+		{
+				while ((i + j + 1) % sizeSpaces != 0)
+				{
+					j++;
+				}
+				tempString[i] = '\t';
+		}
+		else
+		{
+			tempString[i] = string[i + j];
+		}
+	}
+	tempString[i] = '\0';
+	return tempString;
+}
+bool NeedTab(char* string, int i, int sizeSpaces)
+{
+	while (i % sizeSpaces != 0)
+	{
+		if (string[i] != ':')
+		{
+			return false;
+		}
+		i++;
+	}
+	return true;
+}
+
 Person ReadPerson()
 {
 	Person person;
@@ -232,9 +271,22 @@ Person ReadPerson()
 	cout << "Sex: Enter '0' for female, '1' for male: ";
 	int sex;
 	cin >> sex;
+	switch (sex)
+	{
+		case 0:
+		{
+			person.Sex = female;
+			break;
+		}
+		case 1:
+		{
+			person.Sex = male;
+			break;
+		}
+	}
 	do
 	{
-		cout << endl << "Enter the age: ";
+		cout << "Enter the age: ";
 		cin >> person.Age;
 		if (person.Age < 0)
 		{
@@ -246,7 +298,7 @@ Person ReadPerson()
 
 void ShowPerson(Person person)
 {
-	cout << endl << "Surname: " << person.Surname;
+	cout << "Surname: " << person.Surname;
 	cout << endl << "Name: " << person.Name;
 	switch (person.Sex)
 	{

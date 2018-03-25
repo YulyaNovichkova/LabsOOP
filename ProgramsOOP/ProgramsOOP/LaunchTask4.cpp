@@ -163,7 +163,7 @@ int MenuList(List* list)
 	{
 		cout << "\t Choose next step:" << endl << endl << endl
 			<< "1. Add new element." << endl
-			<< "2. Delete element." << endl
+			<< "4. Delete element." << endl
 			<< "3. Insert element." << endl
 			<< "4. The index of element." << endl
 			<< "0. Exit." << endl;
@@ -182,8 +182,9 @@ int MenuList(List* list)
 			}
 			case '2':
 			{
-				person = ReadRandomPerson();
-				AddElement(list, person);
+				cout << "Enter the index of element:\n";
+				cin >> index;
+				InsertElement(list, ReadRandomPerson(), index);
 				ListShow(list);
 				break;
 			}
@@ -231,4 +232,6 @@ void LaunchTask4()
 	int key = Menu4(stack, list);
 	cout << key << endl;
 	system("pause");
+	delete[] stack;
+	delete[] list;
 };
