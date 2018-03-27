@@ -16,5 +16,3 @@ void Delete(Stack* stack);
 void ReSize(Stack* stack, int size);
 void StackShow(Stack* stack);
 int MenuStack(Stack* stack);
-int FindSizeStack(Stack* stack);
-int GetTopStack(Stack* stack);

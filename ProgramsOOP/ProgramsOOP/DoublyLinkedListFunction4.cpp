@@ -22,24 +22,9 @@ void ListShow(List* list)
 	cout << endl;
 };
 
-
 void AddElement(List* list, Person data)
-{/*
-	Node *tempList = new Node; // Память под новый
-	tempList->data = data; // Записываем значение в структуру
-	if (list->tail != NULL)
-	{
-		tempList->prev = list->tail;
-		list->tail->next = tempList;
-	}
-	else
-	{
-		list->head = tempList;
-	}
-	list->tail = tempList;
-	list->size++;*/
-	InsertElement(list, data, 0);
-	list->size++;
+{
+	InsertElement(list, data, GetLengthStruct(list));
 }
 
 Person* GetPerson(List* list, int index)
@@ -59,45 +44,28 @@ void InsertElement(List* list, Person data, int index)
 {
 	Node* newNode = new Node();
 	newNode->data = data;
-	newNode->next = NULL;
-	newNode->prev = NULL;
-
-	Node* node = list->head;
-	int i = 0;
-	while (i != index && node != NULL)
-	{
-		++i;
-		node = node->next;
-	}
-	// n check
-	Node* count = list->head;
-	int n = 0;
-	do
-	{
-		count = count->next;
-		n++;
-	} while (count != NULL);
-
-	if (index > n)
-	{
-		throw "Mistake! This index too big. \n";
-		return;
-	}
 
 	Node* current = list->head;
+	int i = 0;
+	//Если список пуст, то значение становится списком
+	if (list->head == NULL)
+	{
+		list->head = newNode;
+		list->tail = newNode;
+		return;
+	}
 	for (int i = 1; i < index && current->next != NULL; i++)
 		current = current->next;
-
+	//Вставляем на первое место
 	if (index == 0)
 	{
-		//вставляем новый элемент на первое место
 		newNode->next = list->head;
 		list->head->prev = newNode;
 		list->head = newNode;
 	}
 	else
 	{
-		//вставляем новый элемент на непервое место
+		//Вставляем элемент на нужное место
 		if (current->next != NULL)
 			current->next->prev = newNode;
 		newNode->next = current->next;
@@ -122,7 +90,6 @@ void DeleteElement(List* list, int index)
 
 	if (node == NULL)
 		return;
-
 	//начало списка
 	if (node->prev == NULL)
 	{
@@ -133,7 +100,6 @@ void DeleteElement(List* list, int index)
 			list->head->prev = NULL;
 		}
 	}
-
 	//конец списка
 	if (node->next == NULL)
 	{
@@ -144,7 +110,6 @@ void DeleteElement(List* list, int index)
 			list->tail->next = NULL;
 		}
 	}
-
 	//середина списка
 	if (node->next != NULL && node->prev != NULL)
 	{
@@ -163,21 +128,20 @@ Person ReadRandomPerson()
 
 	switch (sex)
 	{
-	case 1:
-	{
-		const char *maleSurname[] = { "Walter", "Krause", "Zimmer", "Regenherz", "Von-Webber" };
-		CopyCharString(person.Surname, maleSurname[rand() % 5]);
-		const char *maleName[] = { "Johann", "Walter", "Ludwig", "Karl", "Ulrich" };
-		CopyCharString(person.Name, maleName[rand() % 5]);
-
-	}
-	case 0:
-	{
-		const char *femaleSurname[] = { "Marinelli", "Alfieri", "Bellini", "Ferrario", "Cortese" };
-		CopyCharString(person.Surname, femaleSurname[rand() % 5]);
-		const char *femaleName[] = { "Annabella", "Ottavia", "Laura", "Alessia", "Chiara" };
-		CopyCharString(person.Name, femaleName[rand() % 5]);
-	}
+		case 0:
+		{
+			const char *femaleSurname[] = { "Novichkova", "Ovsyannikova", "Belova", "Petuxova", "Kolesnik" };
+			CopyCharString(person.Surname, femaleSurname[rand() % 5]);
+			const char *femaleName[] = { "Yulya", "Nastya", "Elena", "Irina", "Kristina" };
+			CopyCharString(person.Name, femaleName[rand() % 5]);
+		}
+		case 1:
+		{
+			const char *maleSurname[] = { "Ivanov", "Petrov", "Sidorov", "Trofimov", "Vakulin" };
+			CopyCharString(person.Surname, maleSurname[rand() % 5]);
+			const char *maleName[] = { "Dima", "Pasha", "Alex", "Sergey", "Uluya" };
+			CopyCharString(person.Name, maleName[rand() % 5]);
+		}
 	}
 	return person;
 }

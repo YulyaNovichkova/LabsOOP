@@ -53,25 +53,6 @@ void ReSize(Stack* stack, int newSize)
 	stack->buffer = newBuffer;
 }
 
-int FindSizeStack(Stack* stack)
-{
-	int lengthStack = 0;
-	for (int i = 0; i < stack->buffer[i]; i++)
-	{
-		lengthStack++;
-	}
-	return lengthStack;
-}
-
-int GetTopStack(Stack* stack)
-{
-	if (stack == NULL)
-	{
-		return - 1;
-	}
-	else return stack->top;
-}
-
 void StackShow(Stack* stack)
 {
 	for (int i = stack->top - 1; i >= 0; i--)

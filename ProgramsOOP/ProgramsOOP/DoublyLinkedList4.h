@@ -19,11 +19,8 @@ int MenuList(List* list);
 void ListShow(List* list);
 void AddElement(List* list, Person data);
 void InsertElement(List* list, Person data, int index);
-
 void DeleteElement(List* list, int index);
-
 Person* GetPerson(List* list, int index);
-
 Person ReadRandomPerson();
 void CopyCharString(char* structString, const char* constString);
 //Длина списка

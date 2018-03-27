@@ -59,9 +59,6 @@ int MenuStack(Stack* stack)
 	int size = 0;
 	cout << "Enter size your stack:" << endl;
 	cin >> size;
-	//Stack* stack = InitStack(size);
-	//cout << "Your stack!" << endl << endl;
-	//StackShow(stack);
 
 	do
 	{
@@ -70,8 +67,6 @@ int MenuStack(Stack* stack)
 			<< "2. Pop element." << endl
 			<< "3. Check Empty." << endl
 			<< "4. Check Full." << endl
-			<< "5. Size stack." << endl
-			<< "6. Top stack element." << endl
 			<< "0. Exit." << endl;
 
 		cin >> key;
@@ -131,16 +126,6 @@ int MenuStack(Stack* stack)
 					cout << "Your stack isn't full!" << endl;
 				break;
 			}
-			case '5':
-			{
-				cout << "Size stack: " << FindSizeStack(stack) << endl;
-				break;
-			}
-			case '6':
-			{
-				cout << "Top stack element: " << GetTopStack(stack) << endl;
-				break;
-			}
 			
 			case '0':
 				cout << " Welcome back." << endl;
@@ -163,7 +148,7 @@ int MenuList(List* list)
 	{
 		cout << "\t Choose next step:" << endl << endl << endl
 			<< "1. Add new element." << endl
-			<< "4. Delete element." << endl
+			<< "2. Delete element." << endl
 			<< "3. Insert element." << endl
 			<< "4. The index of element." << endl
 			<< "0. Exit." << endl;
@@ -180,7 +165,15 @@ int MenuList(List* list)
 				ListShow(list);
 				break;
 			}
-			case '2':
+			case 2:
+			{
+				cout << "Enter the index of element:" << endl;
+				cin >> index;
+				DeleteElement(list, index);
+				ListShow(list);
+				break;
+			}
+			case '3':
 			{
 				cout << "Enter the index of element:\n";
 				cin >> index;
@@ -188,7 +181,7 @@ int MenuList(List* list)
 				ListShow(list);
 				break;
 			}
-			case '3':
+			case '4':
 			{
 				ListShow(list);
 				cout << "Enter the index of element:" << endl;
@@ -198,14 +191,7 @@ int MenuList(List* list)
 				ListShow(list);
 				break;
 			}
-			case 4:
-			{
-				cout << "Enter the index of element:" << endl;
-				cin >> index;
-				DeleteElement(list, index);
-				ListShow(list);
-				break;
-			}
+
 
 			case '0':
 				cout << " Welcome back." << endl;
