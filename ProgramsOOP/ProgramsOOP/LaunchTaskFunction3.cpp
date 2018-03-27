@@ -2,7 +2,7 @@
 #include <iomanip>
 #include "Function3.h"
 #include "StructFunction3.h"
-
+//TODO: см. замечания в заголовочном файле
 using namespace std;
 
 void ShowString(char *string)
@@ -38,9 +38,11 @@ int GetLength(char* string)
 
 char* Concatenate(char* string1, char* string2)
 {
+	//TODO: две переменные, которые дальше не используются. Удалить
 	int count1 = 0;
 	int count2 = 0;
 	int i;
+	//TODO: А если сумма длин строк string1 и string2 будет больше 100? Переделать для строк любой длины
 	char* string3 = new char[100];
 	for (i = 0; i < GetLength(string1); i++)
 	{
@@ -57,18 +59,24 @@ char* Concatenate(char* string1, char* string2)
 
 char* GetSubstring(char* string, int startIndex, int charCount)
 {
+	//TODO: Такие длинные условия тяжело прочесть, поэтому их следует комментировать
 	if (((GetLength(string) - startIndex) < charCount) || (startIndex < 0) || (charCount < 0))
 	{
+		//TODO: функции логики не должны ничего выводить на экран. Вывод на экран - это задача интерфейсных функций!
 		cout << "Value entered incorrectly." << endl;
 		return NULL;
 	}
+	//TODO: Убрать вывод на экран
 	cout << "Your string: " << endl;
 	for (int i = 0; i < charCount; i++)
 	{
+		//TODO: Убрать вывод на экран
 		cout << string[startIndex];
 		startIndex++;
 	}
+	//TODO: Убрать вывод на экран
 	cout << endl;
+	//TODO: Функция должна вернуть найденную подстроку, а сейчас они ничего не возвращает
 }
 
 int FindSubstring(char* string, char* substring)
@@ -104,6 +112,7 @@ int FindSubstring(char* string, char* substring)
 	return -1;
 }
 
+//TODO: функция должна вернуть НОВУЮ строку, а не изменить старую
 char* ToUppercase(char* string)
 {
 	int count = 0;
@@ -111,6 +120,8 @@ char* ToUppercase(char* string)
 	{
 		if (string[count] >= 'a' && string[count] <= 'z')
 		{
+			//TODO: Избавиться от магического числа 32
+			//TODO: Кривая табуляция
 				string[count] = string[count] - 32;
 		}
 		count++;
@@ -118,6 +129,7 @@ char* ToUppercase(char* string)
 	return string;
 }
 
+//TODO: функция должна вернуть НОВУЮ строку, а не изменить старую
 char* ToLowercase(char* string)
 {
 	int count = 0;
@@ -125,6 +137,8 @@ char* ToLowercase(char* string)
 	{
 		if (string[count] >= 'A' && string[count] <= 'Z')
 		{
+			//TODO: Избавиться от магического числа 32
+			//TODO: Кривая табуляция
 				string[count] = string[count] + 32;
 		}
 		count++;
@@ -143,14 +157,16 @@ void FindSubstringTest(char* string, char* substring, char testSubstring[20])
 void SplitFilename(char* source, char* path, char* name, char* extension)
 {
 	int size = GetLength(source);
-
+	//TODO: Вместо GetSourcePart нужно использовать GetSubstring, FindSubstring и другие ранее написанные функции
 	size = GetSourcePart(source, extension, '.', "Extension: ", size);
 	size = GetSourcePart(source, name, '\\', "Name: ", size);
 	source[size + 1] = '\0';
 	path = source;
+	//TODO: Функция ничего не должна выводить. Она должна разбить полный путь на части, части поместить во входные параметры, а вывод на экран должен быть в main/LaunchTask3
 	cout << "Path: " << path << endl;
 }
 
+//TODO: Эта функция не нужна
 //Разбиение строки source на части (путь, имя, расширение)
 int GetSourcePart(char* source, char* partString, char symbol, const char partName[30], int size)
 {
@@ -170,11 +186,12 @@ int GetSourcePart(char* source, char* partString, char symbol, const char partNa
 		partString[i] = '\0';
 	}
 	partString = RevertString(partString, GetLength(partString) - 1);
+	//TODO: Функция ничего не должна выводить. Она должна разбить полный путь на части, части поместить во входные параметры, а вывод на экран должен быть в main/LaunchTask3
 	cout << partName << partString << endl;
 	return size;
 }
 
-
+//TODO: Так и не понял, зачем вы с Козыревой вертите строки туда-обратно...
 char* RevertString(char* string, int size)
 {
 	char* newString = new char[size];
@@ -189,8 +206,10 @@ char* RevertString(char* string, int size)
 	return newString;
 }
 
+//TODO: сейчас функция работает неправильно. Тестировать и исправлять
 char* ReplaceTabsOnSpaces(char* string, int sizeTabs)
 {
+	//TODO: Функция перезаписывает исходную строку, а это неправильно - потеря данных. Сделать так, чтобы новая строка помещалась только в tempString
 	int countChar = 0;
 	char tempString[100];
 	int lengthString = GetLength(string);
@@ -229,7 +248,8 @@ char* ReplaceSpacesOnTabs(char* string, int sizeSpaces)
 {
 	int j = 0;
 	int i = 0;
-	char tempString[100];
+	//TODO: этот массив надо было создавать динамически. Теперь функция работает. Почему с динамическим массивом работает, а с обычным нет - спрошу на защите следующей лабораторной
+	char* tempString = new char[100];
 	for (i = 0; string[i + j]; i++)
 	{
 		if (string[i + j] == ':' && NeedTab(string, i + j + 1, sizeSpaces))
@@ -298,6 +318,7 @@ Person ReadPerson()
 
 void ShowPerson(Person person)
 {
+	//TODO: Вывод персоны лучше делать в одну строку - так будет удобнее потом тестировать списки персон
 	cout << "Surname: " << person.Surname;
 	cout << endl << "Name: " << person.Name;
 	switch (person.Sex)
