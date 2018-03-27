@@ -2,7 +2,7 @@
 #include <iostream>
 #include "StackFunction4.h"
 #include "DoublyLinkedList4.h"
-#include "StructFunction3.h"
+#include "Person.h"
 #include "AllLabs.h"
 
 using namespace std;

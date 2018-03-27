@@ -121,7 +121,7 @@
     <ClCompile Include="LaunchTask3.cpp" />
     <ClCompile Include="LaunchTask4.cpp" />
     <ClCompile Include="LaunchTaskFunction2.cpp" />
-    <ClCompile Include="LaunchTaskFunction3.cpp" />
+    <ClCompile Include="String.cpp" />
     <ClCompile Include="LaunchTaskFunctions1.cpp" />
     <ClCompile Include="StackFunction4.cpp" />
     <ClCompile Include="Main.cpp" />
@@ -131,9 +131,9 @@
     <ClInclude Include="DoublyLinkedList4.h" />
     <ClInclude Include="Function2.h" />
     <ClInclude Include="Function1.h" />
-    <ClInclude Include="Function3.h" />
+    <ClInclude Include="String.h" />
     <ClInclude Include="StackFunction4.h" />
-    <ClInclude Include="StructFunction3.h" />
+    <ClInclude Include="Person.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

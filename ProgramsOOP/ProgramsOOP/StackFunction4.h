@@ -22,11 +22,9 @@ void ReSize(Stack* stack, int size);
 void StackShow(Stack* stack);
 //TODO: StackMenu
 int MenuStack(Stack* stack);
-<<<<<<< HEAD
-=======
 //TODO: Переименовать в CalculateNewStackSize
 int FindSizeStack(Stack* stack);
 //TODO: GetStackTop
 int GetTopStack(Stack* stack);
 //TODO: Все переименования сделать в cpp-файлах тоже
->>>>>>> 83f5f387d9f39540ca1768ef5a2ff9f0483fab21
+

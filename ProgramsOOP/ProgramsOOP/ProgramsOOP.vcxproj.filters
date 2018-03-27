@@ -51,9 +51,6 @@
     <ClCompile Include="LaunchTask3.cpp">
       <Filter>Исходные файлы\LaunchLab3</Filter>
     </ClCompile>
-    <ClCompile Include="LaunchTaskFunction3.cpp">
-      <Filter>Исходные файлы\LaunchLab3</Filter>
-    </ClCompile>
     <ClCompile Include="LaunchTask4.cpp">
       <Filter>Исходные файлы\LaunchLab4</Filter>
     </ClCompile>
@@ -62,6 +59,9 @@
     </ClCompile>
     <ClCompile Include="StackFunction4.cpp">
       <Filter>Исходные файлы\LaunchLab4</Filter>
+    </ClCompile>
+    <ClCompile Include="String.cpp">
+      <Filter>Исходные файлы\LaunchLab3</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -74,17 +74,17 @@
     <ClInclude Include="Function1.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="Function3.h">
-      <Filter>Файлы заголовков\Lab3</Filter>
-    </ClInclude>
-    <ClInclude Include="StructFunction3.h">
-      <Filter>Файлы заголовков\Lab3</Filter>
-    </ClInclude>
     <ClInclude Include="StackFunction4.h">
       <Filter>Файлы заголовков\Lab4</Filter>
     </ClInclude>
     <ClInclude Include="DoublyLinkedList4.h">
       <Filter>Файлы заголовков\Lab4</Filter>
+    </ClInclude>
+    <ClInclude Include="String.h">
+      <Filter>Файлы заголовков\Lab3</Filter>
+    </ClInclude>
+    <ClInclude Include="Person.h">
+      <Filter>Файлы заголовков\Lab3</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

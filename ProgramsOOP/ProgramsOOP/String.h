@@ -1,8 +1,9 @@
 ﻿#pragma once
 //TODO: переименовать файл в string - чтобы название отражало содержащиеся в нём функции, а не просто нумеровало лабораторные работы
+//ИСПРАВЛЕНО.
 void ShowString(char *string);
-//TODO: Название функции - "Создать длину". Функция создает длину? Переименовать
-char* CreateLength();
+
+char* CreateString();
 //Определение длины строки
 int GetLength(char* string);
 //Объединение двух строк
@@ -27,3 +28,4 @@ char* ReplaceTabsOnSpaces(char* string, int sizeTabs);
 //Заменапробелов на таб
 char* ReplaceSpacesOnTabs(char* string, int sizeSpaces);
 bool NeedTab(char* string, int i, int sizeSpaces);
+void  ErrorOutput();

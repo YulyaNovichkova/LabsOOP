@@ -1,8 +1,9 @@
 ﻿#include <iostream>
 #include <iomanip>
-#include "Function3.h"
-#include "StructFunction3.h"
+#include "String.h"
+#include "Person.h"
 //TODO: см. замечания в заголовочном файле
+//ИСПРАВЛЕНО.
 using namespace std;
 
 void ShowString(char *string)
@@ -16,7 +17,7 @@ void ShowString(char *string)
 	cout << endl;
 }
 
-char* CreateLength()
+char* CreateString()
 {
 	int size = 100;
 	char* str = new char[size];
@@ -38,17 +39,19 @@ int GetLength(char* string)
 
 char* Concatenate(char* string1, char* string2)
 {
-	//TODO: две переменные, которые дальше не используются. Удалить
-	int count1 = 0;
-	int count2 = 0;
 	int i;
+	int lengthSrting1 = GetLength(string1);
+	int lengthString2 = GetLength(string2);
+	int length = lengthSrting1 + lengthString2;
 	//TODO: А если сумма длин строк string1 и string2 будет больше 100? Переделать для строк любой длины
-	char* string3 = new char[100];
-	for (i = 0; i < GetLength(string1); i++)
+		//ИСПРАВЛЕНО.
+	//Ниже прибавляется 1 для '\0'
+	char* string3 = new char[length + 1];
+	for (i = 0; i < lengthSrting1; i++)
 	{
 		string3[i] = string1[i];
 	}
-	for (int j = 0; j < GetLength(string2); j++)
+	for (int j = 0; j < lengthString2; j++)
 	{
 		string3[i] = string2[j];
 		i++;
@@ -60,22 +63,21 @@ char* Concatenate(char* string1, char* string2)
 char* GetSubstring(char* string, int startIndex, int charCount)
 {
 	//TODO: Такие длинные условия тяжело прочесть, поэтому их следует комментировать
+	//ИСПРАВЛЕНО.
+
+	//Индекс конца подстроки не был больше длины самой строки ИЛИ был больше нуля
+	//ИЛИ индекс начало подстроки был больше нуля
 	if (((GetLength(string) - startIndex) < charCount) || (startIndex < 0) || (charCount < 0))
 	{
-		//TODO: функции логики не должны ничего выводить на экран. Вывод на экран - это задача интерфейсных функций!
-		cout << "Value entered incorrectly." << endl;
+		ErrorOutput();
 		return NULL;
 	}
-	//TODO: Убрать вывод на экран
-	cout << "Your string: " << endl;
 	for (int i = 0; i < charCount; i++)
 	{
 		//TODO: Убрать вывод на экран
 		cout << string[startIndex];
 		startIndex++;
 	}
-	//TODO: Убрать вывод на экран
-	cout << endl;
 	//TODO: Функция должна вернуть найденную подстроку, а сейчас они ничего не возвращает
 }
 
@@ -113,37 +115,48 @@ int FindSubstring(char* string, char* substring)
 }
 
 //TODO: функция должна вернуть НОВУЮ строку, а не изменить старую
+//ИСПРАВЛЕНО.
 char* ToUppercase(char* string)
 {
-	int count = 0;
-	while (string[count] != '\0')
+	char* result = new char[255];
+	for (int i = 0; i < 255; i++)
 	{
-		if (string[count] >= 'a' && string[count] <= 'z')
+		result[i] = string[i];
+	}
+	int count = 0;
+	while (result[count] != '\0')
+	{
+		if (result[count] >= 'a' && result[count] <= 'z')
 		{
 			//TODO: Избавиться от магического числа 32
-			//TODO: Кривая табуляция
-				string[count] = string[count] - 32;
+			result[count] = result[count] - 32;
 		}
 		count++;
 	}
-	return string;
+	return result;
 }
 
+
 //TODO: функция должна вернуть НОВУЮ строку, а не изменить старую
+//ИСПРАВЛЕНО.
 char* ToLowercase(char* string)
 {
-	int count = 0;
-	while (string[count] != '\0')
+	char* result = new char[255];
+	for (int i = 0; i < 255; i++)
 	{
-		if (string[count] >= 'A' && string[count] <= 'Z')
+		result[i] = string[i];
+	}
+	int count = 0;
+	while (result[count] != '\0')
+	{
+		if (result[count] >= 'A' && result[count] <= 'Z')
 		{
 			//TODO: Избавиться от магического числа 32
-			//TODO: Кривая табуляция
-				string[count] = string[count] + 32;
+			result[count] = result[count] + 32;
 		}
 		count++;
 	}
-	return string;
+	return result;
 }
 
 void FindSubstringTest(char* string, char* substring, char testSubstring[20])
@@ -295,12 +308,12 @@ Person ReadPerson()
 	{
 		case 0:
 		{
-			person.Sex = female;
+			person.Sex = Female;
 			break;
 		}
 		case 1:
 		{
-			person.Sex = male;
+			person.Sex = Male;
 			break;
 		}
 	}
@@ -333,4 +346,8 @@ void ShowPerson(Person person)
 			break;
 	}
 	cout << endl << "Age: " << person.Age << endl;
+}
+void ErrorOutput()
+{
+	cout << "Value entered incorrectly." << endl;
 }

@@ -1,6 +1,6 @@
 ﻿#include <iostream>
-#include "Function3.h"
-#include "StructFunction3.h"
+#include "String.h"
+#include "Person.h"
 #include "AllLabs.h"
 
 using namespace std;
@@ -49,17 +49,25 @@ int Menu3()
 			strResult = Concatenate(str1, str2);
 			cout << "Combined string:" << endl;
 			ShowString(strResult);
+			delete[] strResult;
 			//TODO: Утечка памяти
+			//ИСПРАВЛЕНО.
 			break;
 		}
 			
 		case 3:
 		{
 			char str[12] = { 'H', 'e', 'l', 'l', 'o', ',', 'W', 'o', 'r', 'l', 'd', '\0' };
+			//TODO: Убрать вывод на экран
+			//ИСПРАВЛЕНО.
+			cout << "Your string: " << endl;
 			GetSubstring(str, 2, 4);
 			GetSubstring(str, -3, 3);
 			GetSubstring(str, 2, -4);
 			GetSubstring(str, 7, 8);
+			//TODO: Убрать вывод на экран
+			//ИСПРАВЛЕНО.
+			cout << endl;
 			break;
 		}
 			
@@ -74,31 +82,36 @@ int Menu3()
 			FindSubstringTest(string, subString, testSubstring2);
 			char testSubstring3[10] = "sum";
 			FindSubstringTest(string, subString, testSubstring3);
+			delete[] subString;
+			delete[] string;
 			break;
 			//TODO: утечка памяти
+			//ИСПРАВЛЕНО.
 		}
 			
 		case 5:
 		{
-			char* string = CreateLength();
-			ToUppercase(string);
+			char* string = CreateString();
+			string = ToUppercase(string);
 			cout << "Convert string to uppercase:" << endl;
 			ShowString(string);
+			delete[] string;
 			break;
 		}
 
 		case 6:
 		{
-			char* string = CreateLength();
-			ToLowercase(string);
+			char* string = CreateString();
+			string = ToLowercase(string);
 			cout << "Convert string to lowercase:" << endl;
 			ShowString(string);
+			delete[] string;
 			break;
 		}
 
 		case 7:
 		{
-			char* source = CreateLength();
+			char* source = CreateString();
 			char* path = new char[20];
 			char* name = new char[20];
 			char* extension = new char[10];
@@ -137,9 +150,7 @@ int Menu3()
 			char string[] = "::::::::a:::::::as::::::asd:::::asdf!!!!:::a::::::as:::::asd";
 			cout << string << endl;
 			//cout << "New string: " << endl;
-			char* result = ReplaceSpacesOnTabs(string, sizeSpaces);
-			cout << result << endl;
-			//TODO: Утечка памяти
+			cout << ReplaceSpacesOnTabs(string, sizeSpaces) << endl;
 			break;
 		}
 			
