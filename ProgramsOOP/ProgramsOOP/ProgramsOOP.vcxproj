@@ -115,7 +115,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="DoublyLinkedListFunction4.cpp" />
+    <ClCompile Include="List.cpp" />
     <ClCompile Include="LaunchTask1.cpp" />
     <ClCompile Include="LaunchTask2.cpp" />
     <ClCompile Include="LaunchTask3.cpp" />
@@ -123,16 +123,16 @@
     <ClCompile Include="LaunchTaskFunction2.cpp" />
     <ClCompile Include="String.cpp" />
     <ClCompile Include="LaunchTaskFunctions1.cpp" />
-    <ClCompile Include="StackFunction4.cpp" />
+    <ClCompile Include="Stack.cpp" />
     <ClCompile Include="Main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AllLabs.h" />
-    <ClInclude Include="DoublyLinkedList4.h" />
+    <ClInclude Include="List.h" />
     <ClInclude Include="Function2.h" />
     <ClInclude Include="Function1.h" />
     <ClInclude Include="String.h" />
-    <ClInclude Include="StackFunction4.h" />
+    <ClInclude Include="Stack.h" />
     <ClInclude Include="Person.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

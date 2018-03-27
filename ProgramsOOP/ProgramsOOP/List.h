@@ -1,22 +1,29 @@
 ﻿#pragma once
 #include "Person.h"
 //TODO: Если структура называется List, тогда и файл должен называться List, а не DoublyLinkedList. Переименовать файлы
+//ИСПРАВЛЕНО.
 //TODO: комментарий к структуре
+//ИСПРАВЛЕНО.
+//Структура данных, содержащая указатели на предыдущий и следующих элемент списка
 struct Node
 {
 	//TODO: поля с заглавной буквы
-	Person data;
-	Node* next = NULL;
-	Node* prev = NULL;
+	//ИСПРАВЛЕНО.
+	Person Data;
+	Node* Next = NULL;
+	Node* Prev = NULL;
 };
 
 //TODO: комментарий к структуре
+//ИСПРАВЛЕНО.
+//Структура данных "Список"
 struct List
 {
 	//TODO: поля с заглавной буквы
-	int size;
-	Node* head = NULL;
-	Node* tail = NULL;
+	//ИСПРАВЛЕНО.
+	int Size;
+	Node* Head = NULL;
+	Node* Tail = NULL;
 };
 
 //TODO: комментарии ко всем функциям, продублировать в cpp_файлах
@@ -33,4 +40,4 @@ Person ReadRandomPerson();
 void CopyCharString(char* structString, const char* constString);
 //Длина списка
 //TODO: Сейчас функция переводится как "Получить длинную структуру", а должно быть "Получить длину списка". Переименовать
-int GetLengthStruct(List* list);
+int GetLengthList(List* list);

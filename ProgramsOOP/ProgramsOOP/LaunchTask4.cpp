@@ -1,7 +1,7 @@
 ﻿//TODO: Для этого файла нет заголовочного файла с таким же названием. Либо создать для него заголовочный файл, либо переместить функцию в другой файл исходного кода.
 #include <iostream>
-#include "StackFunction4.h"
-#include "DoublyLinkedList4.h"
+#include "Stack.h"
+#include "List.h"
 #include "Person.h"
 #include "AllLabs.h"
 
@@ -26,7 +26,7 @@ int Menu4(Stack* stack, List* list)
 			case '1':
 			{
 				cout << "Stack:" << endl;
-				key1 = MenuStack(stack);
+				key1 = StackMenu(stack);
 				cout << key1 << endl;
 				break;
 			}
@@ -51,7 +51,7 @@ int Menu4(Stack* stack, List* list)
 
 };
 
-int MenuStack(Stack* stack)
+int StackMenu(Stack* stack)
 {
 	char key;
 	int data;
@@ -84,7 +84,7 @@ int MenuStack(Stack* stack)
 					Push(stack, data);
 				else
 				{
-					ReSize(stack, stack->bufferSize * 2);
+					Resize(stack, stack->BufferSize * 2);
 					Push(stack, data);
 				}
 				cout << "Your stack!" << endl << endl;
@@ -213,8 +213,8 @@ void LaunchTask4()
 	Stack* stack = InitStack(size);
 
 	List* list = new List();
-	list->head = NULL;
-	list->tail = NULL;
+	list->Head = NULL;
+	list->Tail = NULL;
 
 	int key = Menu4(stack, list);
 	cout << key << endl;
