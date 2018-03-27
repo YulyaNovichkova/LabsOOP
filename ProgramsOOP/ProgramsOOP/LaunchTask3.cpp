@@ -49,6 +49,7 @@ int Menu3()
 			strResult = Concatenate(str1, str2);
 			cout << "Combined string:" << endl;
 			ShowString(strResult);
+			//TODO: Утечка памяти
 			break;
 		}
 			
@@ -74,6 +75,7 @@ int Menu3()
 			char testSubstring3[10] = "sum";
 			FindSubstringTest(string, subString, testSubstring3);
 			break;
+			//TODO: утечка памяти
 		}
 			
 		case 5:
@@ -111,25 +113,33 @@ int Menu3()
 		{
 			char* resultString;
 			int sizeTabs = 8;
-			char string[100];
-			cout << "Enter string." << endl;
-			cout << "Specify a space with the symbol ':', tab '\\t':" << endl;
-			cin.getline(string, 100);
+			//char string[100];
+			//cout << "Enter string." << endl;
+			//cout << "Specify a space with the symbol ':', tab '\\t':" << endl;
+			//cin.getline(string, 100);
+			char string[] = "\ta\tas\tasd\tasdf";
+			cout << string << endl;
 			resultString = ReplaceTabsOnSpaces(string, sizeTabs);
-			cout << "New string: " << endl;
+			//cout << "New string: " << endl;
 			ShowString(resultString);
 			break;
 		}
 
 		case 9:
 		{
-			int sizeSpaces = 4;
-			char string[100];
-			cout << "Enter string." << endl;
-			cout << "Specify a space with the symbol ':', tab '\\t':" << endl;
-			cin.getline(string, 100);
-			cout << "New string: " << endl;
-			cout << ReplaceSpacesOnTabs(string, sizeSpaces);
+			//TODO: Было неправильно задано число символов для табуляции. Исправил на 8, теперь корректно.
+			// Количество символов для табуляции легко проверить, запустив консоль, нажав Tab и посчитав, насколько символов сдвинулась корректка
+			int sizeSpaces = 8;
+			//char string[100];
+			//cout << "Enter string." << endl;
+			//cout << "Specify a space with the symbol ':', tab '\\t':" << endl;
+			//cin.getline(string, 100);
+			char string[] = "::::::::a:::::::as::::::asd:::::asdf!!!!:::a::::::as:::::asd";
+			cout << string << endl;
+			//cout << "New string: " << endl;
+			char* result = ReplaceSpacesOnTabs(string, sizeSpaces);
+			cout << result << endl;
+			//TODO: Утечка памяти
 			break;
 		}
 			

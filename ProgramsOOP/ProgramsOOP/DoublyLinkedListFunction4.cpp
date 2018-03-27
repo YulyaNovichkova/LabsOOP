@@ -4,7 +4,7 @@
 #include <ctime>
 #include "DoublyLinkedList4.h"
 #include "StructFunction3.h"
-
+//TODO: см. замечания в заголовочном файле
 using namespace std;
 
 void ListShow(List* list)
@@ -24,7 +24,10 @@ void ListShow(List* list)
 
 
 void AddElement(List* list, Person data)
-{/*
+{
+	//TODO: Если этот код уже не нужен - удалить.
+	// Если же нужен, оставить комментарий, зачем он нужен и когда его можно будет удалить.
+	/*
 	Node *tempList = new Node; // Память под новый
 	tempList->data = data; // Записываем значение в структуру
 	if (list->tail != NULL)
@@ -45,6 +48,7 @@ void AddElement(List* list, Person data)
 Person* GetPerson(List* list, int index)
 {
 	Node* node = new Node;
+	//TODO: Утечка памяти
 	node = list->head;
 	int count = 0;
 	while (count != index)
@@ -62,6 +66,8 @@ void InsertElement(List* list, Person data, int index)
 	newNode->next = NULL;
 	newNode->prev = NULL;
 
+	//TODO: имя переменной node малоинформативно - непонятно, зачем она нужна в алгоритме
+	//TODO: Логичнее сначала определить количество элементов в списке, а потом переходить к текущему элементу
 	Node* node = list->head;
 	int i = 0;
 	while (i != index && node != NULL)
@@ -70,6 +76,8 @@ void InsertElement(List* list, Person data, int index)
 		node = node->next;
 	}
 	// n check
+	//TODO: count - это количество. Именовать так элемент списка - неправильно
+	//TODO: Для подсчета элементов списка надо использовать готовую функцию
 	Node* count = list->head;
 	int n = 0;
 	do
@@ -80,10 +88,12 @@ void InsertElement(List* list, Person data, int index)
 
 	if (index > n)
 	{
+		//TODO: Выбрасывать надо exception, а не строку
 		throw "Mistake! This index too big. \n";
 		return;
 	}
 
+	//TODO: Опять поиск текущего элемента? Зачем тогда переменная node?
 	Node* current = list->head;
 	for (int i = 1; i < index && current->next != NULL; i++)
 		current = current->next;
@@ -165,6 +175,7 @@ Person ReadRandomPerson()
 	{
 	case 1:
 	{
+		//TODO: Фамилии и имена удивительным образом совпали с вариантом Козыревой... Да и вся функция, вплоть до структуры и пустых строчек...
 		const char *maleSurname[] = { "Walter", "Krause", "Zimmer", "Regenherz", "Von-Webber" };
 		CopyCharString(person.Surname, maleSurname[rand() % 5]);
 		const char *maleName[] = { "Johann", "Walter", "Ludwig", "Karl", "Ulrich" };
@@ -205,5 +216,6 @@ int GetLengthStruct(List* list)
 	{
 		return count;
 	}
+	//TODO: NULL - это адрес (указатель), а функция должна возвращать число
 	else NULL;
 }

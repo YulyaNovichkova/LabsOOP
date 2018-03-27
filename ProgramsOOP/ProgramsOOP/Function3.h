@@ -1,6 +1,7 @@
 ﻿#pragma once
-
+//TODO: переименовать файл в string - чтобы название отражало содержащиеся в нём функции, а не просто нумеровало лабораторные работы
 void ShowString(char *string);
+//TODO: Название функции - "Создать длину". Функция создает длину? Переименовать
 char* CreateLength();
 //Определение длины строки
 int GetLength(char* string);
@@ -10,6 +11,7 @@ char* Concatenate(char* string1, char* string2);
 char* GetSubstring(char* string, int startIndex, int charCount);
 int FindSubstring(char* string, char* substring);
 //Нахождение подстроки теста
+//TODO: Странно, что функция-тест написана только для поиска подстроки. Почему только для неё?
 void FindSubstringTest(char* string, char* substring, char testSubstring[20]);
 //Преобразование в верхний регистр
 char* ToUppercase(char* string);
