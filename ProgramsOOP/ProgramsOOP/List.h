@@ -27,17 +27,24 @@ struct List
 };
 
 //TODO: комментарии ко всем функциям, продублировать в cpp_файлах
-int MenuList(List* list);
+//ИСПРАВЛЕНО.
+//Показать список
 void ListShow(List* list);
+//Вставка элемента в конец списка
 void AddElement(List* list, Person data);
+//Вставка элемента на любое место
 void InsertElement(List* list, Person data, int index);
-void DeleteElement(List* list, int index);
+//Удаление элемента из списка
+void Remove(List* list, int index);
+//Возвращает ссылку на элемент списка по указанному индексу
 Person* GetPerson(List* list, int index);
-
-//TODO: Read - подразумевает чтение с клавиатуры, а здесь функция сама генерирует данные. Заменить Read на Get, Create или Generate
-Person ReadRandomPerson();
+//Заполнение Person случайными данными
+Person CreateRandomPerson();
 //TODO: Если работать с классом string, то такие функции не понадобятся
 void CopyCharString(char* structString, const char* constString);
-//Длина списка
 //TODO: Сейчас функция переводится как "Получить длинную структуру", а должно быть "Получить длину списка". Переименовать
+//ИСПРАВЛЕНО.
+//Длина списка
 int GetLengthList(List* list);
+//Очистить содержимое списка
+void Clear(List* list);

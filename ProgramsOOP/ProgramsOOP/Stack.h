@@ -33,6 +33,6 @@ void Remove(Stack* stack);
 void Resize(Stack* stack, int size);
 //Вывод стека
 void StackShow(Stack* stack);
-int StackMenu(Stack* stack);
+
 //TODO: Все переименования сделать в cpp-файлах тоже
 //ИСПРАВЛЕНО.

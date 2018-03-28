@@ -1,5 +1,7 @@
 ﻿//TODO: Для этого файла нет заголовочного файла с таким же названием. Либо создать для него заголовочный файл, либо переместить функцию в другой файл исходного кода.
+//ИСПРПАВЛЕНО.
 #include <iostream>
+#include "LaunchTask4.h"
 #include "Stack.h"
 #include "List.h"
 #include "Person.h"
@@ -14,8 +16,8 @@ int Menu4(Stack* stack, List* list)
 	do
 	{
 		cout << "\t Choose next step:" << endl << endl << endl
-			<< "1. Struct Stack." << endl
-			<< "2. Struct doubly linked list." << endl
+			<< "1. Stack." << endl
+			<< "2. List." << endl
 			<< "0. Exit." << endl;
 
 		cin >> key;
@@ -33,7 +35,7 @@ int Menu4(Stack* stack, List* list)
 			case '2':
 			{
 				cout << "Doubly linked list" << endl;
-				key2 = MenuList(list);
+				key2 = ListMenu(list);
 				cout << key2 << endl;
 				break;
 			}
@@ -140,7 +142,7 @@ int StackMenu(Stack* stack)
 	return(k);
 };
 
-int MenuList(List* list)
+int ListMenu(List* list)
 {
 	char key;
 	int index;
@@ -150,8 +152,9 @@ int MenuList(List* list)
 		cout << "\t Choose next step:" << endl << endl << endl
 			<< "1. Add new element." << endl
 			<< "2. Delete element." << endl
-			<< "3. Insert element." << endl
-			<< "4. The index of element." << endl
+			<< "3. Return a reference to the item in the list." << endl
+			<< "4. Insert random element." << endl
+			<< "5. Clear list." << endl
 			<< "0. Exit." << endl;
 
 		cin >> key;
@@ -166,34 +169,42 @@ int MenuList(List* list)
 				ListShow(list);
 				break;
 			}
-			case 2:
+			case '2':
 			{
 				cout << "Enter the index of element:" << endl;
 				cin >> index;
-				DeleteElement(list, index);
+				Remove(list, index);
 				ListShow(list);
 				break;
 			}
 			case '3':
 			{
-				cout << "Enter the index of element:\n";
+				cout << "Enter the index of element:" << endl;
 				cin >> index;
-				InsertElement(list, ReadRandomPerson(), index);
-				ListShow(list);
+				Person* person = GetPerson(list, index);
+				if (person)
+				{
+					ShowPerson(*GetPerson(list, index));
+				}
+				else
+				{
+					cout << "Invalid value entered!" << endl;
+				}
 				break;
 			}
 			case '4':
 			{
-				ListShow(list);
 				cout << "Enter the index of element:" << endl;
 				cin >> index;
-				person = ReadPerson();
-				InsertElement(list, person, index);
+				InsertElement(list, CreateRandomPerson(), index);
 				ListShow(list);
 				break;
 			}
-
-
+			case '5':
+			{
+				Clear(list);
+				break;
+			}
 			case '0':
 				cout << " Welcome back." << endl;
 				break;

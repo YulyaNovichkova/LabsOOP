@@ -5,8 +5,10 @@
 #include "List.h"
 #include "Person.h"
 //TODO: см. замечания в заголовочном файле
+//ИСПРАВЛЕНО.
 using namespace std;
 
+//Показать список
 void ListShow(List* list)
 {
 	Node* current = list->Head;
@@ -22,12 +24,13 @@ void ListShow(List* list)
 	cout << endl;
 };
 
+//Вставка элемента в конец списка
 void AddElement(List* list, Person data)
 {
 	InsertElement(list, data, GetLengthList(list));
-	list->Size++;
 }
 
+//Возвращает ссылку на элемент списка по указанному индексу
 Person* GetPerson(List* list, int index)
 {
 	Node* node = new Node;
@@ -40,14 +43,14 @@ Person* GetPerson(List* list, int index)
 		count++;
 	}
 	return &node->Data;
+	delete[] node;
 }
 
+//Вставка элемента на любое место
 void InsertElement(List* list, Person data, int index)
 {
 	Node* newNode = new Node();
 	newNode->Data = data;
-
-	Node* current = list->Head;
 	int i = 0;
 	//Если список пуст, то значение становится списком
 	if (list->Head == NULL)
@@ -65,18 +68,10 @@ void InsertElement(List* list, Person data, int index)
 		++i;
 		node = node->Next;
 	}
-	// n check
 	//TODO: count - это количество. Именовать так элемент списка - неправильно
 	//TODO: Для подсчета элементов списка надо использовать готовую функцию
-	Node* count = list->Head;
-	int n = 0;
-	do
-	{
-		count = count->Next;
-		n++;
-	} while (count != NULL);
-
-	if (index > n)
+	//ИСПРАВЛЕНО.
+	if (index > GetLengthList(list))
 	{
 		//TODO: Выбрасывать надо exception, а не строку
 		throw "Mistake! This index too big. \n";
@@ -84,10 +79,10 @@ void InsertElement(List* list, Person data, int index)
 	}
 
 	//TODO: Опять поиск текущего элемента? Зачем тогда переменная node?
-	//Node* current = list->head;
+	//ИСПРАВЛЕНО.
 
-	for (int i = 1; i < index && current->Next != NULL; i++)
-		current = current->Next;
+	for (int i = 1; i < index && node->Next != NULL; i++)
+		node = node->Next;
 	//Вставляем на первое место
 	if (index == 0)
 	{
@@ -98,30 +93,35 @@ void InsertElement(List* list, Person data, int index)
 	else
 	{
 		//Вставляем элемент на нужное место
-		if (current->Next != NULL)
-			current->Next->Prev = newNode;
-		newNode->Next = current->Next;
-		current->Next = newNode;
-		newNode->Prev = current;
-		current = newNode;
+		if (node->Next != NULL)
+			node->Next->Prev = newNode;
+		newNode->Next = node->Next;
+		node->Next = newNode;
+		newNode->Prev = node;
+		node = newNode;
 	}
 }
 
-void DeleteElement(List* list, int index)
+//Удаление элемента из списка
+void Remove(List* list, int index)
 {
+	Node* node = list->Head;
+
+	if (node == NULL)
+	{
+			return;
+	}
 	if (list->Head == NULL)
+	{
 		return;
+	}
 
 	int i = 0;
-	Node* node = list->Head;
 	while (i != index && node != NULL)
 	{
 		++i;
 		node = node->Next;
 	}
-
-	if (node == NULL)
-		return;
 	//начало списка
 	if (node->Prev == NULL)
 	{
@@ -151,31 +151,40 @@ void DeleteElement(List* list, int index)
 	delete node;
 }
 
-Person ReadRandomPerson()
+//Заполнение Person случайными данными
+Person CreateRandomPerson()
 {
-	Person person;
 	srand(time(NULL));
-	person.Age = rand() % 100;
-	int sex = rand() % 1;
+	//Женщины
+	const char* femaleSurname[] = { "Novichkova", "Ovsyannikova", "Belova", "Petuxova", "Shilnikova",
+		"Nagih", "Bespalova", "Lebedeva", "Alexseeva", "Koreshkova",
+		"Karipova", "Kislova", "Smirnova", "Proxorova", "Maksova" };
 
-	switch (sex)
+	const char* femaleName[] = { "Yulya", "Nastya", "Elena", "Irina", "Kristina",
+		"Alisa", "Inna", "Ekaterina", "Dasha", "Masha",
+		"Olga", "Evgeniya", "Anna", "Liliya", "Yana" };
+	//Мужчины
+	const char* maleSurname[] = { "Ivanov", "Petrov", "Sidorov", "Trofimov", "Vakulin",
+		"Kolesnik", "Solovov", "Kalinin", "Kachev", "Ermolaev",
+		"Tihonov", "Brodt", "Dvornikov", "Pushkarev", "Mulenok" };
+
+	const char* maleName[] = { "Dmitriy", "Pasha", "Aleksandr", "Sergey", "Ilya",
+		"Yaroslav", "Aleksey", "Kirill", "Nikolay", "Ivan",
+		"Vladislav", "Slava", "Georgiy", "Evgeniy", "Vitaliy" };
+	Person person;
+	person.Age = rand() % 100;
+	person.Sex = Sex(rand() % 2);
+	if (person.Sex == 0)
 	{
-		//TODO: ПОМЕНЯТЬ
-		case 0:
-		{
-			const char *femaleSurname[] = { "Novichkova", "Ovsyannikova", "Belova", "Petuxova", "Kolesnik" };
-			CopyCharString(person.Surname, femaleSurname[rand() % 5]);
-			const char *femaleName[] = { "Yulya", "Nastya", "Elena", "Irina", "Kristina" };
-			CopyCharString(person.Name, femaleName[rand() % 5]);
-		}
-		case 1:
-		{
-			const char *maleSurname[] = { "Ivanov", "Petrov", "Sidorov", "Trofimov", "Vakulin" };
-			CopyCharString(person.Surname, maleSurname[rand() % 5]);
-			const char *maleName[] = { "Dima", "Pasha", "Alex", "Sergey", "Uluya" };
-			CopyCharString(person.Name, maleName[rand() % 5]);
-		}
+			CopyCharString(person.Surname, femaleSurname[rand() % 15]);
+			CopyCharString(person.Name, femaleName[rand() % 15]);
 	}
+	else
+	{
+			CopyCharString(person.Surname, maleSurname[rand() % 15]);
+			CopyCharString(person.Name, maleName[rand() % 15]);
+	}
+
 	return person;
 }
 
@@ -189,6 +198,7 @@ void CopyCharString(char* structString, const char* constString)
 	structString[i] = '\0';
 }
 
+//Длина списка
 int GetLengthList(List* list)
 {
 	int count = 0;
@@ -203,5 +213,17 @@ int GetLengthList(List* list)
 		return count;
 	}
 	//TODO: NULL - это адрес (указатель), а функция должна возвращать число
-	else NULL;
+	//ИСПРАВЛЕНО.
+	else return 0;
+}
+
+//Очистить содержимое списка
+void Clear(List* list)
+{
+	while (list->Head)
+	{
+		list->Tail = list->Head->Next;
+		delete list->Head;
+		list->Head = list->Tail;
+	}
 }

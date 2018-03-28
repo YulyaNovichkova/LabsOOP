@@ -86,5 +86,8 @@
     <ClInclude Include="Stack.h">
       <Filter>Файлы заголовков\Lab4</Filter>
     </ClInclude>
+    <ClInclude Include="LaunchTask4.h">
+      <Filter>Файлы заголовков\Lab4</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
