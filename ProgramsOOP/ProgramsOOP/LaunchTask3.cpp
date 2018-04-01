@@ -61,7 +61,8 @@ int Menu3()
 			//TODO: Убрать вывод на экран
 			//ИСПРАВЛЕНО.
 			cout << "Your string: " << endl;
-			GetSubstring(str, 2, 4);
+			char* substr = GetSubstring(str, 2, 4);
+			ShowString(substr);
 			GetSubstring(str, -3, 3);
 			GetSubstring(str, 2, -4);
 			GetSubstring(str, 7, 8);
@@ -83,7 +84,6 @@ int Menu3()
 			char testSubstring3[10] = "sum";
 			FindSubstringTest(string, subString, testSubstring3);
 			delete[] subString;
-			delete[] string;
 			break;
 			//TODO: утечка памяти
 			//ИСПРАВЛЕНО.
@@ -116,6 +116,9 @@ int Menu3()
 			char* name = new char[20];
 			char* extension = new char[10];
 			SplitFilename(source, path, name, extension);
+			cout << endl << "path: " << path << endl;
+			cout << "name: " << name << endl;
+			cout << "extention: " << extension << endl;
 			delete[] source;
 			delete[] name;
 			delete[] extension;
@@ -143,13 +146,13 @@ int Menu3()
 			//TODO: Было неправильно задано число символов для табуляции. Исправил на 8, теперь корректно.
 			// Количество символов для табуляции легко проверить, запустив консоль, нажав Tab и посчитав, насколько символов сдвинулась корректка
 			int sizeSpaces = 8;
-			//char string[100];
-			//cout << "Enter string." << endl;
-			//cout << "Specify a space with the symbol ':', tab '\\t':" << endl;
-			//cin.getline(string, 100);
-			char string[] = "::::::::a:::::::as::::::asd:::::asdf!!!!:::a::::::as:::::asd";
+			char string[100];
+			cout << "Enter string." << endl;
+			cout << "Specify a space with the symbol ':', tab '\\t':" << endl;
+			cin.getline(string, 100);
+			//char string[] = "::::::::a:::::::as::::::asd:::::asdf!!!!:::a::::::as:::::asd";
 			cout << string << endl;
-			//cout << "New string: " << endl;
+			cout << "New string: " << endl;
 			cout << ReplaceSpacesOnTabs(string, sizeSpaces) << endl;
 			break;
 		}

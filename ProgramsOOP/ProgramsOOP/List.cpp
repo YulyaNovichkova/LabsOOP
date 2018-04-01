@@ -35,6 +35,7 @@ Person* GetPerson(List* list, int index)
 {
 	Node* node = new Node;
 	//TODO: Утечка памяти
+	//ИСПРАВЛЕНО.
 	node = list->Head;
 	int count = 0;
 	while (count != index)

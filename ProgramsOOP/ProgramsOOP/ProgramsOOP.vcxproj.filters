@@ -31,6 +31,9 @@
     <Filter Include="Исходные файлы\LaunchLab4">
       <UniqueIdentifier>{95e151c1-4f74-44ce-89f1-398598cf1b97}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Исходные файлы\LaunchLab5">
+      <UniqueIdentifier>{f9bfaf9e-8f07-47a5-89bf-347baeb0ca06}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -62,6 +65,9 @@
     </ClCompile>
     <ClCompile Include="Stack.cpp">
       <Filter>Исходные файлы\LaunchLab4</Filter>
+    </ClCompile>
+    <ClCompile Include="LaunchTask5.cpp">
+      <Filter>Исходные файлы\LaunchLab5</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
