@@ -115,7 +115,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="LaunchTask5.cpp" />
+    <ClCompile Include="ClassPerson.cpp" />
     <ClCompile Include="List.cpp" />
     <ClCompile Include="LaunchTask1.cpp" />
     <ClCompile Include="LaunchTask2.cpp" />
@@ -129,10 +129,12 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AllLabs.h" />
+    <ClInclude Include="PersonClass.h" />
     <ClInclude Include="LaunchTask4.h" />
     <ClInclude Include="List.h" />
     <ClInclude Include="Function2.h" />
     <ClInclude Include="Function1.h" />
+    <ClInclude Include="PersonListClass.h" />
     <ClInclude Include="String.h" />
     <ClInclude Include="Stack.h" />
     <ClInclude Include="Person.h" />

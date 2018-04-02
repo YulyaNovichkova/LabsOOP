@@ -34,6 +34,9 @@
     <Filter Include="Исходные файлы\LaunchLab5">
       <UniqueIdentifier>{f9bfaf9e-8f07-47a5-89bf-347baeb0ca06}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Файлы заголовков\Lab5">
+      <UniqueIdentifier>{718426c6-11db-4ce3-82ff-df935814b45e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -66,7 +69,7 @@
     <ClCompile Include="Stack.cpp">
       <Filter>Исходные файлы\LaunchLab4</Filter>
     </ClCompile>
-    <ClCompile Include="LaunchTask5.cpp">
+    <ClCompile Include="ClassPerson.cpp">
       <Filter>Исходные файлы\LaunchLab5</Filter>
     </ClCompile>
   </ItemGroup>
@@ -94,6 +97,12 @@
     </ClInclude>
     <ClInclude Include="LaunchTask4.h">
       <Filter>Файлы заголовков\Lab4</Filter>
+    </ClInclude>
+    <ClInclude Include="PersonListClass.h">
+      <Filter>Файлы заголовков\Lab5</Filter>
+    </ClInclude>
+    <ClInclude Include="PersonClass.h">
+      <Filter>Файлы заголовков\Lab5</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
