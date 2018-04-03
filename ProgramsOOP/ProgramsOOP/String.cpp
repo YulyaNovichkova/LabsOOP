@@ -2,8 +2,7 @@
 #include <iomanip>
 #include "String.h"
 #include "Person.h"
-//TODO: см. замечания в заголовочном файле
-//ИСПРАВЛЕНО.
+
 using namespace std;
 
 void ShowString(char *string)
@@ -43,8 +42,6 @@ char* Concatenate(char* string1, char* string2)
 	int lengthSrting1 = GetLength(string1);
 	int lengthString2 = GetLength(string2);
 	int length = lengthSrting1 + lengthString2;
-	//TODO: А если сумма длин строк string1 и string2 будет больше 100? Переделать для строк любой длины
-		//ИСПРАВЛЕНО.
 	//Ниже прибавляется 1 для '\0'
 	char* string3 = new char[length + 1];
 	for (i = 0; i < lengthSrting1; i++)
@@ -62,9 +59,6 @@ char* Concatenate(char* string1, char* string2)
 
 char* GetSubstring(char* string, int startIndex, int charCount)
 {
-	//TODO: Такие длинные условия тяжело прочесть, поэтому их следует комментировать
-	//ИСПРАВЛЕНО.
-
 	//Индекс конца подстроки не был больше длины самой строки ИЛИ был больше нуля
 	//ИЛИ индекс начало подстроки был больше нуля
 	if (((GetLength(string) - startIndex) < charCount) || (startIndex < 0) || (charCount < 0))
@@ -75,16 +69,12 @@ char* GetSubstring(char* string, int startIndex, int charCount)
 	char* substring = new char[charCount + 1];
 	for (int i = 0; i < charCount; i++)
 	{
-		//TODO: Убрать вывод на экран
-		//ИСПРАВЛЕНО.
 		substring[i] = string[startIndex];
 		startIndex++;
 	}
-	//TODO: Функция должна вернуть найденную подстроку, а сейчас они ничего не возвращает
-	//ИСПРАВЛЕНО.
 	substring[charCount] = '\0';
 	return substring;
-	delete[] substring;
+	//delete[] substring;
 }
 
 int FindSubstring(char* string, char* substring)
@@ -119,8 +109,7 @@ int FindSubstring(char* string, char* substring)
 	}
 	return -1;
 }
-//TODO: функция должна вернуть НОВУЮ строку, а не изменить старую
-//ИСПРАВЛЕНО.
+
 char* ToUppercase(char* string)
 {
 	char* result = new char[255];
@@ -133,18 +122,13 @@ char* ToUppercase(char* string)
 	{
 		if (result[count] >= 'a' && result[count] <= 'z')
 		{
-			//TODO: Избавиться от магического числа 32
-			//Я не имею понятия как. Может на то оно и магическое, что без него никак?
-			result[count] = result[count] - 32;
+			result[count] = result[count] - ('A' - 'a');
 		}
 		count++;
 	}
 	return result;
 }
 
-
-//TODO: функция должна вернуть НОВУЮ строку, а не изменить старую
-//ИСПРАВЛЕНО.
 char* ToLowercase(char* string)
 {
 	char* result = new char[255];
@@ -157,8 +141,7 @@ char* ToLowercase(char* string)
 	{
 		if (result[count] >= 'A' && result[count] <= 'Z')
 		{
-			//TODO: Избавиться от магического числа 32
-			result[count] = result[count] + 32;
+			result[count] = result[count] + ('A' - 'a');
 		}
 		count++;
 	}
@@ -224,8 +207,6 @@ void SplitFilename(char* source, char* path, char* name, char* extension)
 	}
 }
 
-//TODO: сейчас функция работает неправильно. Тестировать и исправлять
-//ИСПРАВЛЕНО.
 char* ReplaceTabsOnSpaces(char* string, int sizeTabs)
 {
 	int i = 0;
@@ -336,7 +317,6 @@ Person ReadPerson()
 
 void ShowPerson(Person person)
 {
-	//TODO: Вывод персоны лучше делать в одну строку - так будет удобнее потом тестировать списки персон
 	cout << "Surname: " << person.Surname;
 	cout << endl << "Name: " << person.Name;
 	switch (person.Sex)

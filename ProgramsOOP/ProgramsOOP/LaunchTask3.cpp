@@ -50,24 +50,18 @@ int Menu3()
 			cout << "Combined string:" << endl;
 			ShowString(strResult);
 			delete[] strResult;
-			//TODO: Утечка памяти
-			//ИСПРАВЛЕНО.
 			break;
 		}
 			
 		case 3:
 		{
 			char str[12] = { 'H', 'e', 'l', 'l', 'o', ',', 'W', 'o', 'r', 'l', 'd', '\0' };
-			//TODO: Убрать вывод на экран
-			//ИСПРАВЛЕНО.
 			cout << "Your string: " << endl;
 			char* substr = GetSubstring(str, 2, 4);
 			ShowString(substr);
 			GetSubstring(str, -3, 3);
 			GetSubstring(str, 2, -4);
 			GetSubstring(str, 7, 8);
-			//TODO: Убрать вывод на экран
-			//ИСПРАВЛЕНО.
 			cout << endl;
 			break;
 		}
@@ -85,8 +79,6 @@ int Menu3()
 			FindSubstringTest(string, subString, testSubstring3);
 			delete[] subString;
 			break;
-			//TODO: утечка памяти
-			//ИСПРАВЛЕНО.
 		}
 			
 		case 5:
@@ -143,8 +135,6 @@ int Menu3()
 
 		case 9:
 		{
-			//TODO: Было неправильно задано число символов для табуляции. Исправил на 8, теперь корректно.
-			// Количество символов для табуляции легко проверить, запустив консоль, нажав Tab и посчитав, насколько символов сдвинулась корректка
 			int sizeSpaces = 8;
 			char string[100];
 			cout << "Enter string." << endl;

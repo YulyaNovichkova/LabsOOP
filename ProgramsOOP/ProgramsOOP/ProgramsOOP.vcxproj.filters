@@ -72,6 +72,12 @@
     <ClCompile Include="ClassPerson.cpp">
       <Filter>Исходные файлы\LaunchLab5</Filter>
     </ClCompile>
+    <ClCompile Include="PersonClass.cpp">
+      <Filter>Исходные файлы\LaunchLab5</Filter>
+    </ClCompile>
+    <ClCompile Include="PersonListClass.cpp">
+      <Filter>Исходные файлы\LaunchLab5</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AllLabs.h">

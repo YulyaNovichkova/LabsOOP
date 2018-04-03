@@ -73,3 +73,6 @@ public:
 	}
 	Person* GetRandomPerson();
 };
+
+Person ReadPerson();
+void ShowPerson(Person person);

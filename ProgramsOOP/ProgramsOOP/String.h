@@ -1,8 +1,6 @@
 ﻿#pragma once
-//TODO: переименовать файл в string - чтобы название отражало содержащиеся в нём функции, а не просто нумеровало лабораторные работы
-//ИСПРАВЛЕНО.
-void ShowString(char *string);
 
+void ShowString(char *string);
 //Создание строки
 char* CreateString();
 //Определение длины строки

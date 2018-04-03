@@ -1,13 +1,12 @@
-п»ї#include <iostream>
+#include <iostream>
 #include <Windows.h>
 #include <cstdlib>
 #include <ctime>
-#include "List.h"
-#include "Person.h"
-
+#include "PersonListClass.h"
+#include "PersonClass.h"
 using namespace std;
 
-//РџРѕРєР°Р·Р°С‚СЊ СЃРїРёСЃРѕРє
+//Показать список
 void ListShow(List* list)
 {
 	Node* current = list->Head;
@@ -23,13 +22,13 @@ void ListShow(List* list)
 	cout << endl;
 };
 
-//Р’СЃС‚Р°РІРєР° СЌР»РµРјРµРЅС‚Р° РІ РєРѕРЅРµС† СЃРїРёСЃРєР°
+//Вставка элемента в конец списка
 void AddElement(List* list, Person data)
 {
 	InsertElement(list, data, GetLengthList(list));
 }
 
-//Р’РѕР·РІСЂР°С‰Р°РµС‚ СЃСЃС‹Р»РєСѓ РЅР° СЌР»РµРјРµРЅС‚ СЃРїРёСЃРєР° РїРѕ СѓРєР°Р·Р°РЅРЅРѕРјСѓ РёРЅРґРµРєСЃСѓ
+//Возвращает ссылку на элемент списка по указанному индексу
 Person* GetPerson(List* list, int index)
 {
 	Node* node = new Node;
@@ -44,13 +43,13 @@ Person* GetPerson(List* list, int index)
 	delete[] node;
 }
 
-//Р’СЃС‚Р°РІРєР° СЌР»РµРјРµРЅС‚Р° РЅР° Р»СЋР±РѕРµ РјРµСЃС‚Рѕ
+//Вставка элемента на любое место
 void InsertElement(List* list, Person data, int index)
 {
 	Node* newNode = new Node();
 	newNode->Data = data;
 	int i = 0;
-	//Р•СЃР»Рё СЃРїРёСЃРѕРє РїСѓСЃС‚, С‚Рѕ Р·РЅР°С‡РµРЅРёРµ СЃС‚Р°РЅРѕРІРёС‚СЃСЏ СЃРїРёСЃРєРѕРј
+	//Если список пуст, то значение становится списком
 	if (list->Head == NULL)
 	{
 		list->Head = newNode;
@@ -67,13 +66,14 @@ void InsertElement(List* list, Person data, int index)
 
 	if (index > GetLengthList(list))
 	{
+		//TODO: Выбрасывать надо exception, а не строку
 		throw "Mistake! This index too big. \n";
 		return;
 	}
 
 	for (int i = 1; i < index && node->Next != NULL; i++)
 		node = node->Next;
-	//Р’СЃС‚Р°РІР»СЏРµРј РЅР° РїРµСЂРІРѕРµ РјРµСЃС‚Рѕ
+	//Вставляем на первое место
 	if (index == 0)
 	{
 		newNode->Next = list->Head;
@@ -82,7 +82,7 @@ void InsertElement(List* list, Person data, int index)
 	}
 	else
 	{
-		//Р’СЃС‚Р°РІР»СЏРµРј СЌР»РµРјРµРЅС‚ РЅР° РЅСѓР¶РЅРѕРµ РјРµСЃС‚Рѕ
+		//Вставляем элемент на нужное место
 		if (node->Next != NULL)
 			node->Next->Prev = newNode;
 		newNode->Next = node->Next;
@@ -92,14 +92,14 @@ void InsertElement(List* list, Person data, int index)
 	}
 }
 
-//РЈРґР°Р»РµРЅРёРµ СЌР»РµРјРµРЅС‚Р° РёР· СЃРїРёСЃРєР°
+//Удаление элемента из списка
 void Remove(List* list, int index)
 {
 	Node* node = list->Head;
 
 	if (node == NULL)
 	{
-			return;
+		return;
 	}
 	if (list->Head == NULL)
 	{
@@ -112,7 +112,7 @@ void Remove(List* list, int index)
 		++i;
 		node = node->Next;
 	}
-	//РЅР°С‡Р°Р»Рѕ СЃРїРёСЃРєР°
+	//начало списка
 	if (node->Prev == NULL)
 	{
 		list->Head = NULL;
@@ -122,7 +122,7 @@ void Remove(List* list, int index)
 			list->Head->Prev = NULL;
 		}
 	}
-	//РєРѕРЅРµС† СЃРїРёСЃРєР°
+	//конец списка
 	if (node->Next == NULL)
 	{
 		list->Tail = NULL;
@@ -132,7 +132,7 @@ void Remove(List* list, int index)
 			list->Tail->Next = NULL;
 		}
 	}
-	//СЃРµСЂРµРґРёРЅР° СЃРїРёСЃРєР°
+	//середина списка
 	if (node->Next != NULL && node->Prev != NULL)
 	{
 		node->Next->Prev = node->Prev;
@@ -141,11 +141,11 @@ void Remove(List* list, int index)
 	delete node;
 }
 
-//Р—Р°РїРѕР»РЅРµРЅРёРµ Person СЃР»СѓС‡Р°Р№РЅС‹РјРё РґР°РЅРЅС‹РјРё
+//Заполнение Person случайными данными
 Person CreateRandomPerson()
 {
 	srand(time(NULL));
-	//Р–РµРЅС‰РёРЅС‹
+	//Женщины
 	const char* femaleSurname[] = { "Novichkova", "Ovsyannikova", "Belova", "Petuxova", "Shilnikova",
 		"Nagih", "Bespalova", "Lebedeva", "Alexseeva", "Koreshkova",
 		"Karipova", "Kislova", "Smirnova", "Proxorova", "Maksova" };
@@ -153,7 +153,7 @@ Person CreateRandomPerson()
 	const char* femaleName[] = { "Yulya", "Nastya", "Elena", "Irina", "Kristina",
 		"Alisa", "Inna", "Ekaterina", "Dasha", "Masha",
 		"Olga", "Evgeniya", "Anna", "Liliya", "Yana" };
-	//РњСѓР¶С‡РёРЅС‹
+	//Мужчины
 	const char* maleSurname[] = { "Ivanov", "Petrov", "Sidorov", "Trofimov", "Vakulin",
 		"Kolesnik", "Solovov", "Kalinin", "Kachev", "Ermolaev",
 		"Tihonov", "Brodt", "Dvornikov", "Pushkarev", "Mulenok" };
@@ -166,13 +166,13 @@ Person CreateRandomPerson()
 	person.Sex = Sex(rand() % 2);
 	if (person.Sex == 0)
 	{
-			CopyCharString(person.Surname, femaleSurname[rand() % 15]);
-			CopyCharString(person.Name, femaleName[rand() % 15]);
+		CopyCharString(person.Surname, femaleSurname[rand() % 15]);
+		CopyCharString(person.Name, femaleName[rand() % 15]);
 	}
 	else
 	{
-			CopyCharString(person.Surname, maleSurname[rand() % 15]);
-			CopyCharString(person.Name, maleName[rand() % 15]);
+		CopyCharString(person.Surname, maleSurname[rand() % 15]);
+		CopyCharString(person.Name, maleName[rand() % 15]);
 	}
 
 	return person;
@@ -188,7 +188,7 @@ void CopyCharString(char* structString, const char* constString)
 	structString[i] = '\0';
 }
 
-//Р”Р»РёРЅР° СЃРїРёСЃРєР°
+//Длина списка
 int GetLengthList(List* list)
 {
 	int count = 0;
@@ -205,7 +205,7 @@ int GetLengthList(List* list)
 	else return 0;
 }
 
-//РћС‡РёСЃС‚РёС‚СЊ СЃРѕРґРµСЂР¶РёРјРѕРµ СЃРїРёСЃРєР°
+//Очистить содержимое списка
 void Clear(List* list)
 {
 	while (list->Head)

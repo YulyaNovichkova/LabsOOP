@@ -122,6 +122,8 @@
     <ClCompile Include="LaunchTask3.cpp" />
     <ClCompile Include="LaunchTask4.cpp" />
     <ClCompile Include="LaunchTaskFunction2.cpp" />
+    <ClCompile Include="PersonClass.cpp" />
+    <ClCompile Include="PersonListClass.cpp" />
     <ClCompile Include="String.cpp" />
     <ClCompile Include="LaunchTaskFunctions1.cpp" />
     <ClCompile Include="Stack.cpp" />
