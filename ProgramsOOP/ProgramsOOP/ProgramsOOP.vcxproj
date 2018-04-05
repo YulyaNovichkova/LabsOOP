@@ -115,7 +115,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="ClassPerson.cpp" />
+    <ClCompile Include="LaunchTask5.cpp" />
     <ClCompile Include="List.cpp" />
     <ClCompile Include="LaunchTask1.cpp" />
     <ClCompile Include="LaunchTask2.cpp" />

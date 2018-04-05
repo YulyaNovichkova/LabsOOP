@@ -14,13 +14,10 @@ private:
 	Sex _sex;
 	int _age;
 public:
-	Person(string surname, string name, enum Sex sex, int age) //конструктор класса
+	Person(string surname, string name, enum Sex sex, int age)
 	{
-		SetSurname(surname);
-		SetName(name);
-		SetSex(sex);
-		SetAge(age);
-	}
+
+	};
 	void SetSurname(string surname)
 	{
 		_surname = surname;
@@ -54,25 +51,10 @@ public:
 	{
 		return _age;
 	}
-	void Show()
-	{
-		cout << "Surname: " << _surname;
-		cout << endl << "Name: " << _name;
-		switch (_sex)
-		{
-		case 0:
-			cout << endl << "Sex: female";
-			break;
-		case 1:
-			cout << endl << "Sex: male";
-			break;
-		default:
-			break;
-		}
-		cout << endl << "Age: " << _age << endl;
-	}
-	Person* GetRandomPerson();
+	static Person* CreateRandomPerson();
+	Person* Read();
+	static void ShowPerson(Person* person);
 };
 
-Person ReadPerson();
-void ShowPerson(Person person);
+
+
