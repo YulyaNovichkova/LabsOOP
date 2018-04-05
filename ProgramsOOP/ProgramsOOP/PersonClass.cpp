@@ -37,7 +37,8 @@ Person* Person::Read()
 			cout << "An invalid value was entered!" << endl;
 		}
 	} while (age < 0);
-	return new Person(name, surname, sex, age);
+	Person* person = new Person(surname, name, sex, age);
+	return person;
 }
 
 //Заполнение Person случайными данными
@@ -54,7 +55,7 @@ Person* Person::CreateRandomPerson()
 		"Olga", "Evgeniya", "Anna", "Liliya", "Yana" };
 	//Мужчины
 	const char* maleSurname[] = { "Ivanov", "Petrov", "Sidorov", "Trofimov", "Vakulin",
-		"Kolesnik", "Solovov", "Kalinin", "Kachev", "Ermolaev",
+		"Kolesnik", "Solovov", "Kalinin", "Kalachev", "Ermolaev",
 		"Tihonov", "Brodt", "Dvornikov", "Pushkarev", "Mulenok" };
 
 	const char* maleName[] = { "Dmitriy", "Pasha", "Aleksandr", "Sergey", "Ilya",
@@ -78,7 +79,7 @@ Person* Person::CreateRandomPerson()
 		surname = maleSurname[rand() % 15];
 		name = maleName[rand() % 15];
 	}
-	Person* person = new Person(name, surname, sex, age);
+	Person* person = new Person(surname,name,sex,age);
 	return	person;
 }
 
@@ -98,4 +99,5 @@ void Person::ShowPerson(Person* person)
 		break;
 	}
 	cout << endl << "Age: " << person->GetAge() << endl;
+	cout << endl;
 }

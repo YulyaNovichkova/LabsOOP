@@ -6,20 +6,10 @@ class PersonList
 private:
 	class PersonListItem
 	{
-	private:
-		Person * _value;
 	public:
-		Person * date;
 		PersonListItem* _next = nullptr;
 		PersonListItem* _prev = nullptr;
-		PersonListItem(Person* person)
-		{
-			_value = person;
-		};
-		Person* GetValue()
-		{
-			return _value;
-		}
+		Person* person;
 	};
 	PersonListItem * _head; //указатель на голову списка
 	PersonListItem * _tail;

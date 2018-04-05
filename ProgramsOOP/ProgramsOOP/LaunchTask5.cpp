@@ -5,15 +5,15 @@ using namespace std;
 int Menu5()
 {
 	char key;
-	PersonList list;
-
+	int index;
+	PersonList* list = new PersonList();
 	do
 	{
 		cout << "\t Choose next step:" << endl << endl << endl
 			<< "1. Add Person." << endl
 			<< "2. Find Person with Index." << endl
 			<< "3. Get Person Index." << endl
-			<< "4. Remove Person." << endl
+			<< "4. Remove Person by index." << endl
 			<< "5. Clear list." << endl
 			<< "0. Exit." << endl;
 
@@ -24,28 +24,44 @@ int Menu5()
 		{
 		case '1':
 		{
-			list.Add(Person::CreateRandomPerson());
-			list.Show();
+			Person* person = Person::CreateRandomPerson();
+			list->Add(person);
+			list->Show();
 			break;
 		}
 		case '2':
 		{
-
+			cout << "Enter the index:" << endl;
+			cin >> index;
+			Person* person = list->Find(index);
+			Person::ShowPerson(person);
 			break;
 		}
 		case '3':
 		{
-
+			Person* person = Person::Read();
+			index = list->IndexOf(person);
+			if (index == -1)
+			{
+				cout << "Person not found." << endl;
+			}
+			else
+			{
+				cout << "Index: " << index << endl;
+			}
 			break;
 		}
 		case '4':
 		{
-
+			cout << "Enter the index:" << endl;
+			cin >> index;
+			list->RemoveAt(index);
+			list->Show();
 			break;
 		}
 		case '5':
 		{
-			list.Clear();
+			list->Clear();
 			break;
 		}
 		case '0':

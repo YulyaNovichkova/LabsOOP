@@ -9,14 +9,13 @@ using namespace std;
 void PersonList::Show()
 {
 	PersonListItem* current = _head;
-	if (_head == NULL)
+	if (!(current))
 	{
 		return;
 	}
-	cout << "List:" << endl;
 	while (current)
 	{
-		Person::ShowPerson(current->date);
+		Person::ShowPerson(current->person);
 		current = current->_next;
 	}
 	cout << endl;
@@ -25,17 +24,18 @@ void PersonList::Show()
 //добавить человека в список
 void PersonList::Add(Person* person)
 {
-	PersonListItem* temp = new PersonListItem(person);
-	if (!_head)
+	PersonListItem* newItem = new PersonListItem();
+	newItem->person = person;
+	if (!(_head))
 	{
-		_head = temp;
+		_head = newItem;
 	}
 	else
 	{
-		temp->_prev = _tail;
-		_tail->_next = temp;
+		newItem->_prev = _tail;
+		_tail->_next = newItem;
 	}
-	_tail = temp;
+	_tail = newItem;
 	_count++;
 }
 
@@ -56,22 +56,31 @@ Person* PersonList::Find(int index)
 			searchedItem = searchedItem->_next;
 		}
 	}
-	return searchedItem->GetValue();
+	return searchedItem->person;
 }
 
 //вернуть индекс человека, если он есть в списке
 int PersonList::IndexOf(Person* person)
 {
-	PersonListItem* searchedPerson = _head;
+	PersonListItem* current = _head;
 	int index = 0;
-	while (searchedPerson)
+	while (current != nullptr && index <= _count)
 	{
-		if (searchedPerson->GetValue() == person)
+		if (current->person->GetSurname() == person->GetSurname())
 		{
-			return index;
+			if (current->person->GetName() == person->GetName())
+			{
+				if (current->person->GetSex() == person->GetSex())
+				{
+					if (current->person->GetAge() == person->GetAge())
+					{
+						return index;
+					}
+				}
+			}
 		}
+		current = current->_next;
 		index++;
-		searchedPerson = searchedPerson->_next;
 	}
 	return -1;
 }
@@ -83,7 +92,7 @@ void PersonList::Remove(Person* person)
 
 	if (person)
 	{
-		while (deletedItem->GetValue() != person)
+		while (deletedItem->person != person)
 		{
 			if (!deletedItem->_next)
 			{

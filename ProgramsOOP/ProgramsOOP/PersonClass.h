@@ -16,8 +16,12 @@ private:
 public:
 	Person(string surname, string name, enum Sex sex, int age)
 	{
-
+		SetSurname(surname);
+		SetName(name);
+		SetSex(sex);
+		SetAge(age);
 	};
+
 	void SetSurname(string surname)
 	{
 		_surname = surname;
@@ -52,7 +56,7 @@ public:
 		return _age;
 	}
 	static Person* CreateRandomPerson();
-	Person* Read();
+	static Person* Read();
 	static void ShowPerson(Person* person);
 };
 
