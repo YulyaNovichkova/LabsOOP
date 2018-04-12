@@ -43,4 +43,5 @@ public:
 	{
 		return _school;
 	}
+	static Child* CreateRandomChild();
 };

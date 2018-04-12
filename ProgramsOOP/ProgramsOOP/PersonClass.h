@@ -12,7 +12,7 @@ protected:
 	string _surname;
 	string _name;
 	Sex _sex;
-	int _age;
+	unsigned int _age;
 public:
 	Person();
 	Person(string surname, string name, enum Sex sex, int age)
@@ -35,9 +35,16 @@ public:
 	{
 		_sex = sex;
 	}
-	void SetAge(int age)
+	void SetAge(unsigned int age)
 	{
-		_age = age;
+		if (age >= 18)
+		{
+			_age = age;
+		}
+		else
+		{
+			_age = 18;
+		}
 	}
 
 	string GetSurname()
