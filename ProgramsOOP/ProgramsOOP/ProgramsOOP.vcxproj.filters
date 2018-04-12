@@ -37,6 +37,12 @@
     <Filter Include="Файлы заголовков\Lab5">
       <UniqueIdentifier>{718426c6-11db-4ce3-82ff-df935814b45e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Файлы заголовков\Lab6">
+      <UniqueIdentifier>{5a530688-fe5e-497d-9bec-06fdcf429fa3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\LaunchLab6">
+      <UniqueIdentifier>{57d0d66a-6a50-4378-a2d7-ebf462638461}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -78,6 +84,15 @@
     <ClCompile Include="LaunchTask5.cpp">
       <Filter>Исходные файлы\LaunchLab5</Filter>
     </ClCompile>
+    <ClCompile Include="LaunchTask6.cpp">
+      <Filter>Исходные файлы\LaunchLab6</Filter>
+    </ClCompile>
+    <ClCompile Include="AdultClass.cpp">
+      <Filter>Исходные файлы\LaunchLab6</Filter>
+    </ClCompile>
+    <ClCompile Include="ChildClass.cpp">
+      <Filter>Исходные файлы\LaunchLab6</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AllLabs.h">
@@ -109,6 +124,12 @@
     </ClInclude>
     <ClInclude Include="PersonClass.h">
       <Filter>Файлы заголовков\Lab5</Filter>
+    </ClInclude>
+    <ClInclude Include="AdultClass.h">
+      <Filter>Файлы заголовков\Lab6</Filter>
+    </ClInclude>
+    <ClInclude Include="ChildClass.h">
+      <Filter>Файлы заголовков\Lab6</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

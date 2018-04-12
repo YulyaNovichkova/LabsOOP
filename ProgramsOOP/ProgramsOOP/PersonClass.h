@@ -8,12 +8,13 @@ enum Sex { Female = 0, Male = 1 };
 
 class Person 
 {
-private:
+protected:
 	string _surname;
 	string _name;
 	Sex _sex;
 	int _age;
 public:
+	Person();
 	Person(string surname, string name, enum Sex sex, int age)
 	{
 		SetSurname(surname);
@@ -58,6 +59,7 @@ public:
 	static Person* CreateRandomPerson();
 	static Person* Read();
 	static void ShowPerson(Person* person);
+	//virtual char* GetDescription();
 };
 
 
