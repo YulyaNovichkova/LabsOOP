@@ -8,7 +8,7 @@ private:
 	Person* _father;
 	string _school;
 public:
-	Child();
+	Child() {};
 	Child(string surname, string name, enum Sex sex, int age, Person* mother, Person* father, string school)
 	{
 		SetSurname(surname);
