@@ -1,3 +1,4 @@
+//TODO: удалить слово Class из названия файла
 #include "ChildClass.h"
 #include "PersonClass.h"
 #include <ctime>

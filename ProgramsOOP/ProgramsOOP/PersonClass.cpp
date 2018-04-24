@@ -1,3 +1,4 @@
+//TODO: удалить слово Class из названия файла
 #include "PersonClass.h"
 #include <ctime>
 
@@ -66,6 +67,7 @@ Person* Person::CreateRandomPerson()
 	string name;
 	enum Sex sex;
 	int age = rand() % 100;
+	//TODO: грамматическая ошибка в переменной
 	int randonSex = Sex(rand() % 2);
 	if (randonSex == 0)
 	{
@@ -83,6 +85,7 @@ Person* Person::CreateRandomPerson()
 	return	person;
 }
 
+//TODO: лучше вывод Person в одну строку - так удобнее тестировать/отлаживать. Да и пользователю удобнее
 void Person::ShowPerson(Person* person)
 {
 	cout << "Surname: " << person->GetSurname();

@@ -1,3 +1,4 @@
+//TODO: удалить неактуальные лабораторные
 #pragma once
 
 void LaunchTask1();

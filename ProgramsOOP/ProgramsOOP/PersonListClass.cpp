@@ -1,3 +1,4 @@
+//TODO: удалить слово Class из названия файла
 #include <iostream>
 #include <Windows.h>
 #include <cstdlib>
@@ -44,6 +45,7 @@ Person* PersonList::Find(int index)
 {
 	if (index < 0)
 	{
+		//TODO: Нет - если кто-то извне передал отрицательный индекс - значит, код извне содержит ошибку. Надо выбрасывать исключение
 		return nullptr;
 	}
 
@@ -64,8 +66,11 @@ int PersonList::IndexOf(Person* person)
 {
 	PersonListItem* current = _head;
 	int index = 0;
+	//TODO: вместо while лучше брать for от 0 до конца списка - форы гораздо читаемее уайлов
 	while (current != nullptr && index <= _count)
 	{
+		//TODO: Ну что это за вложенная портянка ifов?
+		// Заменить на логическое умножение
 		if (current->person->GetSurname() == person->GetSurname())
 		{
 			if (current->person->GetName() == person->GetName())
@@ -122,6 +127,7 @@ void PersonList::Remove(Person* person)
 //удалить человека из списка по индексу
 void PersonList::RemoveAt(int index)
 {
+	//TODO: Слишком большая реализация для функции. Переделать в две строчки
 	PersonListItem* deletedItem = _head;
 
 	if (index >= 0)
