@@ -1,4 +1,5 @@
-﻿#pragma once
+﻿//TODO: удалить файл
+#pragma once
 
 int Menu2();
 void PrintHelloWorld();double MakeCalculation(int value1, int value2, char operationKey);//Корни квадратного уравнения

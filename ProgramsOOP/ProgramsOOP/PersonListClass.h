@@ -1,3 +1,4 @@
+//TODO: убрать слово Class из названия файла
 #pragma once
 #include "PersonClass.h"
 
@@ -17,6 +18,7 @@ private:
 public:
 	PersonList() //конструктор класса
 	{
+		//TODO: вынести конструкторы в инициализацию полей по умолчанию
 		_head = nullptr;
 		_tail = nullptr;
 		_count = 0;

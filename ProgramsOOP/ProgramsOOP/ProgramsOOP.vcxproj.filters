@@ -107,9 +107,6 @@
     <ClInclude Include="String.h">
       <Filter>Файлы заголовков\Lab3</Filter>
     </ClInclude>
-    <ClInclude Include="Person.h">
-      <Filter>Файлы заголовков\Lab3</Filter>
-    </ClInclude>
     <ClInclude Include="List.h">
       <Filter>Файлы заголовков\Lab4</Filter>
     </ClInclude>
@@ -122,14 +119,17 @@
     <ClInclude Include="PersonListClass.h">
       <Filter>Файлы заголовков\Lab5</Filter>
     </ClInclude>
-    <ClInclude Include="PersonClass.h">
-      <Filter>Файлы заголовков\Lab5</Filter>
-    </ClInclude>
     <ClInclude Include="AdultClass.h">
       <Filter>Файлы заголовков\Lab6</Filter>
     </ClInclude>
     <ClInclude Include="ChildClass.h">
       <Filter>Файлы заголовков\Lab6</Filter>
+    </ClInclude>
+    <ClInclude Include="PersonStract.h">
+      <Filter>Файлы заголовков\Lab3</Filter>
+    </ClInclude>
+    <ClInclude Include="Person.h">
+      <Filter>Файлы заголовков\Lab5</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -136,7 +136,7 @@
     <ClInclude Include="AdultClass.h" />
     <ClInclude Include="AllLabs.h" />
     <ClInclude Include="ChildClass.h" />
-    <ClInclude Include="PersonClass.h" />
+    <ClInclude Include="Person.h" />
     <ClInclude Include="LaunchTask4.h" />
     <ClInclude Include="List.h" />
     <ClInclude Include="Function2.h" />
@@ -144,7 +144,7 @@
     <ClInclude Include="PersonListClass.h" />
     <ClInclude Include="String.h" />
     <ClInclude Include="Stack.h" />
-    <ClInclude Include="Person.h" />
+    <ClInclude Include="PersonStract.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

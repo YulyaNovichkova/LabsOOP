@@ -1,5 +1,6 @@
+//TODO: удалить слово Class из названия файла
 #include "ChildClass.h"
-#include "PersonClass.h"
+#include "Person.h"
 #include <ctime>
 
 Child* Child::CreateRandomChild()

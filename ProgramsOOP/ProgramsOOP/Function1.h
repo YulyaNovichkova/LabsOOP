@@ -1,3 +1,4 @@
+//TODO: удалить файл
 #pragma once
 #include <iostream>
 

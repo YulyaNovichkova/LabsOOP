@@ -1,6 +1,6 @@
 ﻿#include <iostream>
 #include "String.h"
-#include "Person.h"
+#include "PersonStract.h"
 #include "AllLabs.h"
 
 using namespace std;

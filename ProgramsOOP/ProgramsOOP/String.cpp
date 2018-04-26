@@ -1,7 +1,7 @@
 ﻿#include <iostream>
 #include <iomanip>
 #include "String.h"
-#include "Person.h"
+#include "PersonStract.h"
 
 using namespace std;
 
