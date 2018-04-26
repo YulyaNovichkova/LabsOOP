@@ -7,7 +7,7 @@ private:
 	Person* _marriedOn;
 	string _workPlace;
 public:
-	Adult() {};
+	Adult();
 	/*Adult(string surname, string name, enum Sex sex, int age, Person*  marriedOn, string workPlace)
 	{
 	SetSurname(surname);
