@@ -1,12 +1,43 @@
-//TODO: ������� ����� Class �� �������� �����
-#include "AdultClass.h"
+﻿#include "Adult.h"
 #include "Person.h"
 #include <ctime>
+
+//TODO: реализацию в cpp
+//ИСПРАВДЕНО.
+Adult::Adult(string surname, string name, enum Sex sex, int age, Person*  marriedOn, string workPlace) : Person(surname, name, sex, age)
+{
+	SetMarriedOn(marriedOn);
+	SetWorkPlace(workPlace);
+}
+
+//TODO: комментарии к функции
+void Adult::SetMarriedOn(Person* marriedOn)
+{
+	_marriedOn = marriedOn;
+} 
+
+  //TODO: комментарии к функции
+void Adult::SetWorkPlace(string workPlace)
+{
+	_workPlace = workPlace;
+}
+
+//TODO: комментарии к функции
+Person* Adult::GetMarriedOn()
+{
+	return _marriedOn;
+}
+
+ //TODO: комментарии к функции
+string Adult::GetWorkPlace()
+{
+	return _workPlace;
+}
 
 Adult* Adult::CreateRandomAdult()
 {
 	srand(time(NULL));
-	//�������
+	//Женщины
 	const char* femaleSurname[] = { "Novichkova", "Ovsyannikova", "Belova", "Petuxova", "Shilnikova",
 		"Nagih", "Bespalova", "Lebedeva", "Alexseeva", "Koreshkova",
 		"Karipova", "Kislova", "Smirnova", "Proxorova", "Maksova" };
@@ -14,7 +45,7 @@ Adult* Adult::CreateRandomAdult()
 	const char* femaleName[] = { "Yulya", "Nastya", "Elena", "Irina", "Kristina",
 		"Alisa", "Inna", "Ekaterina", "Dasha", "Masha",
 		"Olga", "Evgeniya", "Anna", "Liliya", "Yana" };
-	//�������
+	//Мужчины
 	const char* maleSurname[] = { "Ivanov", "Petrov", "Sidorov", "Trofimov", "Vakulin",
 		"Kolesnik", "Solovov", "Kalinin", "Kalachev", "Ermolaev",
 		"Tihonov", "Brodt", "Dvornikov", "Pushkarev", "Mulenok" };
@@ -27,8 +58,8 @@ Adult* Adult::CreateRandomAdult()
 	string name;
 	enum Sex sex;
 	int age = rand() % 100;
-	int randonSex = Sex(rand() % 2);
-	if (randonSex == 0)
+	int randomSex = Sex(rand() % 2);
+	if (randomSex == 0)
 	{
 		sex = Female;
 		surname = femaleSurname[rand() % 15];

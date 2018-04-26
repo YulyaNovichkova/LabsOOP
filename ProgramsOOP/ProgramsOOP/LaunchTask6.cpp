@@ -1,7 +1,7 @@
-#include "Person.h"
-#include "PersonListClass.h"
-#include "AdultClass.h"
-#include "ChildClass.h"
+﻿#include "Person.h"
+#include "PersonList.h"
+#include "Adult.h"
+#include "Child.h"
 using namespace std;
 
 int Menu6()

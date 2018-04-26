@@ -1,7 +1,7 @@
 ﻿#pragma once
 
 //Перечисление пола Person
-enum Sex {Female = 0, Male = 1};
+//enum Sex {Female = 0, Male = 1}
 
 //Структура Person
 struct Person

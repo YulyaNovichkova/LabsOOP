@@ -1,6 +1,64 @@
-//TODO: удалить слово Class из названия файла
-#include "Person.h"
+п»ї#include "Person.h"
 #include <ctime>
+
+//TODO: СЂРµР°Р»РёР·Р°С†РёСЋ РІ cpp-С„Р°Р№Р»
+//РРЎРџР РђР’Р›Р•РќРћ.
+//TODO: РєРѕРјРјРµРЅС‚Р°СЂРёРё Рє С„СѓРЅРєС†РёРё
+Person::Person(string surname, string name, enum Sex sex, int age)
+{
+	SetSurname(surname);
+	SetName(name);
+	SetSex(sex);
+	SetAge(age);
+};
+
+//TODO: РєРѕРјРјРµРЅС‚Р°СЂРёРё Рє С„СѓРЅРєС†РёРё
+void Person::SetSurname(string surname)
+{
+	_surname = surname;
+} 
+
+  //TODO: РєРѕРјРјРµРЅС‚Р°СЂРёРё Рє С„СѓРЅРєС†РёРё
+void Person::SetName(string name)
+{
+	_name = name;
+} 
+
+  //TODO: РєРѕРјРјРµРЅС‚Р°СЂРёРё Рє С„СѓРЅРєС†РёРё
+void Person::SetSex(enum Sex sex)
+{
+	_sex = sex;
+} 
+
+  //TODO: РєРѕРјРјРµРЅС‚Р°СЂРёРё Рє С„СѓРЅРєС†РёРё
+void Person::SetAge(unsigned int age)
+{
+	_age = age;
+}
+
+//TODO: РєРѕРјРјРµРЅС‚Р°СЂРёРё Рє С„СѓРЅРєС†РёРё
+string Person::GetSurname()
+{
+	return _surname;
+} 
+
+  //TODO: РєРѕРјРјРµРЅС‚Р°СЂРёРё Рє С„СѓРЅРєС†РёРё
+string Person::GetName()
+{
+	return _name;
+} 
+
+  //TODO: РєРѕРјРјРµРЅС‚Р°СЂРёРё Рє С„СѓРЅРєС†РёРё
+int Person::GetSex()
+{
+	return _sex;
+} 
+
+  //TODO: РєРѕРјРјРµРЅС‚Р°СЂРёРё Рє С„СѓРЅРєС†РёРё
+int Person::GetAge()
+{
+	return _age;
+} 
 
 Person* Person::Read()
 {
@@ -42,11 +100,11 @@ Person* Person::Read()
 	return person;
 }
 
-//Заполнение Person случайными данными
+//Р—Р°РїРѕР»РЅРµРЅРёРµ Person СЃР»СѓС‡Р°Р№РЅС‹РјРё РґР°РЅРЅС‹РјРё
 Person* Person::CreateRandomPerson()
 {
 	srand(time(NULL));
-	//Женщины
+	//Р–РµРЅС‰РёРЅС‹
 	const char* femaleSurname[] = { "Novichkova", "Ovsyannikova", "Belova", "Petuxova", "Shilnikova",
 		"Nagih", "Bespalova", "Lebedeva", "Alexseeva", "Koreshkova",
 		"Karipova", "Kislova", "Smirnova", "Proxorova", "Maksova" };
@@ -54,7 +112,7 @@ Person* Person::CreateRandomPerson()
 	const char* femaleName[] = { "Yulya", "Nastya", "Elena", "Irina", "Kristina",
 		"Alisa", "Inna", "Ekaterina", "Dasha", "Masha",
 		"Olga", "Evgeniya", "Anna", "Liliya", "Yana" };
-	//Мужчины
+	//РњСѓР¶С‡РёРЅС‹
 	const char* maleSurname[] = { "Ivanov", "Petrov", "Sidorov", "Trofimov", "Vakulin",
 		"Kolesnik", "Solovov", "Kalinin", "Kalachev", "Ermolaev",
 		"Tihonov", "Brodt", "Dvornikov", "Pushkarev", "Mulenok" };
@@ -67,9 +125,8 @@ Person* Person::CreateRandomPerson()
 	string name;
 	enum Sex sex;
 	int age = rand() % 100;
-	//TODO: грамматическая ошибка в переменной
-	int randonSex = Sex(rand() % 2);
-	if (randonSex == 0)
+	int randomSex = Sex(rand() % 2);
+	if (randomSex == 0)
 	{
 		sex = Female;
 		surname = femaleSurname[rand() % 15];
@@ -85,7 +142,7 @@ Person* Person::CreateRandomPerson()
 	return	person;
 }
 
-//TODO: лучше вывод Person в одну строку - так удобнее тестировать/отлаживать. Да и пользователю удобнее
+//TODO: Р»СѓС‡С€Рµ РІС‹РІРѕРґ Person РІ РѕРґРЅСѓ СЃС‚СЂРѕРєСѓ - С‚Р°Рє СѓРґРѕР±РЅРµРµ С‚РµСЃС‚РёСЂРѕРІР°С‚СЊ/РѕС‚Р»Р°Р¶РёРІР°С‚СЊ. Р”Р° Рё РїРѕР»СЊР·РѕРІР°С‚РµР»СЋ СѓРґРѕР±РЅРµРµ
 void Person::ShowPerson(Person* person)
 {
 	cout << "Surname: " << person->GetSurname();

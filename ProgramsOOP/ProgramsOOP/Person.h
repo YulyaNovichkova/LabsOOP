@@ -1,14 +1,19 @@
-#pragma once
-//TODO: убрать слово Class из названия файла
-//ИСПРАВЛЕНО.
+п»ї#pragma once
+//TODO: СѓР±СЂР°С‚СЊ СЃР»РѕРІРѕ Class РёР· РЅР°Р·РІР°РЅРёСЏ С„Р°Р№Р»Р°
+//РРЎРџР РђР’Р›Р•РќРћ.
 #include <iostream>
 #include <string>
 
 using namespace std;
 
-//TODO: перечисление в отдельный файл
-//TODO: каждое значение перечисления на новой строке, фигурные скобки на новой строке
-enum Sex { Female = 0, Male = 1 };
+//TODO: РїРµСЂРµС‡РёСЃР»РµРЅРёРµ РІ РѕС‚РґРµР»СЊРЅС‹Р№ С„Р°Р№Р»
+//TODO: РєР°Р¶РґРѕРµ Р·РЅР°С‡РµРЅРёРµ РїРµСЂРµС‡РёСЃР»РµРЅРёСЏ РЅР° РЅРѕРІРѕР№ СЃС‚СЂРѕРєРµ, С„РёРіСѓСЂРЅС‹Рµ СЃРєРѕР±РєРё РЅР° РЅРѕРІРѕР№ СЃС‚СЂРѕРєРµ
+//РРЎРџР РђР’Р›Р•РќРћ.
+enum Sex 
+{ 
+	Female = 0, 
+	Male = 1 
+};
 
 class Person 
 {
@@ -18,72 +23,22 @@ protected:
 	Sex _sex;
 	unsigned int _age;
 public:
+	Person() {}; 
+	Person(string surname, string name, enum Sex sex, int age);
+	void SetSurname(string surname);
+	void SetName(string name);
+	void SetSex(enum Sex sex);
+	void SetAge(unsigned int age);
 
-	Person() {};
-
-	Person() {}; //TODO: между функциями надо одну пустую строку
-    //TODO: реализацию в cpp-файл
-	//TODO: комментарии к функции
-	Person(string surname, string name, enum Sex sex, int age)
-	{
-		SetSurname(surname);
-		SetName(name);
-		SetSex(sex);
-		SetAge(age);
-	};
-	//TODO: реализацию в cpp-файл
-	//TODO: комментарии к функции
-	void SetSurname(string surname)
-	{
-		_surname = surname;
-	} //TODO: между функциями надо одну пустую строку
-	  //TODO: реализацию в cpp-файл
-	  //TODO: комментарии к функции
-	void SetName(string name)
-	{
-		_name = name;
-	} //TODO: между функциями надо одну пустую строку
-	  //TODO: реализацию в cpp-файл
-	  //TODO: комментарии к функции
-	void SetSex(enum Sex sex)
-	{
-		_sex = sex;
-	} //TODO: между функциями надо одну пустую строку
-	  //TODO: реализацию в cpp-файл
-	  //TODO: комментарии к функции
-	void SetAge(unsigned int age)
-	{
-			_age = age;
-	}
-	//TODO: реализацию в cpp-файл
-	//TODO: комментарии к функции
-	string GetSurname()
-	{
-		return _surname;
-	} //TODO: между функциями надо одну пустую строку
-	  //TODO: реализацию в cpp-файл
-	  //TODO: комментарии к функции
-	string GetName()
-	{
-		return _name;
-	} //TODO: между функциями надо одну пустую строку
-	  //TODO: реализацию в cpp-файл
-	  //TODO: комментарии к функции
-	int GetSex()
-	{
-		return _sex;
-	} //TODO: между функциями надо одну пустую строку
-	  //TODO: реализацию в cpp-файл
-	  //TODO: комментарии к функции
-	int GetAge()
-	{
-		return _age;
-	} //TODO: между функциями надо одну пустую строку
-	  //TODO: комментарии к функции
+	string GetSurname();
+	string GetName();
+	int GetSex();
+	int GetAge();
+	 //TODO: РєРѕРјРјРµРЅС‚Р°СЂРёРё Рє С„СѓРЅРєС†РёРё
 	static Person* CreateRandomPerson();
-	//TODO: комментарии к функции
+	//TODO: РєРѕРјРјРµРЅС‚Р°СЂРёРё Рє С„СѓРЅРєС†РёРё
 	static Person* Read();
-	//TODO: комментарии к функции
+	//TODO: РєРѕРјРјРµРЅС‚Р°СЂРёРё Рє С„СѓРЅРєС†РёРё
 	static void ShowPerson(Person* person);
 	virtual char* GetDescription();
 };

@@ -3,6 +3,7 @@
 #include <cstdlib>
 #include <ctime>
 #include "List.h"
+#include "PersonStract.h"
 #include "Person.h"
 
 using namespace std;

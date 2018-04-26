@@ -115,8 +115,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="AdultClass.cpp" />
-    <ClCompile Include="ChildClass.cpp" />
+    <ClCompile Include="Adult.cpp" />
+    <ClCompile Include="Child.cpp" />
     <ClCompile Include="LaunchTask5.cpp" />
     <ClCompile Include="LaunchTask6.cpp" />
     <ClCompile Include="List.cpp" />
@@ -125,23 +125,23 @@
     <ClCompile Include="LaunchTask3.cpp" />
     <ClCompile Include="LaunchTask4.cpp" />
     <ClCompile Include="LaunchTaskFunction2.cpp" />
-    <ClCompile Include="PersonClass.cpp" />
-    <ClCompile Include="PersonListClass.cpp" />
+    <ClCompile Include="Person.cpp" />
+    <ClCompile Include="PersonList.cpp" />
     <ClCompile Include="String.cpp" />
     <ClCompile Include="LaunchTaskFunctions1.cpp" />
     <ClCompile Include="Stack.cpp" />
     <ClCompile Include="Main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="AdultClass.h" />
+    <ClInclude Include="Adult.h" />
     <ClInclude Include="AllLabs.h" />
-    <ClInclude Include="ChildClass.h" />
+    <ClInclude Include="Child.h" />
     <ClInclude Include="Person.h" />
     <ClInclude Include="LaunchTask4.h" />
     <ClInclude Include="List.h" />
     <ClInclude Include="Function2.h" />
     <ClInclude Include="Function1.h" />
-    <ClInclude Include="PersonListClass.h" />
+    <ClInclude Include="PersonList.h" />
     <ClInclude Include="String.h" />
     <ClInclude Include="Stack.h" />
     <ClInclude Include="PersonStract.h" />

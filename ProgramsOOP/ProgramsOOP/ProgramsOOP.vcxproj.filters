@@ -75,23 +75,23 @@
     <ClCompile Include="Stack.cpp">
       <Filter>Исходные файлы\LaunchLab4</Filter>
     </ClCompile>
-    <ClCompile Include="PersonClass.cpp">
-      <Filter>Исходные файлы\LaunchLab5</Filter>
-    </ClCompile>
-    <ClCompile Include="PersonListClass.cpp">
-      <Filter>Исходные файлы\LaunchLab5</Filter>
-    </ClCompile>
     <ClCompile Include="LaunchTask5.cpp">
       <Filter>Исходные файлы\LaunchLab5</Filter>
     </ClCompile>
     <ClCompile Include="LaunchTask6.cpp">
       <Filter>Исходные файлы\LaunchLab6</Filter>
     </ClCompile>
-    <ClCompile Include="AdultClass.cpp">
+    <ClCompile Include="Adult.cpp">
       <Filter>Исходные файлы\LaunchLab6</Filter>
     </ClCompile>
-    <ClCompile Include="ChildClass.cpp">
+    <ClCompile Include="Child.cpp">
       <Filter>Исходные файлы\LaunchLab6</Filter>
+    </ClCompile>
+    <ClCompile Include="Person.cpp">
+      <Filter>Исходные файлы\LaunchLab5</Filter>
+    </ClCompile>
+    <ClCompile Include="PersonList.cpp">
+      <Filter>Исходные файлы\LaunchLab5</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -116,19 +116,19 @@
     <ClInclude Include="LaunchTask4.h">
       <Filter>Файлы заголовков\Lab4</Filter>
     </ClInclude>
-    <ClInclude Include="PersonListClass.h">
-      <Filter>Файлы заголовков\Lab5</Filter>
-    </ClInclude>
-    <ClInclude Include="AdultClass.h">
-      <Filter>Файлы заголовков\Lab6</Filter>
-    </ClInclude>
-    <ClInclude Include="ChildClass.h">
-      <Filter>Файлы заголовков\Lab6</Filter>
-    </ClInclude>
     <ClInclude Include="PersonStract.h">
       <Filter>Файлы заголовков\Lab3</Filter>
     </ClInclude>
     <ClInclude Include="Person.h">
+      <Filter>Файлы заголовков\Lab5</Filter>
+    </ClInclude>
+    <ClInclude Include="Adult.h">
+      <Filter>Файлы заголовков\Lab6</Filter>
+    </ClInclude>
+    <ClInclude Include="Child.h">
+      <Filter>Файлы заголовков\Lab6</Filter>
+    </ClInclude>
+    <ClInclude Include="PersonList.h">
       <Filter>Файлы заголовков\Lab5</Filter>
     </ClInclude>
   </ItemGroup>

@@ -1,8 +1,7 @@
-//TODO: удалить слово Class из названия файла
-#include <iostream>
+п»ї#include <iostream>
 #include <Windows.h>
 #include <cstdlib>
-#include "PersonListClass.h"
+#include "PersonList.h"
 #include "Person.h"
 
 using namespace std;
@@ -22,7 +21,7 @@ void PersonList::Show()
 	cout << endl;
 }
 
-//добавить человека в список
+//РґРѕР±Р°РІРёС‚СЊ С‡РµР»РѕРІРµРєР° РІ СЃРїРёСЃРѕРє
 void PersonList::Add(Person* person)
 {
 	PersonListItem* newItem = new PersonListItem();
@@ -40,12 +39,12 @@ void PersonList::Add(Person* person)
 	_count++;
 }
 
-//найти человека по указанному индексу
+//РЅР°Р№С‚Рё С‡РµР»РѕРІРµРєР° РїРѕ СѓРєР°Р·Р°РЅРЅРѕРјСѓ РёРЅРґРµРєСЃСѓ
 Person* PersonList::Find(int index)
 {
 	if (index < 0)
 	{
-		//TODO: Нет - если кто-то извне передал отрицательный индекс - значит, код извне содержит ошибку. Надо выбрасывать исключение
+		//TODO: РќРµС‚ - РµСЃР»Рё РєС‚Рѕ-С‚Рѕ РёР·РІРЅРµ РїРµСЂРµРґР°Р» РѕС‚СЂРёС†Р°С‚РµР»СЊРЅС‹Р№ РёРЅРґРµРєСЃ - Р·РЅР°С‡РёС‚, РєРѕРґ РёР·РІРЅРµ СЃРѕРґРµСЂР¶РёС‚ РѕС€РёР±РєСѓ. РќР°РґРѕ РІС‹Р±СЂР°СЃС‹РІР°С‚СЊ РёСЃРєР»СЋС‡РµРЅРёРµ
 		return nullptr;
 	}
 
@@ -61,16 +60,16 @@ Person* PersonList::Find(int index)
 	return searchedItem->person;
 }
 
-//вернуть индекс человека, если он есть в списке
+//РІРµСЂРЅСѓС‚СЊ РёРЅРґРµРєСЃ С‡РµР»РѕРІРµРєР°, РµСЃР»Рё РѕРЅ РµСЃС‚СЊ РІ СЃРїРёСЃРєРµ
 int PersonList::IndexOf(Person* person)
 {
 	PersonListItem* current = _head;
 	int index = 0;
-	//TODO: вместо while лучше брать for от 0 до конца списка - форы гораздо читаемее уайлов
+	//TODO: РІРјРµСЃС‚Рѕ while Р»СѓС‡С€Рµ Р±СЂР°С‚СЊ for РѕС‚ 0 РґРѕ РєРѕРЅС†Р° СЃРїРёСЃРєР° - С„РѕСЂС‹ РіРѕСЂР°Р·РґРѕ С‡РёС‚Р°РµРјРµРµ СѓР°Р№Р»РѕРІ
 	while (current != nullptr && index <= _count)
 	{
-		//TODO: Ну что это за вложенная портянка ifов?
-		// Заменить на логическое умножение
+		//TODO: РќСѓ С‡С‚Рѕ СЌС‚Рѕ Р·Р° РІР»РѕР¶РµРЅРЅР°СЏ РїРѕСЂС‚СЏРЅРєР° ifРѕРІ?
+		// Р—Р°РјРµРЅРёС‚СЊ РЅР° Р»РѕРіРёС‡РµСЃРєРѕРµ СѓРјРЅРѕР¶РµРЅРёРµ
 		if (current->person->GetSurname() == person->GetSurname())
 		{
 			if (current->person->GetName() == person->GetName())
@@ -90,7 +89,7 @@ int PersonList::IndexOf(Person* person)
 	return -1;
 }
 
-//удалить человека из списка
+//СѓРґР°Р»РёС‚СЊ С‡РµР»РѕРІРµРєР° РёР· СЃРїРёСЃРєР°
 void PersonList::Remove(Person* person)
 {
 	PersonListItem* deletedItem = _head;
@@ -124,10 +123,10 @@ void PersonList::Remove(Person* person)
 	delete deletedItem;
 }
 
-//удалить человека из списка по индексу
+//СѓРґР°Р»РёС‚СЊ С‡РµР»РѕРІРµРєР° РёР· СЃРїРёСЃРєР° РїРѕ РёРЅРґРµРєСЃСѓ
 void PersonList::RemoveAt(int index)
 {
-	//TODO: Слишком большая реализация для функции. Переделать в две строчки
+	//TODO: РЎР»РёС€РєРѕРј Р±РѕР»СЊС€Р°СЏ СЂРµР°Р»РёР·Р°С†РёСЏ РґР»СЏ С„СѓРЅРєС†РёРё. РџРµСЂРµРґРµР»Р°С‚СЊ РІ РґРІРµ СЃС‚СЂРѕС‡РєРё
 	PersonListItem* deletedItem = _head;
 
 	if (index >= 0)
@@ -159,7 +158,7 @@ void PersonList::RemoveAt(int index)
 	delete deletedItem;
 }
 
-//очистить список
+//РѕС‡РёСЃС‚РёС‚СЊ СЃРїРёСЃРѕРє
 void PersonList::Clear()
 {
 	PersonListItem* temp = _head;
