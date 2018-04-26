@@ -41,9 +41,6 @@ Adult* Adult::CreateRandomAdult()
 	}
 	Person* marriedOn = Person::CreateRandomPerson();
 	string workPlace;
-	//Adult* adult = new Adult(surname, name, sex, age, marriedOn, workPlace);
-	Adult* adult = new Adult();
+	Adult* adult = new Adult(surname, name, sex, age, marriedOn, workPlace);
 	return	adult;
 }
-// »нициализировать по пол€м, посмотреть что будет.
-// ѕотом полностью убрать этот конструктор.

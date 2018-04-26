@@ -101,3 +101,8 @@ void Person::ShowPerson(Person* person)
 	cout << endl << "Age: " << person->GetAge() << endl;
 	cout << endl;
 }
+
+char* Person::GetDescription()
+{
+
+}

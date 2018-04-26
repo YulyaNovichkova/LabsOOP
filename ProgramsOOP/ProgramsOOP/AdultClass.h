@@ -10,12 +10,12 @@ public:
 	Adult() {};
 	/*Adult(string surname, string name, enum Sex sex, int age, Person*  marriedOn, string workPlace)
 	{
-		SetSurname(surname);
-		SetName(name);
-		SetSex(sex);
-		SetAge(age);
-		SetMarriedOn(marriedOn);
-		SetWorkPlace(workPlace);
+	SetSurname(surname);
+	SetName(name);
+	SetSex(sex);
+	SetAge(age);
+	SetMarriedOn(marriedOn);
+	SetWorkPlace(workPlace);
 	}*/
 
 	void SetSurname(string surname)
@@ -57,8 +57,6 @@ public:
 	{
 		return _age;
 	}
-
-
 	void SetMarriedOn(Person* marriedOn)
 	{
 		_marriedOn = marriedOn;

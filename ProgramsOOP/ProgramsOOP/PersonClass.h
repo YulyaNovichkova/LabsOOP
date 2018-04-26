@@ -14,7 +14,7 @@ protected:
 	Sex _sex;
 	unsigned int _age;
 public:
-	Person();
+	Person() {};
 	Person(string surname, string name, enum Sex sex, int age)
 	{
 		SetSurname(surname);
@@ -37,14 +37,7 @@ public:
 	}
 	void SetAge(unsigned int age)
 	{
-		if (age >= 18)
-		{
 			_age = age;
-		}
-		else
-		{
-			_age = 18;
-		}
 	}
 
 	string GetSurname()
@@ -66,7 +59,7 @@ public:
 	static Person* CreateRandomPerson();
 	static Person* Read();
 	static void ShowPerson(Person* person);
-	//virtual char* GetDescription();
+	virtual char* GetDescription();
 };
 
 
