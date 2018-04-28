@@ -3,6 +3,7 @@
 #include <cstdlib>
 #include "PersonList.h"
 #include "Person.h"
+#include "Sex.h"
 
 using namespace std;
 

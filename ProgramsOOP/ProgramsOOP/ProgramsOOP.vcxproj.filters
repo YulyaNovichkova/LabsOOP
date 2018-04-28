@@ -131,5 +131,8 @@
     <ClInclude Include="PersonList.h">
       <Filter>Файлы заголовков\Lab5</Filter>
     </ClInclude>
+    <ClInclude Include="Sex.h">
+      <Filter>Файлы заголовков\Lab5</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

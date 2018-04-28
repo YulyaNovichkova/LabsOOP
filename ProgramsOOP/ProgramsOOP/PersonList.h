@@ -1,6 +1,8 @@
 ﻿//TODO: убрать слово Class из названия файла
+//ИСПРАВЛЕНО.
 #pragma once
 #include "Person.h"
+#include "Sex.h"
 
 class PersonList
 {

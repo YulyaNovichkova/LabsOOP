@@ -2,6 +2,7 @@
 #include <iomanip>
 #include "String.h"
 #include "PersonStract.h"
+#include "Sex.h"
 
 using namespace std;
 

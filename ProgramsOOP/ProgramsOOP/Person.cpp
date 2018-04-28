@@ -1,9 +1,13 @@
 ﻿#include "Person.h"
+#include "Sex.h"
 #include <ctime>
 
 //TODO: реализацию в cpp-файл
 //ИСПРАВЛЕНО.
 //TODO: комментарии к функции
+//Исправлено.
+
+//Конструктор класса Person
 Person::Person(string surname, string name, enum Sex sex, int age)
 {
 	SetSurname(surname);
@@ -12,54 +16,55 @@ Person::Person(string surname, string name, enum Sex sex, int age)
 	SetAge(age);
 };
 
-//TODO: комментарии к функции
+//Задать фамилию для Person
 void Person::SetSurname(string surname)
 {
 	_surname = surname;
 } 
 
-  //TODO: комментарии к функции
+//Задать имя для Person
 void Person::SetName(string name)
 {
 	_name = name;
 } 
 
-  //TODO: комментарии к функции
+//Задать пол для Person
 void Person::SetSex(enum Sex sex)
 {
 	_sex = sex;
 } 
 
-  //TODO: комментарии к функции
+//Задать возраст для Person
 void Person::SetAge(unsigned int age)
 {
 	_age = age;
 }
 
-//TODO: комментарии к функции
+//Получить фамилию Person
 string Person::GetSurname()
 {
 	return _surname;
 } 
 
-  //TODO: комментарии к функции
+//Получить имя Person
 string Person::GetName()
 {
 	return _name;
 } 
 
-  //TODO: комментарии к функции
+//Получить пол Person
 int Person::GetSex()
 {
 	return _sex;
 } 
 
-  //TODO: комментарии к функции
+//Получить возраст Person
 int Person::GetAge()
 {
 	return _age;
 } 
 
+//Ввести данные о человеке
 Person* Person::Read()
 {
 	string surname;
@@ -143,6 +148,7 @@ Person* Person::CreateRandomPerson()
 }
 
 //TODO: лучше вывод Person в одну строку - так удобнее тестировать/отлаживать. Да и пользователю удобнее
+//Вывод данных о человеке
 void Person::ShowPerson(Person* person)
 {
 	cout << "Surname: " << person->GetSurname();
@@ -162,7 +168,9 @@ void Person::ShowPerson(Person* person)
 	cout << endl;
 }
 
-char* Person::GetDescription()
-{
-
-}
+//Функция для 6-й лабы
+//Перечисление всех данных о Person
+//char* Person::GetDescription()
+//{
+//
+//}

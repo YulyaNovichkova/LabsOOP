@@ -1,4 +1,5 @@
 ﻿#include "Person.h"
+#include "Sex.h"
 #include "PersonList.h"
 using namespace std;
 

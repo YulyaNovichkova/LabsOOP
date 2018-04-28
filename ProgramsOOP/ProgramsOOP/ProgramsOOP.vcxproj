@@ -142,6 +142,7 @@
     <ClInclude Include="Function2.h" />
     <ClInclude Include="Function1.h" />
     <ClInclude Include="PersonList.h" />
+    <ClInclude Include="Sex.h" />
     <ClInclude Include="String.h" />
     <ClInclude Include="Stack.h" />
     <ClInclude Include="PersonStract.h" />

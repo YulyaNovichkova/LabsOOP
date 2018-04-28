@@ -1,7 +1,5 @@
 ﻿#pragma once
-
-//Перечисление пола Person
-//enum Sex {Female = 0, Male = 1}
+#include "Sex.h"
 
 //Структура Person
 struct Person

@@ -38,12 +38,12 @@ int Menu()
 				LaunchTask2();
 				break;
 
-			case '3':
-				LaunchTask3();
-				break;
-			case '4':
-				LaunchTask4();
-				break;
+			//case '3':
+			//	LaunchTask3();
+			//	break;
+			//case '4':
+			//	LaunchTask4();
+			//	break;
 			case '5':
 				LaunchTask5();
 				break;
