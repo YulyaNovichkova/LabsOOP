@@ -13,84 +13,81 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Файлы заголовков\Lab4">
-      <UniqueIdentifier>{ca7519af-1113-44d6-b8d1-3789a0610357}</UniqueIdentifier>
+    <Filter Include="Исходные файлы\Stack">
+      <UniqueIdentifier>{79ae5ad6-7ef6-446a-a2de-0fe9e169775a}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Исходные файлы\LaunchLab4">
-      <UniqueIdentifier>{95e151c1-4f74-44ce-89f1-398598cf1b97}</UniqueIdentifier>
+    <Filter Include="Файлы заголовков\Stack">
+      <UniqueIdentifier>{4440c4a0-bdc9-446b-a7f0-6dce14336b2e}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Исходные файлы\LaunchLab5">
-      <UniqueIdentifier>{f9bfaf9e-8f07-47a5-89bf-347baeb0ca06}</UniqueIdentifier>
+    <Filter Include="Исходные файлы\List">
+      <UniqueIdentifier>{787854bd-3687-4bd3-88b1-7fc6a5872698}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Файлы заголовков\Lab5">
-      <UniqueIdentifier>{718426c6-11db-4ce3-82ff-df935814b45e}</UniqueIdentifier>
+    <Filter Include="Файлы заголовков\List">
+      <UniqueIdentifier>{2e90af7f-bba2-4480-8c63-0a3181c8dfbf}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Файлы заголовков\Lab6">
-      <UniqueIdentifier>{5a530688-fe5e-497d-9bec-06fdcf429fa3}</UniqueIdentifier>
+    <Filter Include="Исходные файлы\Demo">
+      <UniqueIdentifier>{a56f210d-1d9a-4794-a3f6-c87b1ea427ef}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Исходные файлы\LaunchLab6">
-      <UniqueIdentifier>{57d0d66a-6a50-4378-a2d7-ebf462638461}</UniqueIdentifier>
+    <Filter Include="Исходные файлы\Person">
+      <UniqueIdentifier>{1570f4de-c826-42c5-a878-3c1d444e1375}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\Person">
+      <UniqueIdentifier>{aaf4c8ca-43d7-4b3b-9447-f37f3d79e743}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="LaunchTask4.cpp">
-      <Filter>Исходные файлы\LaunchLab4</Filter>
+    <ClCompile Include="Stack.cpp">
+      <Filter>Исходные файлы\Stack</Filter>
     </ClCompile>
     <ClCompile Include="List.cpp">
-      <Filter>Исходные файлы\LaunchLab4</Filter>
-    </ClCompile>
-    <ClCompile Include="Stack.cpp">
-      <Filter>Исходные файлы\LaunchLab4</Filter>
+      <Filter>Исходные файлы\List</Filter>
     </ClCompile>
     <ClCompile Include="LaunchTask5.cpp">
-      <Filter>Исходные файлы\LaunchLab5</Filter>
+      <Filter>Исходные файлы\Demo</Filter>
     </ClCompile>
     <ClCompile Include="LaunchTask6.cpp">
-      <Filter>Исходные файлы\LaunchLab6</Filter>
-    </ClCompile>
-    <ClCompile Include="Adult.cpp">
-      <Filter>Исходные файлы\LaunchLab6</Filter>
-    </ClCompile>
-    <ClCompile Include="Child.cpp">
-      <Filter>Исходные файлы\LaunchLab6</Filter>
+      <Filter>Исходные файлы\Demo</Filter>
     </ClCompile>
     <ClCompile Include="Person.cpp">
-      <Filter>Исходные файлы\LaunchLab5</Filter>
+      <Filter>Исходные файлы\Person</Filter>
     </ClCompile>
     <ClCompile Include="PersonList.cpp">
-      <Filter>Исходные файлы\LaunchLab5</Filter>
+      <Filter>Исходные файлы\Person</Filter>
+    </ClCompile>
+    <ClCompile Include="Adult.cpp">
+      <Filter>Исходные файлы\Person</Filter>
+    </ClCompile>
+    <ClCompile Include="Child.cpp">
+      <Filter>Исходные файлы\Person</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="AllLabs.h">
-      <Filter>Файлы заголовков</Filter>
+    <ClInclude Include="Stack.h">
+      <Filter>Файлы заголовков\Stack</Filter>
     </ClInclude>
     <ClInclude Include="List.h">
-      <Filter>Файлы заголовков\Lab4</Filter>
+      <Filter>Файлы заголовков\List</Filter>
     </ClInclude>
-    <ClInclude Include="Stack.h">
-      <Filter>Файлы заголовков\Lab4</Filter>
-    </ClInclude>
-    <ClInclude Include="LaunchTask4.h">
-      <Filter>Файлы заголовков\Lab4</Filter>
-    </ClInclude>
-    <ClInclude Include="Person.h">
-      <Filter>Файлы заголовков\Lab5</Filter>
-    </ClInclude>
-    <ClInclude Include="Adult.h">
-      <Filter>Файлы заголовков\Lab6</Filter>
-    </ClInclude>
-    <ClInclude Include="Child.h">
-      <Filter>Файлы заголовков\Lab6</Filter>
-    </ClInclude>
-    <ClInclude Include="PersonList.h">
-      <Filter>Файлы заголовков\Lab5</Filter>
+    <ClInclude Include="Demo.h">
+      <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="Sex.h">
-      <Filter>Файлы заголовков\Lab5</Filter>
+      <Filter>Файлы заголовков\Person</Filter>
+    </ClInclude>
+    <ClInclude Include="PersonList.h">
+      <Filter>Файлы заголовков\Person</Filter>
+    </ClInclude>
+    <ClInclude Include="Person.h">
+      <Filter>Файлы заголовков\Person</Filter>
+    </ClInclude>
+    <ClInclude Include="Adult.h">
+      <Filter>Файлы заголовков\Person</Filter>
+    </ClInclude>
+    <ClInclude Include="Child.h">
+      <Filter>Файлы заголовков\Person</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

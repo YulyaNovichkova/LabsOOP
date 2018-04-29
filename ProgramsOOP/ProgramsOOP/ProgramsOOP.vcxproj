@@ -120,7 +120,6 @@
     <ClCompile Include="LaunchTask5.cpp" />
     <ClCompile Include="LaunchTask6.cpp" />
     <ClCompile Include="List.cpp" />
-    <ClCompile Include="LaunchTask4.cpp" />
     <ClCompile Include="Person.cpp" />
     <ClCompile Include="PersonList.cpp" />
     <ClCompile Include="Stack.cpp" />
@@ -128,10 +127,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Adult.h" />
-    <ClInclude Include="AllLabs.h" />
+    <ClInclude Include="Demo.h" />
     <ClInclude Include="Child.h" />
     <ClInclude Include="Person.h" />
-    <ClInclude Include="LaunchTask4.h" />
     <ClInclude Include="List.h" />
     <ClInclude Include="PersonList.h" />
     <ClInclude Include="Sex.h" />

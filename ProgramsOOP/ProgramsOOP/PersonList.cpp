@@ -43,14 +43,7 @@ void PersonList::Add(Person* person)
 //найти человека по указанному индексу
 Person* PersonList::Find(int index)
 {
-	if (index < 0)
-	{
-		//TODO: Нет - если кто-то извне передал отрицательный индекс - значит, код извне содержит ошибку. Надо выбрасывать исключение
-		return nullptr;
-	}
-
 	PersonListItem* searchedItem = _head;
-
 	for (int i = 0; i < index; i++)
 	{
 		if (searchedItem->_next)
@@ -65,27 +58,21 @@ Person* PersonList::Find(int index)
 int PersonList::IndexOf(Person* person)
 {
 	PersonListItem* current = _head;
-	int index = 0;
 	//TODO: вместо while лучше брать for от 0 до конца списка - форы гораздо читаемее уайлов
-	while (current != nullptr && index <= _count)
+	//Исправлено.
+	for (int index = 0; index < GetCount(); index++)
 	{
 		//TODO: Ну что это за вложенная портянка ifов?
 		// Заменить на логическое умножение
-		if (current->person->GetSurname() == person->GetSurname())
+		//Исправлено.
+
+		//Если вводимые данные совпадают с Person из списка
+		if ((current->person->GetSurname() == person->GetSurname()) && (current->person->GetName() == person->GetName()) 
+			 && (current->person->GetSex() == person->GetSex()) && (current->person->GetAge() == person->GetAge()))
 		{
-			if (current->person->GetName() == person->GetName())
-			{
-				if (current->person->GetSex() == person->GetSex())
-				{
-					if (current->person->GetAge() == person->GetAge())
-					{
-						return index;
-					}
-				}
-			}
+			return index;
 		}
 		current = current->_next;
-		index++;
 	}
 	return -1;
 }
@@ -93,41 +80,15 @@ int PersonList::IndexOf(Person* person)
 //удалить человека из списка
 void PersonList::Remove(Person* person)
 {
-	PersonListItem* deletedItem = _head;
-
-	if (person)
-	{
-		while (deletedItem->person != person)
-		{
-			if (!deletedItem->_next)
-			{
-				return;
-			}
-			deletedItem = deletedItem->_next;
-		}
-	}
-	else
-	{
-		return;
-	}
-
-	if (deletedItem->_prev)
-		deletedItem->_prev->_next = deletedItem->_next;
-	else
-		_head = deletedItem->_next;
-
-	if (deletedItem->_next)
-		deletedItem->_next->_prev = deletedItem->_prev;
-	else
-		_tail = deletedItem->_prev;
-
-	delete deletedItem;
+	//TODO: Слишком большая реализация для функции. Переделать в две строчки
+	//Сделано.
+	int index = IndexOf(person);
+	RemoveAt(index);
 }
 
 //удалить человека из списка по индексу
 void PersonList::RemoveAt(int index)
 {
-	//TODO: Слишком большая реализация для функции. Переделать в две строчки
 	PersonListItem* deletedItem = _head;
 
 	if (index >= 0)

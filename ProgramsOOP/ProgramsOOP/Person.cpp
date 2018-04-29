@@ -149,23 +149,23 @@ Person* Person::CreateRandomPerson()
 
 //TODO: лучше вывод Person в одну строку - так удобнее тестировать/отлаживать. Да и пользователю удобнее
 //Вывод данных о человеке
+//Сделано.
 void Person::ShowPerson(Person* person)
 {
-	cout << "Surname: " << person->GetSurname();
-	cout << endl << "Name: " << person->GetName();
+	cout << person->GetSurname() << " "
+		<< person->GetName() << ", "
+		<< person->GetAge() << " years old, ";
 	switch (person->GetSex())
 	{
 	case 0:
-		cout << endl << "Sex: female";
+		cout << "female." << endl;
 		break;
 	case 1:
-		cout << endl << "Sex: male";
+		cout << "male." << endl;
 		break;
 	default:
 		break;
 	}
-	cout << endl << "Age: " << person->GetAge() << endl;
-	cout << endl;
 }
 
 //Функция для 6-й лабы
