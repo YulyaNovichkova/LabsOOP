@@ -13,18 +13,6 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Исходные файлы\LaunchLab1">
-      <UniqueIdentifier>{0a7a705b-1582-4e0a-9cbe-c6ea9f7c41bc}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Исходные файлы\LaunchLab2">
-      <UniqueIdentifier>{ca04c5e6-50cd-4eb6-a362-0b2f272b0c5c}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Исходные файлы\LaunchLab3">
-      <UniqueIdentifier>{d631f54e-3b03-4c4f-b106-c23257ae88d5}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Файлы заголовков\Lab3">
-      <UniqueIdentifier>{29edd06f-eae6-4bd6-a945-649c632aa80a}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Файлы заголовков\Lab4">
       <UniqueIdentifier>{ca7519af-1113-44d6-b8d1-3789a0610357}</UniqueIdentifier>
     </Filter>
@@ -48,26 +36,8 @@
     <ClCompile Include="Main.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="LaunchTask1.cpp">
-      <Filter>Исходные файлы\LaunchLab1</Filter>
-    </ClCompile>
-    <ClCompile Include="LaunchTask2.cpp">
-      <Filter>Исходные файлы\LaunchLab2</Filter>
-    </ClCompile>
-    <ClCompile Include="LaunchTaskFunction2.cpp">
-      <Filter>Исходные файлы\LaunchLab2</Filter>
-    </ClCompile>
-    <ClCompile Include="LaunchTaskFunctions1.cpp">
-      <Filter>Исходные файлы\LaunchLab1</Filter>
-    </ClCompile>
-    <ClCompile Include="LaunchTask3.cpp">
-      <Filter>Исходные файлы\LaunchLab3</Filter>
-    </ClCompile>
     <ClCompile Include="LaunchTask4.cpp">
       <Filter>Исходные файлы\LaunchLab4</Filter>
-    </ClCompile>
-    <ClCompile Include="String.cpp">
-      <Filter>Исходные файлы\LaunchLab3</Filter>
     </ClCompile>
     <ClCompile Include="List.cpp">
       <Filter>Исходные файлы\LaunchLab4</Filter>
@@ -98,15 +68,6 @@
     <ClInclude Include="AllLabs.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="Function2.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="Function1.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="String.h">
-      <Filter>Файлы заголовков\Lab3</Filter>
-    </ClInclude>
     <ClInclude Include="List.h">
       <Filter>Файлы заголовков\Lab4</Filter>
     </ClInclude>
@@ -115,9 +76,6 @@
     </ClInclude>
     <ClInclude Include="LaunchTask4.h">
       <Filter>Файлы заголовков\Lab4</Filter>
-    </ClInclude>
-    <ClInclude Include="PersonStract.h">
-      <Filter>Файлы заголовков\Lab3</Filter>
     </ClInclude>
     <ClInclude Include="Person.h">
       <Filter>Файлы заголовков\Lab5</Filter>

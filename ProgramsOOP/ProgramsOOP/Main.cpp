@@ -4,6 +4,7 @@
 
 //TODO: удалить всю лабораторную 1, 2, и 3 лабораторные - уже неактуальны
 // Удалить вместе с функциями и файлами исходного кода.
+//ИСПРАВЛЕНО.
 //TODO: 4 лабораторную работу - удалить, также неактуальная. Оставить только Stack
 //TODO: Переделать структуру папок в программе:
 // - вместо папок Lab1, Lab2, Lab3 сделать папки Person, List, Stack, Demo (где лежат функции launchTask)
@@ -17,9 +18,6 @@ int Menu()
 	do
 	{
 		cout << "\t Choose laboratory work:" << endl << endl << endl
-			<< "1. Task 1;" << endl
-			<< "2. Task 2;" << endl
-			<< "3. Task 3;" << endl
 			<< "4. Task 4;" << endl
 			<< "5. Task 5;" << endl
 			<< "6. Task 6;" << endl
@@ -30,17 +28,6 @@ int Menu()
 		system("cls");
 		switch (key)
 		{
-			case '1':
-				LaunchTask1();
-				break;
-
-			case '2':
-				LaunchTask2();
-				break;
-
-			//case '3':
-			//	LaunchTask3();
-			//	break;
 			//case '4':
 			//	LaunchTask4();
 			//	break;
