@@ -122,7 +122,6 @@
     <ClCompile Include="List.cpp" />
     <ClCompile Include="Person.cpp" />
     <ClCompile Include="PersonList.cpp" />
-    <ClCompile Include="Stack.cpp" />
     <ClCompile Include="Main.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -133,7 +132,6 @@
     <ClInclude Include="List.h" />
     <ClInclude Include="PersonList.h" />
     <ClInclude Include="Sex.h" />
-    <ClInclude Include="Stack.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

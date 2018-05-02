@@ -13,12 +13,6 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Исходные файлы\Stack">
-      <UniqueIdentifier>{79ae5ad6-7ef6-446a-a2de-0fe9e169775a}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Файлы заголовков\Stack">
-      <UniqueIdentifier>{4440c4a0-bdc9-446b-a7f0-6dce14336b2e}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Исходные файлы\List">
       <UniqueIdentifier>{787854bd-3687-4bd3-88b1-7fc6a5872698}</UniqueIdentifier>
     </Filter>
@@ -38,9 +32,6 @@
   <ItemGroup>
     <ClCompile Include="Main.cpp">
       <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="Stack.cpp">
-      <Filter>Исходные файлы\Stack</Filter>
     </ClCompile>
     <ClCompile Include="List.cpp">
       <Filter>Исходные файлы\List</Filter>
@@ -65,9 +56,6 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Stack.h">
-      <Filter>Файлы заголовков\Stack</Filter>
-    </ClInclude>
     <ClInclude Include="List.h">
       <Filter>Файлы заголовков\List</Filter>
     </ClInclude>

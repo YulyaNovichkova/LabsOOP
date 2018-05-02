@@ -168,9 +168,18 @@ void Person::ShowPerson(Person* person)
 	}
 }
 
-//Функция для 6-й лабы
 //Перечисление всех данных о Person
-//char* Person::GetDescription()
-//{
-//
-//}
+string Person::GetDescription()
+{
+	string descriptionPerson = _surname + " " + _name + ", " + to_string(_age) + " years old, ";
+	if (_sex == Male)
+	{
+		descriptionPerson = descriptionPerson + "male. ";
+	}
+	else
+	{
+		descriptionPerson = descriptionPerson + "female. ";
+	}
+
+	return descriptionPerson;
+}

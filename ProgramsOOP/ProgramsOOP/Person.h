@@ -45,8 +45,7 @@ public:
 	//Вывод данных о человеке
 	static void ShowPerson(Person* person);
 	//Перечисление всех данных о Person
-	//Функция к 6-ой лабе
-	//virtual char* GetDescription();
+	virtual string GetDescription();
 };
 
 

@@ -11,35 +11,24 @@ private:
 	Person* _marriedOn = NULL;
 	string _workPlace;
 public:
-	Adult() {};
-	Adult(string surname, string name, enum Sex sex, int age, Person*  marriedOn, string workPlace);
 
+	//Конструктор по умолчанию
+	Adult() {};
+	//Конструктор класса Adult
+	Adult(string surname, string name, enum Sex sex, int age, Person*  marriedOn, string workPlace);
+	//Задать паспортные данные 
 	void SetMarriedOn(Person* marriedOn);
+	//Задать место работы
 	void SetWorkPlace(string workPlace);
+	//Получить паспортные данные
 	Person* GetMarriedOn();
+	//Получить место работы
 	string GetWorkPlace();
 	
-	//TODO: унаследованная от Person реализация. Зачем её здесь дублировать?
-	void SetAge(unsigned int age)
-	{
-		if (age >= 18)
-		{
-			_age = age;
-		}
-		else
-		{
-			//TODO: правильно ли, что у взрослого возраст меньше 18? Может, логичнее бросать исключение?
-			_age = 18;
-		}
-	}
-	//TODO: унаследованная от Person реализация. Зачем её здесь дублировать?
-	int GetAge()
-	{
-		return _age;
-	}
-
-
-	
 	//TODO: комментарии к функции
+	//Исправлено.
+	//Задать случайные значения для Adult
 	static Adult* CreateRandomAdult();
+	//Вывод данных
+	virtual string GetDescription();
 };
