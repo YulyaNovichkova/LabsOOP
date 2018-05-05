@@ -2,11 +2,6 @@
 #include "Sex.h"
 #include <ctime>
 
-//TODO: реализацию в cpp-файл
-//ИСПРАВЛЕНО.
-//TODO: комментарии к функции
-//Исправлено.
-
 //Конструктор класса Person
 Person::Person(string surname, string name, enum Sex sex, int age)
 {
@@ -147,9 +142,7 @@ Person* Person::CreateRandomPerson()
 	return	person;
 }
 
-//TODO: лучше вывод Person в одну строку - так удобнее тестировать/отлаживать. Да и пользователю удобнее
 //Вывод данных о человеке
-//Сделано.
 void Person::ShowPerson(Person* person)
 {
 	cout << person->GetSurname() << " "

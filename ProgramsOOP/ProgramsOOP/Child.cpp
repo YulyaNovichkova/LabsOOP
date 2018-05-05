@@ -2,8 +2,6 @@
 #include "Person.h"
 #include <ctime>
 
-//TODO: реализацию в cpp
-//ИСПРАВЛЕНО.
 //Конструктор класса Child
 Child::Child(string surname, string name, enum Sex sex, int age, Person* mother, Person* father, string school) : Person(surname, name, sex, age)
 {
@@ -12,48 +10,36 @@ Child::Child(string surname, string name, enum Sex sex, int age, Person* mother,
 	SetSchool(school);
 }
 
- //TODO: комментарии к функции
- //Исправлено.
  //Задать данные матери
 void Child::SetMother(Person* mother)
 {
 	_mother = mother;
 }
 
- //TODO: комментарии к функции
- //Исправлено.
  //Задать данные отца
 void Child::SetFather(Person* father)
 {
 	_father = father;
 }
 
- //TODO: комментарии к функции
- //Исправлено.
  //Задать название детского сада/школы
 void Child::SetSchool(string school)
 {
 	_school = school;
 }
 
- //TODO: комментарии к функции
- //Исправлено.
  //Получить данные матери
 Person* Child::GetMother()
 {
 	return _mother;
 }
 
- //TODO: комментарии к функции
- //Исправлено.
  //Получить данные отца
 Person* Child::GetFather()
 {
 	return _father;
 }
 
- //TODO: комментарии к функции
- //Исправлено.
  //Получить название детского сада/школы
 string Child::GetSchool()
 {

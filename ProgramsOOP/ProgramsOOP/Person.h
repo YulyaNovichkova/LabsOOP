@@ -1,6 +1,4 @@
 ﻿#pragma once
-//TODO: убрать слово Class из названия файла
-//ИСПРАВЛЕНО.
 #include <iostream>
 #include <string>
 #include "Sex.h"
@@ -36,9 +34,7 @@ public:
 	//Получить возраст Person
 	int GetAge();
 
-	 //TODO: комментарии к функции
-	//Исправлено.
-	 //Заполнение Person случайными данными
+	//Заполнение Person случайными данными
 	static Person* CreateRandomPerson();
 	//Ввести данные о человеке
 	static Person* Read();

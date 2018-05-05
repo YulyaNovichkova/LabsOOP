@@ -1,13 +1,9 @@
-﻿//TODO: убрать слово Class из названия файла
-//ИСПРАВЛЕНО.
-#pragma once
+﻿#pragma once
 #include "Person.h"
 
 class Adult : public Person
 {
 private:
-	//TODO: присвоить значение null по умолчанию
-	//ИСПРАВЛЕНО.
 	Person* _marriedOn = NULL;
 	string _workPlace;
 public:
@@ -24,9 +20,7 @@ public:
 	Person* GetMarriedOn();
 	//Получить место работы
 	string GetWorkPlace();
-	
-	//TODO: комментарии к функции
-	//Исправлено.
+
 	//Задать случайные значения для Adult
 	static Adult* CreateRandomAdult();
 	//Вывод данных

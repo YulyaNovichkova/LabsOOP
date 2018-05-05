@@ -1,16 +1,10 @@
-﻿//TODO: убрать слово Class из названия файла
-//ИСПРАВЛЕНО.
-#pragma once
+﻿#pragma once
 #include "Person.h"
 
 class Child : public Person
 {
 private:
-	//TODO: null по умолчанию
-	//ИСПРАВЛЕНО.
 	Person* _mother = NULL;
-	//TODO: null по умолчанию
-	//ИСПРАВЛЕНО.
 	Person* _father = NULL;
 	string _school;
 public:
@@ -30,9 +24,6 @@ public:
 	Person* GetFather();
 	//Получить название детского сада/школы
 	string GetSchool();
-
-	//TODO: комментарии к функции
-	//Исправлено.
 	//Задать случайные значения для Child
 	static Child* CreateRandomChild();
 	//Вывод данных

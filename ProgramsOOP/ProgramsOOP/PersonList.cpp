@@ -58,14 +58,8 @@ Person* PersonList::Find(int index)
 int PersonList::IndexOf(Person* person)
 {
 	PersonListItem* current = _head;
-	//TODO: вместо while лучше брать for от 0 до конца списка - форы гораздо читаемее уайлов
-	//Исправлено.
 	for (int index = 0; index < GetCount(); index++)
 	{
-		//TODO: Ну что это за вложенная портянка ifов?
-		// Заменить на логическое умножение
-		//Исправлено.
-
 		//Если вводимые данные совпадают с Person из списка
 		if ((current->person->GetSurname() == person->GetSurname()) && (current->person->GetName() == person->GetName()) 
 			 && (current->person->GetSex() == person->GetSex()) && (current->person->GetAge() == person->GetAge()))
@@ -80,8 +74,6 @@ int PersonList::IndexOf(Person* person)
 //удалить человека из списка
 void PersonList::Remove(Person* person)
 {
-	//TODO: Слишком большая реализация для функции. Переделать в две строчки
-	//Сделано.
 	int index = IndexOf(person);
 	RemoveAt(index);
 }

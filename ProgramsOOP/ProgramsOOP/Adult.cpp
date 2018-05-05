@@ -2,8 +2,6 @@
 #include "Person.h"
 #include <ctime>
 
-//TODO: реализацию в cpp
-//ИСПРАВДЕНО.
 //Конструктор класса Adult
 Adult::Adult(string surname, string name, enum Sex sex, int age, Person*  marriedOn, string workPlace) : Person(surname, name, sex, age)
 {
@@ -11,32 +9,24 @@ Adult::Adult(string surname, string name, enum Sex sex, int age, Person*  marrie
 	SetWorkPlace(workPlace);
 }
 
-//TODO: комментарии к функции
-//Исправлено.
 //Задать паспортные данные 
 void Adult::SetMarriedOn(Person* marriedOn)
 {
 	_marriedOn = marriedOn;
 } 
 
-  //TODO: комментарии к функции
-  //Исправлено.
-  //Задать место работы
+ //Задать место работы
 void Adult::SetWorkPlace(string workPlace)
 {
 	_workPlace = workPlace;
 }
 
-//TODO: комментарии к функции
-//Исправлено.
 //Получить паспортные данные
 Person* Adult::GetMarriedOn()
 {
 	return _marriedOn;
 }
 
- //TODO: комментарии к функции
- //Исправлено.
  //Получить место работы
 string Adult::GetWorkPlace()
 {
