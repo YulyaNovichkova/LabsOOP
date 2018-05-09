@@ -8,13 +8,14 @@ private:
 	class PersonListItem
 	{
 	public:
-		PersonListItem* _next = nullptr;
-		PersonListItem* _prev = nullptr;
+		PersonListItem* _next = NULL;
+		PersonListItem* _prev = NULL;
 		Person* person;
 	};
 	//указатель на голову списка
-	PersonListItem * _head = nullptr; 
-	PersonListItem * _tail = nullptr;
+	PersonListItem * _head = NULL;
+	//указатель на хвост списка
+	PersonListItem * _tail = NULL;
 	//количество элементов в списке
 	int _count = 0; 
 public:

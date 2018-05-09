@@ -54,6 +54,9 @@
     <ClCompile Include="Child.cpp">
       <Filter>Исходные файлы\Person</Filter>
     </ClCompile>
+    <ClCompile Include="LaunchTask7.cpp">
+      <Filter>Исходные файлы\Demo</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="List.h">

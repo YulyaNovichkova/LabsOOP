@@ -119,6 +119,7 @@
     <ClCompile Include="Child.cpp" />
     <ClCompile Include="LaunchTask5.cpp" />
     <ClCompile Include="LaunchTask6.cpp" />
+    <ClCompile Include="LaunchTask7.cpp" />
     <ClCompile Include="List.cpp" />
     <ClCompile Include="Person.cpp" />
     <ClCompile Include="PersonList.cpp" />
